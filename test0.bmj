@@ -1,0 +1,97 @@
+🎃
+🌞 🤜1000🤛 🐛 name
+🌞 🤜1000🤛 🐛 category
+🌞 🤜1000🤛 🐛 totalPoints
+🌞 🤜1000🤛 🐛 earnedPoints
+🌞 🤜1000🤛 🐛 uniqueCategory
+🔢 completeTotalPoints
+🔢 completePossiblePoints
+🔢 completeEarnedPoints
+🔢 uniqueCategoryAmt
+🔢 lineLocation
+🐛 fileLine
+🔢 current
+🔢 temp;
+🔢 isUnique;
+
+
+⬅ fileLine
+completeTotalPoints 🚸 fileLine
+⬅ fileLine
+lineLocation 🚸 0
+current 🚸 0
+uniqueCategoryAmt 🚸 0
+♻ fileLine 🔥 🕷🕷
+
+👀 fileLine🤜lineLocation🤛🍔'
+' 👶
+
+temp 🚸 0
+isUnique 🚸 1
+♻ temp 🍻 uniqueCategoryAmt
+👀 category🤜current🤛🍔uniqueCategory🤜temp🤛 👶
+isUnique 🚸 0
+🧓
+🛑
+👀 isUnique 🍔 1 👶
+uniqueCategory🤜uniqueCategoryAmt🤛 🚸 category🤜current🤛
+🧓
+completeEarnedPoints 🚸 completeEarnedPoints 🎄 earnedPoints🤜current🤛
+completePossiblePoints 🚸 completeTotalPoints 🎄 totalPoints🤜current🤛
+
+
+lineLocation 🚸 0
+current 🚸 current 🎄 1
+⬅ fileLine
+🧓
+
+
+👀 lineLocation🍻19 👶
+name 🤜current🤛 🚸 name🤜current🤛 🎄 fileLine🤜lineLocation🤛
+🧓
+🤓 lineLocation🍻39 👶
+category 🤜current🤛 🚸 name🤜current🤛 🎄 fileLine🤜lineLocation🤛
+🧓
+🤓 lineLocation🍻53 👶
+totalPoints 🤜current🤛 🚸 totalPoints 🤜current🤛 🎄 fileLine 🤜lineLocation🤛
+🧓
+🤓 lineLocation🍻60 👶
+earnedPoints 🤜current🤛 🚸 totalPoints 🤜current🤛 🎄 fileLine 🤜lineLocation🤛
+🧓
+🛑
+🔢 counter
+counter 🚸 0
+🔢 insideCounter
+insideCounter 🚸 0
+🌞 🤜uniqueCategoryAmt🤛 🔢 uniqueCategoryPossible
+🌞 🤜uniqueCategoryAmt🤛 🔢 uniqueCategoryEarned
+
+♻ counter 🍺 uniqueCategoryAmt
+♻ insideCounter 🍺 current
+👀 category🤜insideCounter🤛 🍔 uniqueCategory🤜counter🤛 👶
+uniqueCategoryPossible🤜counter🤛 🚸 uniqueCategoryPossible🤜counter🤛 🎄 totalPoints🤜insideCounter🤛
+uniqueCategoryEarned🤜counter🤛 🚸 uniqueCategoryEarned🤜counter🤛 🎄 earnedPoints🤜insideCounter🤛
+🧓
+insideCounter 🚸 insideCounter 🎄 1
+🛑
+counter 🚸 counter 🎄 1
+🛑
+
+counter 🚸 0
+insideCounter 🚸 0
+♻ counter 🍺 uniqueCategoryAmt
+➡ uniqueCategory🤜counter🤛 🎄 🕷(🕷 🎄 (uniqueCategoryPossible/completePossiblePoints) 🎄 🕷%)🕷
+➡ 🕷==================================🕷
+♻ insideCounter 🍺 current
+👀 category🤜insideCounter🤛 🍔 uniqueCategory🤜counter🤛 👶
+➡ name🤜insideCounter🤛 🎄 earnedPoints 🎄 🕷/🕷 🎄 totalPoints 🎄 🕷 🕷 🎄 (earnedPoints👩‍👦totalPoints) 🎄 🕷%🕷
+🧓
+insideCounter 🚸 insideCounter 🎄 1
+🛑
+➡ 🕷==================================🕷
+➡ 🕷 🕷 🎄 uniqueCategoryEarned 🎄 🕷/🕷 🎄 uniqueCategoryPossible 🎄 🕷 🕷 🎄 (uniqueCategoryEarned👩‍👦uniqueCategoryPossible) 🎄 🕷%🕷
+➡ 🕷🕷
+counter 🚸 counter 🎄 1
+🛑
+
+☣

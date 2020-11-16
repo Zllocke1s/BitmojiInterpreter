@@ -1,4 +1,4 @@
-// Output created by jacc on Sun Nov 15 22:50:56 CST 2020
+// Output created by jacc on Mon Nov 16 13:12:40 CST 2020
 
 package com.bitmoji;
 
@@ -21,27 +21,28 @@ interface BitmojiTokens {
     int GREATER_THAN_OR_EQUAL = 15;
     int ID = 16;
     int IF = 17;
-    int INTEGER_DECL = 18;
-    int INT_LITERAL = 19;
-    int LEFT_BRACKET = 20;
-    int LEFT_PARENTHESIS = 21;
-    int LESS_THAN = 22;
-    int LESS_THAN_OR_EQUAL = 23;
-    int MINUS = 24;
+    int INPUT = 18;
+    int INTEGER_DECL = 19;
+    int INT_LITERAL = 20;
+    int LEFT_BRACKET = 21;
+    int LEFT_PARENTHESIS = 22;
+    int LESS_THAN = 23;
+    int LESS_THAN_OR_EQUAL = 24;
     int MULTIPLY = 25;
     int NOT_EQUALS = 26;
-    int PARAMETER_COMMA = 27;
-    int REAL_DECL = 28;
-    int REAL_LITERAL = 29;
-    int RETURN = 30;
-    int RIGHT_BRACKET = 31;
-    int RIGHT_PARENTHESIS = 32;
-    int START_FUNCTION_STATEMENTS = 33;
-    int START_PROGRAM = 34;
-    int START_THEN = 35;
-    int START_WHILE = 36;
-    int STRING_DECL = 37;
-    int STRING_LITERAL = 38;
-    int SUBTRACT = 39;
-    int error = 40;
+    int OUTPUT = 27;
+    int PARAMETER_COMMA = 28;
+    int REAL_DECL = 29;
+    int REAL_LITERAL = 30;
+    int RETURN = 31;
+    int RIGHT_BRACKET = 32;
+    int RIGHT_PARENTHESIS = 33;
+    int START_FUNCTION_STATEMENTS = 34;
+    int START_PROGRAM = 35;
+    int START_THEN = 36;
+    int START_WHILE = 37;
+    int STRING_DECL = 38;
+    int STRING_LITERAL = 39;
+    int SUBTRACT = 40;
+    int error = 41;
 }

@@ -1,10 +1,12 @@
+package com.bitmoji;
+
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class LooplangLexer implements LooplangTokens
+public class BitmojiLexer implements BitmojiTokens
 {
     //constructor
-    public LooplangLexer(final InputStream in) {
+    public BitmojiLexer(final InputStream in) {
         line = "";
         lineNo = 0;
         colNo = 0;
@@ -73,40 +75,6 @@ public class LooplangLexer implements LooplangTokens
         return value;
     }
 
-    // lexer pattern matching functions
-    private boolean kwIdentMatch() {
-        if (Character.isLetterOrDigit(currentChar)) {
-            return true;
-        }
-
-        return false;
-    }
-
-    // matches keywords and identifiers
-    private void kwIdent(final String[] kw, final int[] token) {
-        final StringBuilder sb = new StringBuilder();
-
-        // accumulate a string of
-        while (kwIdentMatch()) {
-            sb.append(currentChar);
-            nextChar();
-        }
-        final String value = sb.toString();
-
-        // see if the accumulated string matches a keyword
-        for (int i = 0; i < kw.length; i++) {
-            if (kw[i].equals(value)) {
-                this.token = token[i];
-                this.value = null;
-                return;
-            }
-        }
-
-        // must be an identifier!
-        this.token = ID;
-        this.value = value;
-    }
-
     // matches a single character token
     // Returns true on match
     private boolean singleMatch(final char[] c, final int[] token) {
@@ -121,26 +89,70 @@ public class LooplangLexer implements LooplangTokens
         return false;
     }
 
-    // matches integers
-    private void literal() {
-        final StringBuilder sb = new StringBuilder();
 
-        while (Character.isDigit(currentChar)) {
+    //matches an id
+    private void idOrKw()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        while(Character.isLetter(currentChar)) {
             sb.append(currentChar);
             nextChar();
         }
 
-        token = LITERAL;
+        value = sb.toString();
+
+        if(value.equals("real")) {
+            token = REAL;
+        } else if(value.equals("end")) {
+            token = END;
+        } else if(value.equals("record")) {
+            token = RECORD;
+        } else if(value.equals("int")) {
+            token = INTEGER;
+        } else {
+            token = ID;
+            value = sb.toString();
+        }
+
+    }
+
+
+    //matches literals
+    private void literal()
+    {
+        StringBuilder sb = new StringBuilder();
+        //grab the whole number part
+        while(Character.isDigit(currentChar)){
+            sb.append(currentChar);
+            nextChar();
+        }
+
+        //grab the fractional part (if there is one)
+        if(currentChar == '.') {
+            sb.append('.');
+            nextChar();
+            while(Character.isDigit(currentChar)) {
+                sb.append(currentChar);
+                nextChar();
+            }
+            token = REAL_LITERAL;
+            value = Double.valueOf(sb.toString());
+            return;
+        }
+        token = INT_LITERAL;
         value = Integer.valueOf(sb.toString());
     }
 
     // load the next token
     public void next() {
         // the keyword tokens
-        final String[] kw = { "array", "while", "end", "in", "out" };
-        final int[] kwt = { ARRAY, WHILE, END, IN, OUT };
-        final char[] c = { '[', ']', '-' };
-        final int[] ct = { LBRACKET, RBRACKET, MINUS };
+        final String[] c = {
+                "🎃",
+                "☣",
+                "\uD83C\uDF54",
+        };
+        final int[] ct = { ADD, SUBTRAT, DIV, EQUAL, SEMI, LPAREN, RPAREN, DOT };
 
         // skip whitespace
         while (Character.isWhitespace(currentChar)) {
@@ -158,48 +170,55 @@ public class LooplangLexer implements LooplangTokens
         value = String.valueOf(currentChar);
 
         // match strings
-        if (Character.isDigit(currentChar)) {
-            // match an integer
+        if(Character.isLetter(currentChar)) {
+            idOrKw();
+        } else if(Character.isDigit(currentChar)) {
             literal();
-        } else if (kwIdentMatch()) {
-            // match keyword or literal
-            kwIdent(kw, kwt);
-        } else if (singleMatch(c, ct)) {
-            nextChar();
-        } else if (currentChar == ':') {
-            nextChar();
-            if (currentChar == '=') {
-                token = ASSIGN;
-                value = null;
-            }
+        } else if(singleMatch(c, ct)) {
             nextChar();
         } else {
-            // mark the invalid character for skipping
             currentChar = ' ';
         }
-
-        return;
     }
 
     // convert the current token to a string
     public String toString() {
-        final String[] label = { "ENDINPUT", "ARRAY", "ASSIGN", "END", 
-                                 "ID", "IN", "LBRACKET", "LITERAL", "MINUS",
-                                 "OUT", "RBRACKET", "WHILE", "error" };
+        String [] label = new String[error+1];
+
+        label[EQUAL] = "EQUAL";
+        label[ID] = "ID";
+        label[ADD] = "ADD";
+        label[SUB] = "SUB";
+        label[MUL] = "MUL";
+        label[DIV] = "DIV";
+        label[EXP] = "EXP";
+        label[REAL_LITERAL] = "REAL_LITERAL";
+        label[INT_LITERAL]  = "INT_LITERAL";
+        label[LPAREN] = "LPAREN";
+        label[RPAREN] = "RPAREN";
+        label[SEMI] = "SEMI";
+        label[REAL] = "REAL";
+        label[END] = "END";
+        label[RECORD] = "RECORD";
+        label[DOT] = "DOT";
+        label[INTEGER] = "INTEGER";
+        label[ENDINPUT] = "ENDINPUT";
+        label[error] = "error";
 
         return label[token] + ": " + value;
     }
 
     // test the lexer
     public static void main(final String[] args) {
-        final LooplangLexer lexer = new LooplangLexer(System.in);
+        final BitmojiLexer lexer = new BitmojiLexer(System.in);
 
         do {
-            if(lexer.getToken() == LooplangLexer.error) {
+            lexer.next();
+            if(lexer.getToken() == BitmojiLexer.error) {
                 lexer.printError("Invalid Token");
             } else {
                 System.out.println(lexer);
             }
-        } while(lexer.getToken() != LooplangLexer.ENDINPUT);
+        } while(lexer.getToken() != BitmojiLexer.ENDINPUT);
     }
 }

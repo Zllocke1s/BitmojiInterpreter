@@ -1,0 +1,121 @@
+// JACC Implementation of the Bitmoji Parser
+
+//////////////////////////////////////////
+// Directives
+//////////////////////////////////////////
+
+%package com.bitmoji
+%class Bitmoji
+%interface BitmojiTokens
+%next yynext()
+%get lexer.getToken()
+%semantic Object : lexer.getValue()
+
+// Conditionals
+%token EQUALS NOT_EQUALS LESS_THAN GREATER_THAN LESS_THAN_OR_EQUAL GREATER_THAN_OR_EQUAL
+// Arithmetic Operators
+%token ADD SUBTRACT MULTIPLY DIVIDE EXPONENT
+// Grouping
+%token LEFT_BRACKET RIGHT_BRACKET LEFT_PARENTHESIS RIGHT_PARENTHESIS
+// Assignment
+%token INTEGER_DECL REAL_DECL STRING_DECL ARRAY_DECL ASSIGN
+// Control
+%token START_WHILE END_WHILE IF ELIF ELSE START_THEN END_THEN
+// Functions
+%token FUNCTION_DEF START_FUNCTION_STATEMENTS END_FUNCTION_STATEMENTS RETURN PARAMETER_COMMA
+%token ID START_PROGRAM END_PROGRAM START_WHILE END_WHILE
+// Literals
+%token REAL_LITERAL INT_LITERAL STRING_LITERAL
+%left MINUS
+%right ASSIGN
+
+%%
+//////////////////////////////////////////
+// Grammar Rules
+//////////////////////////////////////////
+program                 : START_PROGRAM
+                        {
+
+                        }
+                        ;
+%%
+
+//////////////////////////////////////////
+// Extra Code
+//////////////////////////////////////////
+
+    private BitmojiLexer lexer;
+    private int token;
+    private Object yylvalue;
+    private BitmojiParseTree tree;
+    private BitmojiParseTree.ProgramNode program;
+
+    public int yynext() {
+        lexer.next();
+        token = lexer.getToken();
+        yylvalue = lexer.getValue();
+
+        return token;
+    }
+
+    public void yyerror(String msg) {
+        lexer.printError("ERROR: " + msg);
+    }
+
+    public Bitmoji(java.io.InputStream in) {
+        lexer = new BitmojiLexer(in);
+        tree = new BitmojiParseTree(this);
+    }
+
+
+    public BitmojiParseTree.ProgramNode getProgram() {
+        return program;
+    }
+
+
+    public static void main(String [] args) {
+        boolean interpret = true;
+        boolean printTree = false;
+        boolean compile = false;
+        String filename="";
+
+        //process command line
+        for(int i=0; i<args.length; i++) {
+            if(args[i].equals("-c")) {
+                interpret = false;
+                compile = true;
+            } else if(args[i].equals("-t")) {
+                printTree = true;
+            } else {
+                filename = args[i];
+            }
+        }
+
+        try {
+            Bitmoji parser = new Bitmoji(new java.io.FileInputStream(filename));
+            parser.yynext();
+            parser.parse();
+ 
+            //print the tree
+            if(printTree) {
+                parser.getProgram().print("");
+            }
+
+            //interpret the code
+            if(interpret) {
+                parser.getProgram().evaluate();
+            }
+
+            //compile the code to c
+            if(compile) {
+                java.io.FileOutputStream file = new java.io.FileOutputStream(filename.split("\\.")[0] + ".c");
+                file.write(parser.getProgram().generate().getBytes());
+                file.close();
+            }
+
+        } catch(java.io.FileNotFoundException e) {
+            System.err.println("Could not open file.");
+        } catch(java.io.IOException e) {
+            System.err.println("File Write Error");
+        }
+    }

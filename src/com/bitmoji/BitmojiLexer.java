@@ -148,9 +148,43 @@ public class BitmojiLexer implements BitmojiTokens
     public void next() {
         // the keyword tokens
         final String[] c = {
-                "🎃",
-                "☣",
-                "\uD83C\uDF54",
+                "\uD83C\uDF83", // Start of Program
+                "☣", // End of Program
+                "\uD83C\uDF54", // ==
+                "\uD83D\uDD25", // !=
+                "\uD83C\uDF7A", // <
+                "\uD83C\uDF7B", // <=
+                "\uD83E\uDD42", // >=
+                "\uD83E\uDD43", // >
+                "♻", // Start of while
+                "\uD83D\uDED1", // End of while
+                "\uD83C\uDF84", // Add
+                "\uD83D\uDD22", // Int declaration
+                "\uD83D\uDC00", // Subtract
+                "\uD83E\uDDDC\uD83C\uDFFC\u200D♀️", // Real declaration
+                "\uD83E\uDD3A", // Multiply
+                "\uD83D\uDC69\u200D\uD83D\uDC66", // Divide
+                "\uD83D\uDEB8", // Assign
+                "\uD83E\uDD1C", // Left Bracket
+                "\uD83E\uDD1B", // Right Bracket
+                "⛪", // Exponent
+                "\uD83C\uDF1E", // Array Declaration
+                "\uD83D\uDC40", // if
+                "\uD83E\uDD13", // elif
+                "\uD83D\uDE21", // else
+                "\uD83C\uDF88", // Start of function definition
+                "\uD83D\uDC1B", // String declaration
+                "➡", // Output
+                "⬅", // Input
+                "\uD83C\uDF1C", // Left parenthesis
+                "\uD83C\uDF1B", // Right parenthesis
+                "\uD83D\uDC0E", // Start function statements
+                "\uD83D\uDE02", // End function statements
+                "\uD83D\uDC0A", // Parameter comma
+                "\uD83D\uDC7D", // Return
+                "\uD83D\uDC76", // Start then
+                "\uD83E\uDDD3", // End then
+                "\uD83D\uDD77" // String Quotes
         };
         final int[] ct = { ADD, SUBTRAT, DIV, EQUAL, SEMI, LPAREN, RPAREN, DOT };
 

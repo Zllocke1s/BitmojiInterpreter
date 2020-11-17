@@ -1,5 +1,7 @@
 package com.bitmoji;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.*;
 
@@ -122,7 +124,7 @@ public class BitmojiLexer implements BitmojiTokens
                 uniqueChars.add(c);
             }
         }
-        while (uniqueChars.contains(currentChar)) {
+        while (uniqueChars.contains(currentChar) || quotes.contains(String.valueOf(currentChar))) {
             sb.append(currentChar);
             nextChar();
         }
@@ -130,11 +132,10 @@ public class BitmojiLexer implements BitmojiTokens
         if (bitmojiSymbols.containsKey(value)) {
             token = bitmojiSymbols.get(value);
             return true;
-        } else if (value == quotes) {
+        } else if (value.equals(quotes)) {
             sb = new StringBuilder();
-            nextChar();
-            int indexOfQuotes = -1;
-            while (indexOfQuotes == -1) {
+            int indexOfQuotes;
+            do {
                 if (currentChar == 0) {
                     printError("String not ended with " + quotes);
                     return false;
@@ -142,11 +143,14 @@ public class BitmojiLexer implements BitmojiTokens
                 sb.append(currentChar);
                 nextChar();
                 indexOfQuotes = sb.indexOf(quotes);
-            }
+            } while (indexOfQuotes == -1);
             sb.delete(indexOfQuotes, sb.length());
             value = sb.toString();
             token = STRING_LITERAL;
             return true;
+        } else if (value.equals(quotes + quotes)) {
+            value = "";
+            token = STRING_LITERAL;
         }
         return false;
     }
@@ -202,6 +206,7 @@ public class BitmojiLexer implements BitmojiTokens
         // detect end of the file
         if (currentChar == 0) {
             token = ENDINPUT;
+            value = null;
             return;
         }
 
@@ -269,16 +274,16 @@ public class BitmojiLexer implements BitmojiTokens
     }
 
     // test the lexer
-    public static void main(final String[] args) {
-        final BitmojiLexer lexer = new BitmojiLexer(System.in);
-
+    public static void main(final String[] args) throws FileNotFoundException {
+        final FileInputStream fileStream = new FileInputStream(args[0].toString());
+        final BitmojiLexer lexer = new BitmojiLexer(fileStream);
         do {
             lexer.next();
-            if(lexer.getToken() == BitmojiLexer.error) {
+            if (lexer.getToken() == BitmojiLexer.error) {
                 lexer.printError("Invalid Token");
             } else {
                 System.out.println(lexer);
             }
-        } while(lexer.getToken() != BitmojiLexer.ENDINPUT);
+        } while (lexer.getToken() != BitmojiLexer.ENDINPUT);
     }
 }

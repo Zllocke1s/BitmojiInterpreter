@@ -93,21 +93,17 @@ public class BitmojiLexer implements BitmojiTokens
         bitmojiSymbols.put("♻", START_WHILE);// Start of while
         bitmojiSymbols.put("\uD83D\uDED1", END_WHILE); // End of while
         bitmojiSymbols.put("\uD83C\uDF84", ADD); // Add
-        bitmojiSymbols.put("\uD83D\uDD22", INTEGER_DECL); // Int declaration
         bitmojiSymbols.put("\uD83D\uDC00", SUBTRACT); // Subtract
-        bitmojiSymbols.put("\uD83E\uDDDC\uD83C\uDFFC\u200D♀️", REAL_DECL); // Real declaration
         bitmojiSymbols.put("\uD83E\uDD3A", MULTIPLY); // Multiply
         bitmojiSymbols.put("\uD83D\uDC69\u200D\uD83D\uDC66", DIVIDE); // Divide
         bitmojiSymbols.put("\uD83D\uDEB8", ASSIGN); // Assign
         bitmojiSymbols.put("\uD83E\uDD1C", LEFT_BRACKET); // Left Bracket
         bitmojiSymbols.put("\uD83E\uDD1B", RIGHT_BRACKET);// Right Bracket
         bitmojiSymbols.put("⛪", EXPONENT); // Exponent
-        bitmojiSymbols.put("\uD83C\uDF1E", ARRAY_DECL); // Array Declaration
         bitmojiSymbols.put("\uD83D\uDC40", IF); // if
         bitmojiSymbols.put("\uD83E\uDD13", ELIF); // elif
         bitmojiSymbols.put("\uD83D\uDE21", ELSE); // else
         bitmojiSymbols.put("\uD83C\uDF88", FUNCTION_DEF); // Start of function definition
-        bitmojiSymbols.put("\uD83D\uDC1B", STRING_DECL); // String declaration
         bitmojiSymbols.put("➡", OUTPUT); // Output
         bitmojiSymbols.put("⬅", INPUT); // Input
         bitmojiSymbols.put("\uD83C\uDF1C", LEFT_PARENTHESIS); // Left parenthesis
@@ -229,7 +225,6 @@ public class BitmojiLexer implements BitmojiTokens
         String [] label = new String[error+1];
         label[ENDINPUT] = "ENDINPUT";
         label[ADD] = "ADD";
-        label[ARRAY_DECL] = "ARRAY_DECL";
         label[ASSIGN] = "ASSIGN";
         label[DIVIDE] = "DIVIDE";
         label[ELIF] = "ELIF";
@@ -246,7 +241,6 @@ public class BitmojiLexer implements BitmojiTokens
         label[ID] = "ID";
         label[IF] = "IF";
         label[INPUT] = "INPUT";
-        label[INTEGER_DECL] = "INTEGER_DECL";
         label[INT_LITERAL] = "INTEGER_LITERAL";
         label[LEFT_BRACKET] = "LEFT_BRACKET";
         label[LEFT_PARENTHESIS] = "LEFT_PARENTHESIS";
@@ -256,7 +250,6 @@ public class BitmojiLexer implements BitmojiTokens
         label[NOT_EQUALS] = "NOT_EQUALS";
         label[OUTPUT] = "OUTPUT";
         label[PARAMETER_COMMA] = "PARAMETER_COMMA";
-        label[REAL_DECL] = "REAL_DECL";
         label[REAL_LITERAL] = "REAL_LITERAL";
         label[RETURN] = "RETURN";
         label[RIGHT_BRACKET] = "RIGHT_BRACKET";
@@ -265,7 +258,6 @@ public class BitmojiLexer implements BitmojiTokens
         label[START_PROGRAM] = "START_PROGRAM";
         label[START_THEN] = "START_THEN";
         label[START_WHILE] = "START_WHILE";
-        label[STRING_DECL] = "STRING_DECL";
         label[STRING_LITERAL] = "STRING_LITERAL";
         label[SUBTRACT] = "SUBTRACT";
         label[error] = "error";

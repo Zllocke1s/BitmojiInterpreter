@@ -101,7 +101,7 @@ exp : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS
 	| INT_LITERAL
 	;
 	
-assignment : id ASSIGN expr
+assignment : ID ASSIGN expr
 		   ;
 
 while_statement : START_WHILE equality stmnt_list END_WHILE
@@ -114,10 +114,11 @@ output : OUTPUT expr
 	   | OUTPUT STRING_LITERAL
 	   ;
 
-conditional : if_statmenet
+conditional : if_statement
 			| if_statement elif_statement
 			| if_statement else_statement
 			| if_statement elif_statement else_statement
+			;
 
 if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN
 			 ;
@@ -136,11 +137,11 @@ ref_list : ref_list PARAMETER_COMMA ref
 		 | ref
 		 ;
 
-function_def : FUNCTION_DEF id LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS
+function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS
 			 ;
 		   
-parameter_list : parameter_list PARAMETER_COMMA id
-			   | id
+parameter_list : parameter_list PARAMETER_COMMA ID
+			   | ID
 			   ;
 			   
 

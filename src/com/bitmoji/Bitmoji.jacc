@@ -50,35 +50,17 @@ statement : assignment
 		  | while_statement
 		  | input
 		  | output
-		  | if_statement
+		  | conditional
 		  | function_call
 		  | function_def //Does this go in the program NT or does it go outside program NT?
 		  ;
-		  
-		  
-/*		  
-array_decl : ARRAY_DECL array_type ID //Dynamically-sized array.
-		  ;
 
-int_decl : INTEGER_DECL ID
-		  ;
-
-real_decl : REAL_DECL ID
-		  ;
-
-string_decl : STRING_DECL ID
-		  ;
-*/
 
 
 ref : ID LEFT_BRACKET expr RIGHT_BRACKET
 	| ID
 	;
 
-array_type : INTEGER_DECL
-		   | REAL_DECL
-		   | STRING_DECL
-		   ;
 		   
 expr : expr ADD term
 	 | expr SUBTRACT term

@@ -1,4 +1,4 @@
-// Output created by jacc on Tue Nov 17 23:46:27 CST 2020
+// Output created by jacc on Wed Nov 18 10:40:00 CST 2020
 
 package com.bitmoji;
 
@@ -3398,7 +3398,7 @@ class Bitmoji implements BitmojiTokens {
     private int token;
     private Object yylvalue;
     private BitmojiParseTree tree;
-    private BitmojiParseTree.ProgramNode program;
+    private BitmojiParseTree.PTNode program;
 
     public int yynext() {
         lexer.next();
@@ -3417,11 +3417,9 @@ class Bitmoji implements BitmojiTokens {
         tree = new BitmojiParseTree(this);
     }
 
-
-    public BitmojiParseTree.ProgramNode getProgram() {
+    public BitmojiParseTree.PTNode getProgram() {
         return program;
     }
-
 
     public static void main(String [] args) {
         boolean interpret = true;
@@ -3445,22 +3443,10 @@ class Bitmoji implements BitmojiTokens {
             Bitmoji parser = new Bitmoji(new java.io.FileInputStream(filename));
             parser.yynext();
             parser.parse();
- 
-            //print the tree
-            if(printTree) {
-                parser.getProgram().print("");
-            }
 
             //interpret the code
             if(interpret) {
                 parser.getProgram().evaluate();
-            }
-
-            //compile the code to c
-            if(compile) {
-                java.io.FileOutputStream file = new java.io.FileOutputStream(filename.split("\\.")[0] + ".c");
-                file.write(parser.getProgram().generate().getBytes());
-                file.close();
             }
 
         } catch(java.io.FileNotFoundException e) {

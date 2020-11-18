@@ -150,7 +150,7 @@ relational : relational GREATER_THAN expr
     private int token;
     private Object yylvalue;
     private BitmojiParseTree tree;
-    private BitmojiParseTree.ProgramNode program;
+    private BitmojiParseTree.PTNode program;
 
     public int yynext() {
         lexer.next();
@@ -169,11 +169,9 @@ relational : relational GREATER_THAN expr
         tree = new BitmojiParseTree(this);
     }
 
-
-    public BitmojiParseTree.ProgramNode getProgram() {
+    public BitmojiParseTree.PTNode getProgram() {
         return program;
     }
-
 
     public static void main(String [] args) {
         boolean interpret = true;
@@ -197,22 +195,10 @@ relational : relational GREATER_THAN expr
             Bitmoji parser = new Bitmoji(new java.io.FileInputStream(filename));
             parser.yynext();
             parser.parse();
- 
-            //print the tree
-            if(printTree) {
-                parser.getProgram().print("");
-            }
 
             //interpret the code
             if(interpret) {
                 parser.getProgram().evaluate();
-            }
-
-            //compile the code to c
-            if(compile) {
-                java.io.FileOutputStream file = new java.io.FileOutputStream(filename.split("\\.")[0] + ".c");
-                file.write(parser.getProgram().generate().getBytes());
-                file.close();
             }
 
         } catch(java.io.FileNotFoundException e) {

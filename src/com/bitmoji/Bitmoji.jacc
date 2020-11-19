@@ -29,7 +29,7 @@
 // IO
 %token INPUT OUTPUT
 // Other
-%token ID START_PROGRAM END_PROGRAM
+%token ID START_PROGRAM END_PROGRAM NEWLINE
 %left SUBTRACT
 %right ASSIGN
 
@@ -137,7 +137,11 @@ input                   : INPUT ref
 
 output                  : OUTPUT assignable
                         {
-                            $$ = tree.new OutputNode($2);
+                            $$ = tree.new OutputNode($2, false);
+                        }
+                        | OUTPUT assignable NEWLINE
+                        {
+                            $$ = tree.new OutputNode($2, true);
                         }
 	                    ;
 

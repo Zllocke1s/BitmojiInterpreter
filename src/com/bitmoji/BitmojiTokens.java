@@ -1,4 +1,4 @@
-// Output created by jacc on Thu Nov 19 10:43:05 CST 2020
+// Output created by jacc on Thu Nov 19 11:19:36 CST 2020
 
 package com.bitmoji;
 
@@ -29,20 +29,21 @@ interface BitmojiTokens {
     int LESS_THAN = 23;
     int LESS_THAN_OR_EQUAL = 24;
     int MULTIPLY = 25;
-    int NOT_EQUALS = 26;
-    int OUTPUT = 27;
-    int PARAMETER_COMMA = 28;
-    int REAL_DECL = 29;
-    int REAL_LITERAL = 30;
-    int RETURN = 31;
-    int RIGHT_BRACKET = 32;
-    int RIGHT_PARENTHESIS = 33;
-    int START_FUNCTION_STATEMENTS = 34;
-    int START_PROGRAM = 35;
-    int START_THEN = 36;
-    int START_WHILE = 37;
-    int STRING_DECL = 38;
-    int STRING_LITERAL = 39;
-    int SUBTRACT = 40;
-    int error = 41;
+    int NEWLINE = 26;
+    int NOT_EQUALS = 27;
+    int OUTPUT = 28;
+    int PARAMETER_COMMA = 29;
+    int REAL_DECL = 30;
+    int REAL_LITERAL = 31;
+    int RETURN = 32;
+    int RIGHT_BRACKET = 33;
+    int RIGHT_PARENTHESIS = 34;
+    int START_FUNCTION_STATEMENTS = 35;
+    int START_PROGRAM = 36;
+    int START_THEN = 37;
+    int START_WHILE = 38;
+    int STRING_DECL = 39;
+    int STRING_LITERAL = 40;
+    int SUBTRACT = 41;
+    int error = 42;
 }

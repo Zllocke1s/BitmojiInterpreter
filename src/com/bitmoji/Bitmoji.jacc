@@ -71,29 +71,29 @@ ref                     : ID LEFT_BRACKET expr RIGHT_BRACKET
 		   
 expr                    : expr ADD term
                         {
-                            $$ = tree.new BinaryOperatorNode((BitmojiPT.PTNode) $1, (BitmojiPT.PTNode) $3, "+");
+                            $$ = tree.new BinaryOperatorNode($1, $3, "+");
                         }
 	                    | expr SUBTRACT term
                         {
-                            $$ = tree.new BinaryOperatorNode((BitmojiPT.PTNode) $1, (BitmojiPT.PTNode) $3, "-");
+                            $$ = tree.new BinaryOperatorNode($1, $3, "-");
                         }
 	                    | term
 	                    ;
 	 
 term                    : term MULTIPLY factor
                         {
-                            $$ = tree.new BinaryOperatorNode((BitmojiPT.PTNode) $1, (BitmojiPT.PTNode) $3, "*");
+                            $$ = tree.new BinaryOperatorNode($1, $3, "*");
                         }
 	                    | term DIVIDE factor
                         {
-                            $$ = tree.new BinaryOperatorNode((BitmojiPT.PTNode) $1, (BitmojiPT.PTNode) $3, "/");
+                            $$ = tree.new BinaryOperatorNode($1, $3, "/");
                         }
 	                    | factor
 	                    ;
 	 
 factor                  : factor EXPONENT exp
                         {
-                            $$ = tree.new BinaryOperatorNode((BitmojiPT.PTNode) $1, (BitmojiPT.PTNode) $3, "**");
+                            $$ = tree.new BinaryOperatorNode($1, $3, "**");
                         }
 	                    | exp
 	                    ;
@@ -103,11 +103,11 @@ exp                     : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS
 	                    | function_call
 	                    | REAL_LITERAL
 	                    {
-                            $$ = tree.new BMReal((Double) $1);
+                            $$ = (Double) $1;
                         }
 	                    | INT_LITERAL
 	                    {
-                            $$ = tree.new BMInteger((Integer) $1);
+                            $$ = (Integer) $1;
                         }
 	                    ;
 	
@@ -205,9 +205,6 @@ relational              : relational GREATER_THAN expr
     }
 
     public static void main(String [] args) {
-        boolean interpret = true;
-        boolean printTree = false;
-        boolean compile = false;
         String filename="";
 
         filename = args[0];

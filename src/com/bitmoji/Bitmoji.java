@@ -1,4 +1,4 @@
-// Output created by jacc on Wed Nov 18 20:11:25 CST 2020
+// Output created by jacc on Wed Nov 18 20:35:02 CST 2020
 
 package com.bitmoji;
 
@@ -3099,7 +3099,7 @@ class Bitmoji implements BitmojiTokens {
 
     private int yyr24() { // exp : REAL_LITERAL
         {
-                            yyrv = tree.new BMReal((Double) yysv[yysp-1]);
+                            yyrv = (Double) yysv[yysp-1];
                         }
         yysv[yysp-=1] = yyrv;
         return yypexp();
@@ -3107,7 +3107,7 @@ class Bitmoji implements BitmojiTokens {
 
     private int yyr25() { // exp : INT_LITERAL
         {
-                            yyrv = tree.new BMInteger((Integer) yysv[yysp-1]);
+                            yyrv = (Integer) yysv[yysp-1];
                         }
         yysv[yysp-=1] = yyrv;
         return yypexp();
@@ -3122,7 +3122,7 @@ class Bitmoji implements BitmojiTokens {
 
     private int yyr13() { // expr : expr ADD term
         {
-                            yyrv = tree.new BinaryOperatorNode((BitmojiPT.PTNode) yysv[yysp-3], (BitmojiPT.PTNode) yysv[yysp-1], "+");
+                            yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], "+");
                         }
         yysv[yysp-=3] = yyrv;
         return yypexpr();
@@ -3130,7 +3130,7 @@ class Bitmoji implements BitmojiTokens {
 
     private int yyr14() { // expr : expr SUBTRACT term
         {
-                            yyrv = tree.new BinaryOperatorNode((BitmojiPT.PTNode) yysv[yysp-3], (BitmojiPT.PTNode) yysv[yysp-1], "-");
+                            yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], "-");
                         }
         yysv[yysp-=3] = yyrv;
         return yypexpr();
@@ -3158,7 +3158,7 @@ class Bitmoji implements BitmojiTokens {
 
     private int yyr19() { // factor : factor EXPONENT exp
         {
-                            yyrv = tree.new BinaryOperatorNode((BitmojiPT.PTNode) yysv[yysp-3], (BitmojiPT.PTNode) yysv[yysp-1], "**");
+                            yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], "**");
                         }
         yysv[yysp-=3] = yyrv;
         return yypfactor();
@@ -3378,7 +3378,7 @@ class Bitmoji implements BitmojiTokens {
 
     private int yyr16() { // term : term MULTIPLY factor
         {
-                            yyrv = tree.new BinaryOperatorNode((BitmojiPT.PTNode) yysv[yysp-3], (BitmojiPT.PTNode) yysv[yysp-1], "*");
+                            yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], "*");
                         }
         yysv[yysp-=3] = yyrv;
         return yypterm();
@@ -3386,7 +3386,7 @@ class Bitmoji implements BitmojiTokens {
 
     private int yyr17() { // term : term DIVIDE factor
         {
-                            yyrv = tree.new BinaryOperatorNode((BitmojiPT.PTNode) yysv[yysp-3], (BitmojiPT.PTNode) yysv[yysp-1], "/");
+                            yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], "/");
                         }
         yysv[yysp-=3] = yyrv;
         return yypterm();
@@ -3446,9 +3446,6 @@ class Bitmoji implements BitmojiTokens {
     }
 
     public static void main(String [] args) {
-        boolean interpret = true;
-        boolean printTree = false;
-        boolean compile = false;
         String filename="";
 
         filename = args[0];

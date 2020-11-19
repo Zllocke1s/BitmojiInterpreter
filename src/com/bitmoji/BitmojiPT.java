@@ -97,11 +97,11 @@ public class BitmojiPT {
 
     public class BinaryOperatorNode implements PTNode
     {
-        private PTNode left;
-        private PTNode right;
+        private Object left;
+        private Object right;
         private String operator;
 
-        public BinaryOperatorNode(PTNode left, PTNode right, String operator) {
+        public BinaryOperatorNode(Object left, Object right, String operator) {
             this.left = left;
             this.right = right;
             this.operator = operator;
@@ -123,7 +123,7 @@ public class BitmojiPT {
                     case "**" -> Math.pow(left_value, right_value);
                     default -> (double) 0;
                 };
-                if (TypeHandler.isBMInteger(left) && TypeHandler.isBMInteger(right)) {
+                if (left instanceof Integer && right instanceof Integer) {
                     return ((Number) result).intValue();
                 }
                 return (Double) result;
@@ -132,34 +132,6 @@ public class BitmojiPT {
                 System.exit(1);
             }
             return null;
-        }
-    }
-
-    public class BMInteger implements PTNode
-    {
-        private Integer number;
-
-        public BMInteger(Integer number) {
-            this.number = number;
-        }
-
-        @Override
-        public Object evaluate() {
-            return number;
-        }
-    }
-
-    public class BMReal implements PTNode
-    {
-        private Double number;
-
-        public BMReal(Double number) {
-            this.number = number;
-        }
-
-        @Override
-        public Object evaluate() {
-            return number;
         }
     }
 }

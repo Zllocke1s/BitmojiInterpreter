@@ -65,10 +65,10 @@ statement               : assignment
 
 
 
-ref                     : ID LEFT_BRACKET expr RIGHT_BRACKET
+ref                     : ID LEFT_BRACKET expr RIGHT_BRACKET { $$ = tree.new ReferenceArrNode($1.toString(), $3); }
 	                    | ID
 	                    {
-	                        $$ = tree.new ReferenceNode($1.toString());
+	                        $$ = tree.new ReferenceVarNode($1.toString());
 	                    }
 	                    ;
 
@@ -118,9 +118,9 @@ exp                     : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS
                         }
 	                    ;
 	
-assignment              : ID ASSIGN assignable
+assignment              : ref ASSIGN assignable
                         {
-                            $$ = tree.new AssignNode((String) $1, $3);
+                            $$ = tree.new AssignNode((BitmojiPT.ReferenceNode) $1, $3);
                         }
 		                ;
 

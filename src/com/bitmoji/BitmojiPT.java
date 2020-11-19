@@ -1,6 +1,8 @@
 package com.bitmoji;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class BitmojiPT {
@@ -49,30 +51,50 @@ public class BitmojiPT {
 
     public class AssignNode extends StatementNode
     {
-        private String name;
+        private ReferenceNode node;
         private Object expression;
 
-        public AssignNode(String name, Object expression) {
-            this.name = name;
+        public AssignNode(ReferenceNode name, Object expression) {
+            this.node = name;
             this.expression = expression;
         }
 
         @Override
         public Object evaluate() {
-            ReferenceNode referenceNode = new ReferenceNode(name);
-            referenceNode.setValue(this.expression);
+            String name = node.name;
+            Object index = node.index;
+            if(index!=null)
+            {
+                ReferenceArrNode arrayNode = new ReferenceArrNode(name, index);
+                arrayNode.setValue(this.expression);
+
+            }
+            else {
+                ReferenceVarNode referenceNode = new ReferenceVarNode(name);
+                referenceNode.setValue(this.expression);
+            }
             return null;
         }
     }
 
-    public class ReferenceNode implements PTNode
+    public abstract class ReferenceNode implements PTNode
     {
-        private String name;
+        protected String name;
+        protected Object index;
 
-        ReferenceNode(String name) {
+        public abstract void setValue(Object expression);
+
+        public abstract Object evaluate();
+    }
+
+    public class ReferenceVarNode extends ReferenceNode
+    {
+
+        ReferenceVarNode(String name) {
             this.name = name;
         }
 
+        @Override
         public void setValue(Object expression) {
             globalSymbolTable.assignValue(name, TypeHandler.evaluate(expression));
         }
@@ -80,6 +102,45 @@ public class BitmojiPT {
         @Override
         public Object evaluate() {
             return globalSymbolTable.getValue(name);
+        }
+    }
+
+    public class ReferenceArrNode extends ReferenceNode
+    {
+
+        public ReferenceArrNode(String gName, Object gIndex)
+        {
+            name = gName;
+            index = gIndex;
+        }
+
+        @Override
+        public void setValue(Object expression) {
+            if(globalSymbolTable.hasName(name))
+            {
+                HashMap<Object, Object>map = (HashMap<Object, Object>)globalSymbolTable.getValue(name);
+                if(map.containsKey(index))
+                {
+                    map.replace(index, TypeHandler.evaluate(expression));
+                }
+                else
+                {
+                    map.put(index, TypeHandler.evaluate(expression));
+                }
+                globalSymbolTable.assignValue(name, map);
+            }
+            else
+            {
+                HashMap<Object, Object> newMap = new HashMap<>();
+                newMap.put(index, TypeHandler.evaluate(expression));
+                globalSymbolTable.assignValue(name, newMap);
+            }
+
+        }
+
+        @Override
+        public Object evaluate() {
+            return ((HashMap<Object, Object>)(globalSymbolTable.getValue(name))).get(index);
         }
     }
 

@@ -3,7 +3,7 @@
 <body>
 <h1>Generated machine for Bitmoji</h1>
 <pre>
-// Output created by jacc on Thu Nov 19 15:06:05 CST 2020
+// Output created by jacc on Thu Nov 19 16:30:46 CST 2020
 
 <hr><a name="st0"><b>state 0 (entry on program)</b></a>
     $accept : _program $end
@@ -104,12 +104,12 @@
 
 <hr><a name="st7"><b>state 7 (entry on if_statement)</b></a>
     conditional : if_statement_    (33)
-    conditional : if_statement_elif_statement    (34)
+    conditional : if_statement_elif_block_statement    (34)
     conditional : if_statement_else_statement    (35)
-    conditional : if_statement_elif_statement else_statement    (36)
+    conditional : if_statement_elif_block_statement else_statement    (36)
 
-    ELIF <a href="#st22">shift 22</a>
-    ELSE <a href="#st23">shift 23</a>
+    ELIF <a href="#st23">shift 23</a>
+    ELSE <a href="#st24">shift 24</a>
     ID reduce 33
     RETURN reduce 33
     END_PROGRAM reduce 33
@@ -122,8 +122,9 @@
     END_THEN reduce 33
     . error
 
-    elif_statement <a href="#st20">goto 20</a>
-    else_statement <a href="#st21">goto 21</a>
+    elif_block_statement <a href="#st20">goto 20</a>
+    elif_statement <a href="#st21">goto 21</a>
+    else_statement <a href="#st22">goto 22</a>
 
 <hr><a name="st8"><b>state 8 (entry on input)</b></a>
     statement : input_    (6)
@@ -158,7 +159,7 @@
 <hr><a name="st10"><b>state 10 (entry on ref)</b></a>
     assignment : ref_ASSIGN assignable    (26)
 
-    ASSIGN <a href="#st24">shift 24</a>
+    ASSIGN <a href="#st25">shift 25</a>
     . error
 
 <hr><a name="st11"><b>state 11 (entry on statement)</b></a>
@@ -186,7 +187,7 @@
     INPUT <a href="#st17">shift 17</a>
     OUTPUT <a href="#st18">shift 18</a>
     START_WHILE <a href="#st19">shift 19</a>
-    END_PROGRAM <a href="#st26">shift 26</a>
+    END_PROGRAM <a href="#st27">shift 27</a>
     . error
 
     assignment <a href="#st3">goto 3</a>
@@ -197,7 +198,7 @@
     input <a href="#st8">goto 8</a>
     output <a href="#st9">goto 9</a>
     ref <a href="#st10">goto 10</a>
-    statement <a href="#st25">goto 25</a>
+    statement <a href="#st26">goto 26</a>
     while_statement <a href="#st13">goto 13</a>
 
 <hr><a name="st13"><b>state 13 (entry on while_statement)</b></a>
@@ -216,13 +217,13 @@
     . error
 
 <hr><a name="st14"><b>state 14 (entry on FUNCTION_DEF)</b></a>
-    function_def : FUNCTION_DEF_ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (44)
+    function_def : FUNCTION_DEF_ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
 
-    ID <a href="#st27">shift 27</a>
+    ID <a href="#st28">shift 28</a>
     . error
 
 <hr><a name="st15"><b>state 15 (entry on ID)</b></a>
-    function_call : ID_LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS    (41)
+    function_call : ID_LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS    (42)
     ref : ID_LEFT_BRACKET expr RIGHT_BRACKET    (11)
     ref : ID_    (12)
 
@@ -238,68 +239,70 @@
     PARAMETER_COMMA error
     START_FUNCTION_STATEMENTS error
     ELSE error
-    LEFT_BRACKET <a href="#st28">shift 28</a>
-    LEFT_PARENTHESIS <a href="#st29">shift 29</a>
+    LEFT_BRACKET <a href="#st29">shift 29</a>
+    LEFT_PARENTHESIS <a href="#st30">shift 30</a>
     . reduce 12
 
 <hr><a name="st16"><b>state 16 (entry on IF)</b></a>
     if_statement : IF_LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (37)
 
-    LEFT_PARENTHESIS <a href="#st30">shift 30</a>
+    LEFT_PARENTHESIS <a href="#st31">shift 31</a>
     . error
 
 <hr><a name="st17"><b>state 17 (entry on INPUT)</b></a>
     input : INPUT_ref    (30)
 
-    ID <a href="#st32">shift 32</a>
+    ID <a href="#st33">shift 33</a>
     . error
 
-    ref <a href="#st31">goto 31</a>
+    ref <a href="#st32">goto 32</a>
 
 <hr><a name="st18"><b>state 18 (entry on OUTPUT)</b></a>
     output : OUTPUT_assignable    (31)
     output : OUTPUT_assignable NEWLINE    (32)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
-    STRING_LITERAL <a href="#st45">shift 45</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
+    STRING_LITERAL <a href="#st46">shift 46</a>
     . error
 
-    equality <a href="#st33">goto 33</a>
-    exp <a href="#st34">goto 34</a>
-    expr <a href="#st35">goto 35</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    assignable <a href="#st38">goto 38</a>
-    ref <a href="#st39">goto 39</a>
-    relational <a href="#st40">goto 40</a>
-    term <a href="#st41">goto 41</a>
+    equality <a href="#st34">goto 34</a>
+    exp <a href="#st35">goto 35</a>
+    expr <a href="#st36">goto 36</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    assignable <a href="#st39">goto 39</a>
+    ref <a href="#st40">goto 40</a>
+    relational <a href="#st41">goto 41</a>
+    term <a href="#st42">goto 42</a>
 
 <hr><a name="st19"><b>state 19 (entry on START_WHILE)</b></a>
     while_statement : START_WHILE_equality stmnt_list END_WHILE    (29)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
     . error
 
-    equality <a href="#st46">goto 46</a>
-    exp <a href="#st34">goto 34</a>
-    expr <a href="#st35">goto 35</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
-    relational <a href="#st40">goto 40</a>
-    term <a href="#st41">goto 41</a>
+    equality <a href="#st47">goto 47</a>
+    exp <a href="#st35">goto 35</a>
+    expr <a href="#st36">goto 36</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
+    relational <a href="#st41">goto 41</a>
+    term <a href="#st42">goto 42</a>
 
-<hr><a name="st20"><b>state 20 (entry on elif_statement)</b></a>
-    conditional : if_statement elif_statement_    (34)
-    conditional : if_statement elif_statement_else_statement    (36)
+<hr><a name="st20"><b>state 20 (entry on elif_block_statement)</b></a>
+    conditional : if_statement elif_block_statement_    (34)
+    conditional : if_statement elif_block_statement_else_statement    (36)
+    elif_block_statement : elif_block_statement_elif_statement    (40)
 
-    ELSE <a href="#st23">shift 23</a>
+    ELIF <a href="#st23">shift 23</a>
+    ELSE <a href="#st24">shift 24</a>
     ID reduce 34
     RETURN reduce 34
     END_PROGRAM reduce 34
@@ -312,9 +315,27 @@
     END_THEN reduce 34
     . error
 
-    else_statement <a href="#st47">goto 47</a>
+    elif_statement <a href="#st48">goto 48</a>
+    else_statement <a href="#st49">goto 49</a>
 
-<hr><a name="st21"><b>state 21 (entry on else_statement)</b></a>
+<hr><a name="st21"><b>state 21 (entry on elif_statement)</b></a>
+    elif_block_statement : elif_statement_    (39)
+
+    ID reduce 39
+    RETURN reduce 39
+    END_PROGRAM reduce 39
+    OUTPUT reduce 39
+    FUNCTION_DEF reduce 39
+    ELSE reduce 39
+    END_WHILE reduce 39
+    START_WHILE reduce 39
+    INPUT reduce 39
+    IF reduce 39
+    END_THEN reduce 39
+    ELIF reduce 39
+    . error
+
+<hr><a name="st22"><b>state 22 (entry on else_statement)</b></a>
     conditional : if_statement else_statement_    (35)
 
     ID reduce 35
@@ -329,40 +350,39 @@
     END_THEN reduce 35
     . error
 
-<hr><a name="st22"><b>state 22 (entry on ELIF)</b></a>
+<hr><a name="st23"><b>state 23 (entry on ELIF)</b></a>
     elif_statement : ELIF_LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (38)
-    elif_statement : ELIF_LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN elif_statement    (39)
 
-    LEFT_PARENTHESIS <a href="#st48">shift 48</a>
+    LEFT_PARENTHESIS <a href="#st50">shift 50</a>
     . error
 
-<hr><a name="st23"><b>state 23 (entry on ELSE)</b></a>
-    else_statement : ELSE_START_THEN stmnt_list END_THEN    (40)
+<hr><a name="st24"><b>state 24 (entry on ELSE)</b></a>
+    else_statement : ELSE_START_THEN stmnt_list END_THEN    (41)
 
-    START_THEN <a href="#st49">shift 49</a>
+    START_THEN <a href="#st51">shift 51</a>
     . error
 
-<hr><a name="st24"><b>state 24 (entry on ASSIGN)</b></a>
+<hr><a name="st25"><b>state 25 (entry on ASSIGN)</b></a>
     assignment : ref ASSIGN_assignable    (26)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
-    STRING_LITERAL <a href="#st45">shift 45</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
+    STRING_LITERAL <a href="#st46">shift 46</a>
     . error
 
-    equality <a href="#st33">goto 33</a>
-    exp <a href="#st34">goto 34</a>
-    expr <a href="#st35">goto 35</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    assignable <a href="#st50">goto 50</a>
-    ref <a href="#st39">goto 39</a>
-    relational <a href="#st40">goto 40</a>
-    term <a href="#st41">goto 41</a>
+    equality <a href="#st34">goto 34</a>
+    exp <a href="#st35">goto 35</a>
+    expr <a href="#st36">goto 36</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    assignable <a href="#st52">goto 52</a>
+    ref <a href="#st40">goto 40</a>
+    relational <a href="#st41">goto 41</a>
+    term <a href="#st42">goto 42</a>
 
-<hr><a name="st25"><b>state 25 (entry on statement)</b></a>
+<hr><a name="st26"><b>state 26 (entry on statement)</b></a>
     stmnt_list : stmnt_list statement_    (2)
 
     ID reduce 2
@@ -377,62 +397,62 @@
     END_THEN reduce 2
     . error
 
-<hr><a name="st26"><b>state 26 (entry on END_PROGRAM)</b></a>
+<hr><a name="st27"><b>state 27 (entry on END_PROGRAM)</b></a>
     program : START_PROGRAM stmnt_list END_PROGRAM_    (1)
 
     $end reduce 1
     . error
 
-<hr><a name="st27"><b>state 27 (entry on ID)</b></a>
-    function_def : FUNCTION_DEF ID_LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (44)
+<hr><a name="st28"><b>state 28 (entry on ID)</b></a>
+    function_def : FUNCTION_DEF ID_LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
 
-    LEFT_PARENTHESIS <a href="#st51">shift 51</a>
+    LEFT_PARENTHESIS <a href="#st53">shift 53</a>
     . error
 
-<hr><a name="st28"><b>state 28 (entry on LEFT_BRACKET)</b></a>
+<hr><a name="st29"><b>state 29 (entry on LEFT_BRACKET)</b></a>
     ref : ID LEFT_BRACKET_expr RIGHT_BRACKET    (11)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
     . error
 
-    exp <a href="#st34">goto 34</a>
-    expr <a href="#st52">goto 52</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
-    term <a href="#st41">goto 41</a>
-
-<hr><a name="st29"><b>state 29 (entry on LEFT_PARENTHESIS)</b></a>
-    function_call : ID LEFT_PARENTHESIS_ref_list RIGHT_PARENTHESIS    (41)
-
-    ID <a href="#st32">shift 32</a>
-    . error
-
-    ref <a href="#st53">goto 53</a>
-    ref_list <a href="#st54">goto 54</a>
+    exp <a href="#st35">goto 35</a>
+    expr <a href="#st54">goto 54</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
+    term <a href="#st42">goto 42</a>
 
 <hr><a name="st30"><b>state 30 (entry on LEFT_PARENTHESIS)</b></a>
+    function_call : ID LEFT_PARENTHESIS_ref_list RIGHT_PARENTHESIS    (42)
+
+    ID <a href="#st33">shift 33</a>
+    . error
+
+    ref <a href="#st55">goto 55</a>
+    ref_list <a href="#st56">goto 56</a>
+
+<hr><a name="st31"><b>state 31 (entry on LEFT_PARENTHESIS)</b></a>
     if_statement : IF LEFT_PARENTHESIS_equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (37)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
     . error
 
-    equality <a href="#st55">goto 55</a>
-    exp <a href="#st34">goto 34</a>
-    expr <a href="#st35">goto 35</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
-    relational <a href="#st40">goto 40</a>
-    term <a href="#st41">goto 41</a>
+    equality <a href="#st57">goto 57</a>
+    exp <a href="#st35">goto 35</a>
+    expr <a href="#st36">goto 36</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
+    relational <a href="#st41">goto 41</a>
+    term <a href="#st42">goto 42</a>
 
-<hr><a name="st31"><b>state 31 (entry on ref)</b></a>
+<hr><a name="st32"><b>state 32 (entry on ref)</b></a>
     input : INPUT ref_    (30)
 
     ID reduce 30
@@ -447,11 +467,11 @@
     END_THEN reduce 30
     . error
 
-<hr><a name="st32"><b>state 32 (entry on ID)</b></a>
+<hr><a name="st33"><b>state 33 (entry on ID)</b></a>
     ref : ID_LEFT_BRACKET expr RIGHT_BRACKET    (11)
     ref : ID_    (12)
 
-    LEFT_BRACKET <a href="#st28">shift 28</a>
+    LEFT_BRACKET <a href="#st29">shift 29</a>
     RIGHT_PARENTHESIS reduce 12
     ID reduce 12
     RETURN reduce 12
@@ -466,13 +486,13 @@
     END_THEN reduce 12
     . error
 
-<hr><a name="st33"><b>state 33 (entry on equality)</b></a>
-    equality : equality_EQUALS relational    (47)
-    equality : equality_NOT_EQUALS relational    (48)
+<hr><a name="st34"><b>state 34 (entry on equality)</b></a>
+    equality : equality_EQUALS relational    (48)
+    equality : equality_NOT_EQUALS relational    (49)
     assignable : equality_    (28)
 
-    EQUALS <a href="#st56">shift 56</a>
-    NOT_EQUALS <a href="#st57">shift 57</a>
+    EQUALS <a href="#st58">shift 58</a>
+    NOT_EQUALS <a href="#st59">shift 59</a>
     ID reduce 28
     RETURN reduce 28
     END_PROGRAM reduce 28
@@ -486,7 +506,7 @@
     END_THEN reduce 28
     . error
 
-<hr><a name="st34"><b>state 34 (entry on exp)</b></a>
+<hr><a name="st35"><b>state 35 (entry on exp)</b></a>
     factor : exp_    (20)
 
     END_FUNCTION_STATEMENTS error
@@ -506,34 +526,34 @@
     ELIF error
     . reduce 20
 
-<hr><a name="st35"><b>state 35 (entry on expr)</b></a>
+<hr><a name="st36"><b>state 36 (entry on expr)</b></a>
     expr : expr_ADD term    (13)
     expr : expr_SUBTRACT term    (14)
-    relational : expr_    (54)
+    relational : expr_    (55)
 
-    ADD <a href="#st58">shift 58</a>
-    SUBTRACT <a href="#st59">shift 59</a>
-    ID reduce 54
-    GREATER_THAN_OR_EQUAL reduce 54
-    END_PROGRAM reduce 54
-    OUTPUT reduce 54
-    GREATER_THAN reduce 54
-    NOT_EQUALS reduce 54
-    RETURN reduce 54
-    NEWLINE reduce 54
-    RIGHT_PARENTHESIS reduce 54
-    FUNCTION_DEF reduce 54
-    LESS_THAN_OR_EQUAL reduce 54
-    LESS_THAN reduce 54
-    EQUALS reduce 54
-    END_WHILE reduce 54
-    START_WHILE reduce 54
-    INPUT reduce 54
-    IF reduce 54
-    END_THEN reduce 54
+    ADD <a href="#st60">shift 60</a>
+    SUBTRACT <a href="#st61">shift 61</a>
+    ID reduce 55
+    GREATER_THAN_OR_EQUAL reduce 55
+    END_PROGRAM reduce 55
+    OUTPUT reduce 55
+    GREATER_THAN reduce 55
+    NOT_EQUALS reduce 55
+    RETURN reduce 55
+    NEWLINE reduce 55
+    RIGHT_PARENTHESIS reduce 55
+    FUNCTION_DEF reduce 55
+    LESS_THAN_OR_EQUAL reduce 55
+    LESS_THAN reduce 55
+    EQUALS reduce 55
+    END_WHILE reduce 55
+    START_WHILE reduce 55
+    INPUT reduce 55
+    IF reduce 55
+    END_THEN reduce 55
     . error
 
-<hr><a name="st36"><b>state 36 (entry on factor)</b></a>
+<hr><a name="st37"><b>state 37 (entry on factor)</b></a>
     factor : factor_EXPONENT exp    (19)
     term : factor_    (18)
 
@@ -552,10 +572,10 @@
     ELSE error
     LEFT_PARENTHESIS error
     ELIF error
-    EXPONENT <a href="#st60">shift 60</a>
+    EXPONENT <a href="#st62">shift 62</a>
     . reduce 18
 
-<hr><a name="st37"><b>state 37 (entry on function_call)</b></a>
+<hr><a name="st38"><b>state 38 (entry on function_call)</b></a>
     exp : function_call_    (23)
 
     END_FUNCTION_STATEMENTS error
@@ -575,11 +595,11 @@
     ELIF error
     . reduce 23
 
-<hr><a name="st38"><b>state 38 (entry on assignable)</b></a>
+<hr><a name="st39"><b>state 39 (entry on assignable)</b></a>
     output : OUTPUT assignable_    (31)
     output : OUTPUT assignable_NEWLINE    (32)
 
-    NEWLINE <a href="#st61">shift 61</a>
+    NEWLINE <a href="#st63">shift 63</a>
     ID reduce 31
     RETURN reduce 31
     END_PROGRAM reduce 31
@@ -592,7 +612,7 @@
     END_THEN reduce 31
     . error
 
-<hr><a name="st39"><b>state 39 (entry on ref)</b></a>
+<hr><a name="st40"><b>state 40 (entry on ref)</b></a>
     exp : ref_    (22)
 
     END_FUNCTION_STATEMENTS error
@@ -612,34 +632,34 @@
     ELIF error
     . reduce 22
 
-<hr><a name="st40"><b>state 40 (entry on relational)</b></a>
-    equality : relational_    (49)
-    relational : relational_GREATER_THAN expr    (50)
-    relational : relational_GREATER_THAN_OR_EQUAL expr    (51)
-    relational : relational_LESS_THAN expr    (52)
-    relational : relational_LESS_THAN_OR_EQUAL expr    (53)
+<hr><a name="st41"><b>state 41 (entry on relational)</b></a>
+    equality : relational_    (50)
+    relational : relational_GREATER_THAN expr    (51)
+    relational : relational_GREATER_THAN_OR_EQUAL expr    (52)
+    relational : relational_LESS_THAN expr    (53)
+    relational : relational_LESS_THAN_OR_EQUAL expr    (54)
 
-    GREATER_THAN <a href="#st62">shift 62</a>
-    GREATER_THAN_OR_EQUAL <a href="#st63">shift 63</a>
-    LESS_THAN <a href="#st64">shift 64</a>
-    LESS_THAN_OR_EQUAL <a href="#st65">shift 65</a>
-    ID reduce 49
-    RETURN reduce 49
-    END_PROGRAM reduce 49
-    OUTPUT reduce 49
-    RIGHT_PARENTHESIS reduce 49
-    NOT_EQUALS reduce 49
-    NEWLINE reduce 49
-    FUNCTION_DEF reduce 49
-    EQUALS reduce 49
-    END_WHILE reduce 49
-    START_WHILE reduce 49
-    INPUT reduce 49
-    IF reduce 49
-    END_THEN reduce 49
+    GREATER_THAN <a href="#st64">shift 64</a>
+    GREATER_THAN_OR_EQUAL <a href="#st65">shift 65</a>
+    LESS_THAN <a href="#st66">shift 66</a>
+    LESS_THAN_OR_EQUAL <a href="#st67">shift 67</a>
+    ID reduce 50
+    RETURN reduce 50
+    END_PROGRAM reduce 50
+    OUTPUT reduce 50
+    RIGHT_PARENTHESIS reduce 50
+    NOT_EQUALS reduce 50
+    NEWLINE reduce 50
+    FUNCTION_DEF reduce 50
+    EQUALS reduce 50
+    END_WHILE reduce 50
+    START_WHILE reduce 50
+    INPUT reduce 50
+    IF reduce 50
+    END_THEN reduce 50
     . error
 
-<hr><a name="st41"><b>state 41 (entry on term)</b></a>
+<hr><a name="st42"><b>state 42 (entry on term)</b></a>
     expr : term_    (15)
     term : term_MULTIPLY factor    (16)
     term : term_DIVIDE factor    (17)
@@ -660,11 +680,11 @@
     EXPONENT error
     ELIF error
     $end error
-    DIVIDE <a href="#st66">shift 66</a>
-    MULTIPLY <a href="#st67">shift 67</a>
+    DIVIDE <a href="#st68">shift 68</a>
+    MULTIPLY <a href="#st69">shift 69</a>
     . reduce 15
 
-<hr><a name="st42"><b>state 42 (entry on INT_LITERAL)</b></a>
+<hr><a name="st43"><b>state 43 (entry on INT_LITERAL)</b></a>
     exp : INT_LITERAL_    (25)
 
     END_FUNCTION_STATEMENTS error
@@ -684,23 +704,23 @@
     ELIF error
     . reduce 25
 
-<hr><a name="st43"><b>state 43 (entry on LEFT_PARENTHESIS)</b></a>
+<hr><a name="st44"><b>state 44 (entry on LEFT_PARENTHESIS)</b></a>
     exp : LEFT_PARENTHESIS_expr RIGHT_PARENTHESIS    (21)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
     . error
 
-    exp <a href="#st34">goto 34</a>
-    expr <a href="#st68">goto 68</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
-    term <a href="#st41">goto 41</a>
+    exp <a href="#st35">goto 35</a>
+    expr <a href="#st70">goto 70</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
+    term <a href="#st42">goto 42</a>
 
-<hr><a name="st44"><b>state 44 (entry on REAL_LITERAL)</b></a>
+<hr><a name="st45"><b>state 45 (entry on REAL_LITERAL)</b></a>
     exp : REAL_LITERAL_    (24)
 
     END_FUNCTION_STATEMENTS error
@@ -720,7 +740,7 @@
     ELIF error
     . reduce 24
 
-<hr><a name="st45"><b>state 45 (entry on STRING_LITERAL)</b></a>
+<hr><a name="st46"><b>state 46 (entry on STRING_LITERAL)</b></a>
     assignable : STRING_LITERAL_    (27)
 
     ID reduce 27
@@ -736,9 +756,9 @@
     END_THEN reduce 27
     . error
 
-<hr><a name="st46"><b>state 46 (entry on equality)</b></a>
-    equality : equality_EQUALS relational    (47)
-    equality : equality_NOT_EQUALS relational    (48)
+<hr><a name="st47"><b>state 47 (entry on equality)</b></a>
+    equality : equality_EQUALS relational    (48)
+    equality : equality_NOT_EQUALS relational    (49)
     while_statement : START_WHILE equality_stmnt_list END_WHILE    (29)
 
     FUNCTION_DEF <a href="#st14">shift 14</a>
@@ -747,65 +767,8 @@
     INPUT <a href="#st17">shift 17</a>
     OUTPUT <a href="#st18">shift 18</a>
     START_WHILE <a href="#st19">shift 19</a>
-    EQUALS <a href="#st56">shift 56</a>
-    NOT_EQUALS <a href="#st57">shift 57</a>
-    . error
-
-    assignment <a href="#st3">goto 3</a>
-    conditional <a href="#st4">goto 4</a>
-    function_call <a href="#st5">goto 5</a>
-    function_def <a href="#st6">goto 6</a>
-    if_statement <a href="#st7">goto 7</a>
-    input <a href="#st8">goto 8</a>
-    output <a href="#st9">goto 9</a>
-    ref <a href="#st10">goto 10</a>
-    statement <a href="#st11">goto 11</a>
-    stmnt_list <a href="#st69">goto 69</a>
-    while_statement <a href="#st13">goto 13</a>
-
-<hr><a name="st47"><b>state 47 (entry on else_statement)</b></a>
-    conditional : if_statement elif_statement else_statement_    (36)
-
-    ID reduce 36
-    RETURN reduce 36
-    END_PROGRAM reduce 36
-    OUTPUT reduce 36
-    FUNCTION_DEF reduce 36
-    END_WHILE reduce 36
-    START_WHILE reduce 36
-    INPUT reduce 36
-    IF reduce 36
-    END_THEN reduce 36
-    . error
-
-<hr><a name="st48"><b>state 48 (entry on LEFT_PARENTHESIS)</b></a>
-    elif_statement : ELIF LEFT_PARENTHESIS_equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (38)
-    elif_statement : ELIF LEFT_PARENTHESIS_equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN elif_statement    (39)
-
-    ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
-    . error
-
-    equality <a href="#st70">goto 70</a>
-    exp <a href="#st34">goto 34</a>
-    expr <a href="#st35">goto 35</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
-    relational <a href="#st40">goto 40</a>
-    term <a href="#st41">goto 41</a>
-
-<hr><a name="st49"><b>state 49 (entry on START_THEN)</b></a>
-    else_statement : ELSE START_THEN_stmnt_list END_THEN    (40)
-
-    FUNCTION_DEF <a href="#st14">shift 14</a>
-    ID <a href="#st15">shift 15</a>
-    IF <a href="#st16">shift 16</a>
-    INPUT <a href="#st17">shift 17</a>
-    OUTPUT <a href="#st18">shift 18</a>
-    START_WHILE <a href="#st19">shift 19</a>
+    EQUALS <a href="#st58">shift 58</a>
+    NOT_EQUALS <a href="#st59">shift 59</a>
     . error
 
     assignment <a href="#st3">goto 3</a>
@@ -820,7 +783,80 @@
     stmnt_list <a href="#st71">goto 71</a>
     while_statement <a href="#st13">goto 13</a>
 
-<hr><a name="st50"><b>state 50 (entry on assignable)</b></a>
+<hr><a name="st48"><b>state 48 (entry on elif_statement)</b></a>
+    elif_block_statement : elif_block_statement elif_statement_    (40)
+
+    ID reduce 40
+    RETURN reduce 40
+    END_PROGRAM reduce 40
+    OUTPUT reduce 40
+    FUNCTION_DEF reduce 40
+    ELSE reduce 40
+    END_WHILE reduce 40
+    START_WHILE reduce 40
+    INPUT reduce 40
+    IF reduce 40
+    END_THEN reduce 40
+    ELIF reduce 40
+    . error
+
+<hr><a name="st49"><b>state 49 (entry on else_statement)</b></a>
+    conditional : if_statement elif_block_statement else_statement_    (36)
+
+    ID reduce 36
+    RETURN reduce 36
+    END_PROGRAM reduce 36
+    OUTPUT reduce 36
+    FUNCTION_DEF reduce 36
+    END_WHILE reduce 36
+    START_WHILE reduce 36
+    INPUT reduce 36
+    IF reduce 36
+    END_THEN reduce 36
+    . error
+
+<hr><a name="st50"><b>state 50 (entry on LEFT_PARENTHESIS)</b></a>
+    elif_statement : ELIF LEFT_PARENTHESIS_equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (38)
+
+    ID <a href="#st15">shift 15</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
+    . error
+
+    equality <a href="#st72">goto 72</a>
+    exp <a href="#st35">goto 35</a>
+    expr <a href="#st36">goto 36</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
+    relational <a href="#st41">goto 41</a>
+    term <a href="#st42">goto 42</a>
+
+<hr><a name="st51"><b>state 51 (entry on START_THEN)</b></a>
+    else_statement : ELSE START_THEN_stmnt_list END_THEN    (41)
+
+    FUNCTION_DEF <a href="#st14">shift 14</a>
+    ID <a href="#st15">shift 15</a>
+    IF <a href="#st16">shift 16</a>
+    INPUT <a href="#st17">shift 17</a>
+    OUTPUT <a href="#st18">shift 18</a>
+    START_WHILE <a href="#st19">shift 19</a>
+    . error
+
+    assignment <a href="#st3">goto 3</a>
+    conditional <a href="#st4">goto 4</a>
+    function_call <a href="#st5">goto 5</a>
+    function_def <a href="#st6">goto 6</a>
+    if_statement <a href="#st7">goto 7</a>
+    input <a href="#st8">goto 8</a>
+    output <a href="#st9">goto 9</a>
+    ref <a href="#st10">goto 10</a>
+    statement <a href="#st11">goto 11</a>
+    stmnt_list <a href="#st73">goto 73</a>
+    while_statement <a href="#st13">goto 13</a>
+
+<hr><a name="st52"><b>state 52 (entry on assignable)</b></a>
     assignment : ref ASSIGN assignable_    (26)
 
     ID reduce 26
@@ -835,127 +871,127 @@
     END_THEN reduce 26
     . error
 
-<hr><a name="st51"><b>state 51 (entry on LEFT_PARENTHESIS)</b></a>
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS_parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (44)
+<hr><a name="st53"><b>state 53 (entry on LEFT_PARENTHESIS)</b></a>
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS_parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
 
-    ID <a href="#st73">shift 73</a>
+    ID <a href="#st75">shift 75</a>
     . error
 
-    parameter_list <a href="#st72">goto 72</a>
+    parameter_list <a href="#st74">goto 74</a>
 
-<hr><a name="st52"><b>state 52 (entry on expr)</b></a>
+<hr><a name="st54"><b>state 54 (entry on expr)</b></a>
     expr : expr_ADD term    (13)
     expr : expr_SUBTRACT term    (14)
     ref : ID LEFT_BRACKET expr_RIGHT_BRACKET    (11)
 
-    ADD <a href="#st58">shift 58</a>
-    SUBTRACT <a href="#st59">shift 59</a>
-    RIGHT_BRACKET <a href="#st74">shift 74</a>
+    ADD <a href="#st60">shift 60</a>
+    SUBTRACT <a href="#st61">shift 61</a>
+    RIGHT_BRACKET <a href="#st76">shift 76</a>
     . error
 
-<hr><a name="st53"><b>state 53 (entry on ref)</b></a>
-    ref_list : ref_    (43)
+<hr><a name="st55"><b>state 55 (entry on ref)</b></a>
+    ref_list : ref_    (44)
 
-    RIGHT_PARENTHESIS reduce 43
-    PARAMETER_COMMA reduce 43
+    RIGHT_PARENTHESIS reduce 44
+    PARAMETER_COMMA reduce 44
     . error
 
-<hr><a name="st54"><b>state 54 (entry on ref_list)</b></a>
-    function_call : ID LEFT_PARENTHESIS ref_list_RIGHT_PARENTHESIS    (41)
-    ref_list : ref_list_PARAMETER_COMMA ref    (42)
+<hr><a name="st56"><b>state 56 (entry on ref_list)</b></a>
+    function_call : ID LEFT_PARENTHESIS ref_list_RIGHT_PARENTHESIS    (42)
+    ref_list : ref_list_PARAMETER_COMMA ref    (43)
 
-    PARAMETER_COMMA <a href="#st75">shift 75</a>
-    RIGHT_PARENTHESIS <a href="#st76">shift 76</a>
+    PARAMETER_COMMA <a href="#st77">shift 77</a>
+    RIGHT_PARENTHESIS <a href="#st78">shift 78</a>
     . error
 
-<hr><a name="st55"><b>state 55 (entry on equality)</b></a>
-    equality : equality_EQUALS relational    (47)
-    equality : equality_NOT_EQUALS relational    (48)
+<hr><a name="st57"><b>state 57 (entry on equality)</b></a>
+    equality : equality_EQUALS relational    (48)
+    equality : equality_NOT_EQUALS relational    (49)
     if_statement : IF LEFT_PARENTHESIS equality_RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (37)
 
-    EQUALS <a href="#st56">shift 56</a>
-    NOT_EQUALS <a href="#st57">shift 57</a>
-    RIGHT_PARENTHESIS <a href="#st77">shift 77</a>
+    EQUALS <a href="#st58">shift 58</a>
+    NOT_EQUALS <a href="#st59">shift 59</a>
+    RIGHT_PARENTHESIS <a href="#st79">shift 79</a>
     . error
 
-<hr><a name="st56"><b>state 56 (entry on EQUALS)</b></a>
-    equality : equality EQUALS_relational    (47)
+<hr><a name="st58"><b>state 58 (entry on EQUALS)</b></a>
+    equality : equality EQUALS_relational    (48)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
     . error
 
-    exp <a href="#st34">goto 34</a>
-    expr <a href="#st35">goto 35</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
-    relational <a href="#st78">goto 78</a>
-    term <a href="#st41">goto 41</a>
+    exp <a href="#st35">goto 35</a>
+    expr <a href="#st36">goto 36</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
+    relational <a href="#st80">goto 80</a>
+    term <a href="#st42">goto 42</a>
 
-<hr><a name="st57"><b>state 57 (entry on NOT_EQUALS)</b></a>
-    equality : equality NOT_EQUALS_relational    (48)
+<hr><a name="st59"><b>state 59 (entry on NOT_EQUALS)</b></a>
+    equality : equality NOT_EQUALS_relational    (49)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
     . error
 
-    exp <a href="#st34">goto 34</a>
-    expr <a href="#st35">goto 35</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
-    relational <a href="#st79">goto 79</a>
-    term <a href="#st41">goto 41</a>
+    exp <a href="#st35">goto 35</a>
+    expr <a href="#st36">goto 36</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
+    relational <a href="#st81">goto 81</a>
+    term <a href="#st42">goto 42</a>
 
-<hr><a name="st58"><b>state 58 (entry on ADD)</b></a>
+<hr><a name="st60"><b>state 60 (entry on ADD)</b></a>
     expr : expr ADD_term    (13)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
     . error
 
-    exp <a href="#st34">goto 34</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
-    term <a href="#st80">goto 80</a>
+    exp <a href="#st35">goto 35</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
+    term <a href="#st82">goto 82</a>
 
-<hr><a name="st59"><b>state 59 (entry on SUBTRACT)</b></a>
+<hr><a name="st61"><b>state 61 (entry on SUBTRACT)</b></a>
     expr : expr SUBTRACT_term    (14)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
     . error
 
-    exp <a href="#st34">goto 34</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
-    term <a href="#st81">goto 81</a>
+    exp <a href="#st35">goto 35</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
+    term <a href="#st83">goto 83</a>
 
-<hr><a name="st60"><b>state 60 (entry on EXPONENT)</b></a>
+<hr><a name="st62"><b>state 62 (entry on EXPONENT)</b></a>
     factor : factor EXPONENT_exp    (19)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
     . error
 
-    exp <a href="#st82">goto 82</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
+    exp <a href="#st84">goto 84</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
 
-<hr><a name="st61"><b>state 61 (entry on NEWLINE)</b></a>
+<hr><a name="st63"><b>state 63 (entry on NEWLINE)</b></a>
     output : OUTPUT assignable NEWLINE_    (32)
 
     ID reduce 32
@@ -970,109 +1006,109 @@
     END_THEN reduce 32
     . error
 
-<hr><a name="st62"><b>state 62 (entry on GREATER_THAN)</b></a>
-    relational : relational GREATER_THAN_expr    (50)
+<hr><a name="st64"><b>state 64 (entry on GREATER_THAN)</b></a>
+    relational : relational GREATER_THAN_expr    (51)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
     . error
 
-    exp <a href="#st34">goto 34</a>
-    expr <a href="#st83">goto 83</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
-    term <a href="#st41">goto 41</a>
-
-<hr><a name="st63"><b>state 63 (entry on GREATER_THAN_OR_EQUAL)</b></a>
-    relational : relational GREATER_THAN_OR_EQUAL_expr    (51)
-
-    ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
-    . error
-
-    exp <a href="#st34">goto 34</a>
-    expr <a href="#st84">goto 84</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
-    term <a href="#st41">goto 41</a>
-
-<hr><a name="st64"><b>state 64 (entry on LESS_THAN)</b></a>
-    relational : relational LESS_THAN_expr    (52)
-
-    ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
-    . error
-
-    exp <a href="#st34">goto 34</a>
+    exp <a href="#st35">goto 35</a>
     expr <a href="#st85">goto 85</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
-    term <a href="#st41">goto 41</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
+    term <a href="#st42">goto 42</a>
 
-<hr><a name="st65"><b>state 65 (entry on LESS_THAN_OR_EQUAL)</b></a>
-    relational : relational LESS_THAN_OR_EQUAL_expr    (53)
+<hr><a name="st65"><b>state 65 (entry on GREATER_THAN_OR_EQUAL)</b></a>
+    relational : relational GREATER_THAN_OR_EQUAL_expr    (52)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
     . error
 
-    exp <a href="#st34">goto 34</a>
+    exp <a href="#st35">goto 35</a>
     expr <a href="#st86">goto 86</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
-    term <a href="#st41">goto 41</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
+    term <a href="#st42">goto 42</a>
 
-<hr><a name="st66"><b>state 66 (entry on DIVIDE)</b></a>
+<hr><a name="st66"><b>state 66 (entry on LESS_THAN)</b></a>
+    relational : relational LESS_THAN_expr    (53)
+
+    ID <a href="#st15">shift 15</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
+    . error
+
+    exp <a href="#st35">goto 35</a>
+    expr <a href="#st87">goto 87</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
+    term <a href="#st42">goto 42</a>
+
+<hr><a name="st67"><b>state 67 (entry on LESS_THAN_OR_EQUAL)</b></a>
+    relational : relational LESS_THAN_OR_EQUAL_expr    (54)
+
+    ID <a href="#st15">shift 15</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
+    . error
+
+    exp <a href="#st35">goto 35</a>
+    expr <a href="#st88">goto 88</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
+    term <a href="#st42">goto 42</a>
+
+<hr><a name="st68"><b>state 68 (entry on DIVIDE)</b></a>
     term : term DIVIDE_factor    (17)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
     . error
 
-    exp <a href="#st34">goto 34</a>
-    factor <a href="#st87">goto 87</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
+    exp <a href="#st35">goto 35</a>
+    factor <a href="#st89">goto 89</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
 
-<hr><a name="st67"><b>state 67 (entry on MULTIPLY)</b></a>
+<hr><a name="st69"><b>state 69 (entry on MULTIPLY)</b></a>
     term : term MULTIPLY_factor    (16)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
     . error
 
-    exp <a href="#st34">goto 34</a>
-    factor <a href="#st88">goto 88</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
+    exp <a href="#st35">goto 35</a>
+    factor <a href="#st90">goto 90</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
 
-<hr><a name="st68"><b>state 68 (entry on expr)</b></a>
+<hr><a name="st70"><b>state 70 (entry on expr)</b></a>
     exp : LEFT_PARENTHESIS expr_RIGHT_PARENTHESIS    (21)
     expr : expr_ADD term    (13)
     expr : expr_SUBTRACT term    (14)
 
-    ADD <a href="#st58">shift 58</a>
-    SUBTRACT <a href="#st59">shift 59</a>
-    RIGHT_PARENTHESIS <a href="#st89">shift 89</a>
+    ADD <a href="#st60">shift 60</a>
+    SUBTRACT <a href="#st61">shift 61</a>
+    RIGHT_PARENTHESIS <a href="#st91">shift 91</a>
     . error
 
-<hr><a name="st69"><b>state 69 (entry on stmnt_list)</b></a>
+<hr><a name="st71"><b>state 71 (entry on stmnt_list)</b></a>
     stmnt_list : stmnt_list_statement    (2)
     while_statement : START_WHILE equality stmnt_list_END_WHILE    (29)
 
@@ -1082,7 +1118,7 @@
     INPUT <a href="#st17">shift 17</a>
     OUTPUT <a href="#st18">shift 18</a>
     START_WHILE <a href="#st19">shift 19</a>
-    END_WHILE <a href="#st90">shift 90</a>
+    END_WHILE <a href="#st92">shift 92</a>
     . error
 
     assignment <a href="#st3">goto 3</a>
@@ -1093,22 +1129,21 @@
     input <a href="#st8">goto 8</a>
     output <a href="#st9">goto 9</a>
     ref <a href="#st10">goto 10</a>
-    statement <a href="#st25">goto 25</a>
+    statement <a href="#st26">goto 26</a>
     while_statement <a href="#st13">goto 13</a>
 
-<hr><a name="st70"><b>state 70 (entry on equality)</b></a>
+<hr><a name="st72"><b>state 72 (entry on equality)</b></a>
     elif_statement : ELIF LEFT_PARENTHESIS equality_RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (38)
-    elif_statement : ELIF LEFT_PARENTHESIS equality_RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN elif_statement    (39)
-    equality : equality_EQUALS relational    (47)
-    equality : equality_NOT_EQUALS relational    (48)
+    equality : equality_EQUALS relational    (48)
+    equality : equality_NOT_EQUALS relational    (49)
 
-    EQUALS <a href="#st56">shift 56</a>
-    NOT_EQUALS <a href="#st57">shift 57</a>
-    RIGHT_PARENTHESIS <a href="#st91">shift 91</a>
+    EQUALS <a href="#st58">shift 58</a>
+    NOT_EQUALS <a href="#st59">shift 59</a>
+    RIGHT_PARENTHESIS <a href="#st93">shift 93</a>
     . error
 
-<hr><a name="st71"><b>state 71 (entry on stmnt_list)</b></a>
-    else_statement : ELSE START_THEN stmnt_list_END_THEN    (40)
+<hr><a name="st73"><b>state 73 (entry on stmnt_list)</b></a>
+    else_statement : ELSE START_THEN stmnt_list_END_THEN    (41)
     stmnt_list : stmnt_list_statement    (2)
 
     FUNCTION_DEF <a href="#st14">shift 14</a>
@@ -1117,7 +1152,7 @@
     INPUT <a href="#st17">shift 17</a>
     OUTPUT <a href="#st18">shift 18</a>
     START_WHILE <a href="#st19">shift 19</a>
-    END_THEN <a href="#st92">shift 92</a>
+    END_THEN <a href="#st94">shift 94</a>
     . error
 
     assignment <a href="#st3">goto 3</a>
@@ -1128,25 +1163,25 @@
     input <a href="#st8">goto 8</a>
     output <a href="#st9">goto 9</a>
     ref <a href="#st10">goto 10</a>
-    statement <a href="#st25">goto 25</a>
+    statement <a href="#st26">goto 26</a>
     while_statement <a href="#st13">goto 13</a>
 
-<hr><a name="st72"><b>state 72 (entry on parameter_list)</b></a>
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list_RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (44)
-    parameter_list : parameter_list_PARAMETER_COMMA ID    (45)
+<hr><a name="st74"><b>state 74 (entry on parameter_list)</b></a>
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list_RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
+    parameter_list : parameter_list_PARAMETER_COMMA ID    (46)
 
-    PARAMETER_COMMA <a href="#st93">shift 93</a>
-    RIGHT_PARENTHESIS <a href="#st94">shift 94</a>
+    PARAMETER_COMMA <a href="#st95">shift 95</a>
+    RIGHT_PARENTHESIS <a href="#st96">shift 96</a>
     . error
 
-<hr><a name="st73"><b>state 73 (entry on ID)</b></a>
-    parameter_list : ID_    (46)
+<hr><a name="st75"><b>state 75 (entry on ID)</b></a>
+    parameter_list : ID_    (47)
 
-    RIGHT_PARENTHESIS reduce 46
-    PARAMETER_COMMA reduce 46
+    RIGHT_PARENTHESIS reduce 47
+    PARAMETER_COMMA reduce 47
     . error
 
-<hr><a name="st74"><b>state 74 (entry on RIGHT_BRACKET)</b></a>
+<hr><a name="st76"><b>state 76 (entry on RIGHT_BRACKET)</b></a>
     ref : ID LEFT_BRACKET expr RIGHT_BRACKET_    (11)
 
     START_FUNCTION_STATEMENTS error
@@ -1164,16 +1199,16 @@
     STRING_LITERAL error
     . reduce 11
 
-<hr><a name="st75"><b>state 75 (entry on PARAMETER_COMMA)</b></a>
-    ref_list : ref_list PARAMETER_COMMA_ref    (42)
+<hr><a name="st77"><b>state 77 (entry on PARAMETER_COMMA)</b></a>
+    ref_list : ref_list PARAMETER_COMMA_ref    (43)
 
-    ID <a href="#st32">shift 32</a>
+    ID <a href="#st33">shift 33</a>
     . error
 
-    ref <a href="#st95">goto 95</a>
+    ref <a href="#st97">goto 97</a>
 
-<hr><a name="st76"><b>state 76 (entry on RIGHT_PARENTHESIS)</b></a>
-    function_call : ID LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS_    (41)
+<hr><a name="st78"><b>state 78 (entry on RIGHT_PARENTHESIS)</b></a>
+    function_call : ID LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS_    (42)
 
     END_FUNCTION_STATEMENTS error
     $end error
@@ -1190,52 +1225,25 @@
     LEFT_PARENTHESIS error
     LEFT_BRACKET error
     ELIF error
-    . reduce 41
+    . reduce 42
 
-<hr><a name="st77"><b>state 77 (entry on RIGHT_PARENTHESIS)</b></a>
+<hr><a name="st79"><b>state 79 (entry on RIGHT_PARENTHESIS)</b></a>
     if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS_START_THEN stmnt_list END_THEN    (37)
 
-    START_THEN <a href="#st96">shift 96</a>
+    START_THEN <a href="#st98">shift 98</a>
     . error
 
-<hr><a name="st78"><b>state 78 (entry on relational)</b></a>
-    equality : equality EQUALS relational_    (47)
-    relational : relational_GREATER_THAN expr    (50)
-    relational : relational_GREATER_THAN_OR_EQUAL expr    (51)
-    relational : relational_LESS_THAN expr    (52)
-    relational : relational_LESS_THAN_OR_EQUAL expr    (53)
+<hr><a name="st80"><b>state 80 (entry on relational)</b></a>
+    equality : equality EQUALS relational_    (48)
+    relational : relational_GREATER_THAN expr    (51)
+    relational : relational_GREATER_THAN_OR_EQUAL expr    (52)
+    relational : relational_LESS_THAN expr    (53)
+    relational : relational_LESS_THAN_OR_EQUAL expr    (54)
 
-    GREATER_THAN <a href="#st62">shift 62</a>
-    GREATER_THAN_OR_EQUAL <a href="#st63">shift 63</a>
-    LESS_THAN <a href="#st64">shift 64</a>
-    LESS_THAN_OR_EQUAL <a href="#st65">shift 65</a>
-    ID reduce 47
-    RETURN reduce 47
-    END_PROGRAM reduce 47
-    OUTPUT reduce 47
-    RIGHT_PARENTHESIS reduce 47
-    NOT_EQUALS reduce 47
-    NEWLINE reduce 47
-    FUNCTION_DEF reduce 47
-    EQUALS reduce 47
-    END_WHILE reduce 47
-    START_WHILE reduce 47
-    INPUT reduce 47
-    IF reduce 47
-    END_THEN reduce 47
-    . error
-
-<hr><a name="st79"><b>state 79 (entry on relational)</b></a>
-    equality : equality NOT_EQUALS relational_    (48)
-    relational : relational_GREATER_THAN expr    (50)
-    relational : relational_GREATER_THAN_OR_EQUAL expr    (51)
-    relational : relational_LESS_THAN expr    (52)
-    relational : relational_LESS_THAN_OR_EQUAL expr    (53)
-
-    GREATER_THAN <a href="#st62">shift 62</a>
-    GREATER_THAN_OR_EQUAL <a href="#st63">shift 63</a>
-    LESS_THAN <a href="#st64">shift 64</a>
-    LESS_THAN_OR_EQUAL <a href="#st65">shift 65</a>
+    GREATER_THAN <a href="#st64">shift 64</a>
+    GREATER_THAN_OR_EQUAL <a href="#st65">shift 65</a>
+    LESS_THAN <a href="#st66">shift 66</a>
+    LESS_THAN_OR_EQUAL <a href="#st67">shift 67</a>
     ID reduce 48
     RETURN reduce 48
     END_PROGRAM reduce 48
@@ -1252,7 +1260,34 @@
     END_THEN reduce 48
     . error
 
-<hr><a name="st80"><b>state 80 (entry on term)</b></a>
+<hr><a name="st81"><b>state 81 (entry on relational)</b></a>
+    equality : equality NOT_EQUALS relational_    (49)
+    relational : relational_GREATER_THAN expr    (51)
+    relational : relational_GREATER_THAN_OR_EQUAL expr    (52)
+    relational : relational_LESS_THAN expr    (53)
+    relational : relational_LESS_THAN_OR_EQUAL expr    (54)
+
+    GREATER_THAN <a href="#st64">shift 64</a>
+    GREATER_THAN_OR_EQUAL <a href="#st65">shift 65</a>
+    LESS_THAN <a href="#st66">shift 66</a>
+    LESS_THAN_OR_EQUAL <a href="#st67">shift 67</a>
+    ID reduce 49
+    RETURN reduce 49
+    END_PROGRAM reduce 49
+    OUTPUT reduce 49
+    RIGHT_PARENTHESIS reduce 49
+    NOT_EQUALS reduce 49
+    NEWLINE reduce 49
+    FUNCTION_DEF reduce 49
+    EQUALS reduce 49
+    END_WHILE reduce 49
+    START_WHILE reduce 49
+    INPUT reduce 49
+    IF reduce 49
+    END_THEN reduce 49
+    . error
+
+<hr><a name="st82"><b>state 82 (entry on term)</b></a>
     expr : expr ADD term_    (13)
     term : term_MULTIPLY factor    (16)
     term : term_DIVIDE factor    (17)
@@ -1273,11 +1308,11 @@
     EXPONENT error
     ELIF error
     $end error
-    DIVIDE <a href="#st66">shift 66</a>
-    MULTIPLY <a href="#st67">shift 67</a>
+    DIVIDE <a href="#st68">shift 68</a>
+    MULTIPLY <a href="#st69">shift 69</a>
     . reduce 13
 
-<hr><a name="st81"><b>state 81 (entry on term)</b></a>
+<hr><a name="st83"><b>state 83 (entry on term)</b></a>
     expr : expr SUBTRACT term_    (14)
     term : term_MULTIPLY factor    (16)
     term : term_DIVIDE factor    (17)
@@ -1298,11 +1333,11 @@
     EXPONENT error
     ELIF error
     $end error
-    DIVIDE <a href="#st66">shift 66</a>
-    MULTIPLY <a href="#st67">shift 67</a>
+    DIVIDE <a href="#st68">shift 68</a>
+    MULTIPLY <a href="#st69">shift 69</a>
     . reduce 14
 
-<hr><a name="st82"><b>state 82 (entry on exp)</b></a>
+<hr><a name="st84"><b>state 84 (entry on exp)</b></a>
     factor : factor EXPONENT exp_    (19)
 
     END_FUNCTION_STATEMENTS error
@@ -1322,40 +1357,13 @@
     ELIF error
     . reduce 19
 
-<hr><a name="st83"><b>state 83 (entry on expr)</b></a>
+<hr><a name="st85"><b>state 85 (entry on expr)</b></a>
     expr : expr_ADD term    (13)
     expr : expr_SUBTRACT term    (14)
-    relational : relational GREATER_THAN expr_    (50)
+    relational : relational GREATER_THAN expr_    (51)
 
-    ADD <a href="#st58">shift 58</a>
-    SUBTRACT <a href="#st59">shift 59</a>
-    ID reduce 50
-    GREATER_THAN_OR_EQUAL reduce 50
-    END_PROGRAM reduce 50
-    OUTPUT reduce 50
-    GREATER_THAN reduce 50
-    NOT_EQUALS reduce 50
-    RETURN reduce 50
-    NEWLINE reduce 50
-    RIGHT_PARENTHESIS reduce 50
-    FUNCTION_DEF reduce 50
-    LESS_THAN_OR_EQUAL reduce 50
-    LESS_THAN reduce 50
-    EQUALS reduce 50
-    END_WHILE reduce 50
-    START_WHILE reduce 50
-    INPUT reduce 50
-    IF reduce 50
-    END_THEN reduce 50
-    . error
-
-<hr><a name="st84"><b>state 84 (entry on expr)</b></a>
-    expr : expr_ADD term    (13)
-    expr : expr_SUBTRACT term    (14)
-    relational : relational GREATER_THAN_OR_EQUAL expr_    (51)
-
-    ADD <a href="#st58">shift 58</a>
-    SUBTRACT <a href="#st59">shift 59</a>
+    ADD <a href="#st60">shift 60</a>
+    SUBTRACT <a href="#st61">shift 61</a>
     ID reduce 51
     GREATER_THAN_OR_EQUAL reduce 51
     END_PROGRAM reduce 51
@@ -1376,13 +1384,13 @@
     END_THEN reduce 51
     . error
 
-<hr><a name="st85"><b>state 85 (entry on expr)</b></a>
+<hr><a name="st86"><b>state 86 (entry on expr)</b></a>
     expr : expr_ADD term    (13)
     expr : expr_SUBTRACT term    (14)
-    relational : relational LESS_THAN expr_    (52)
+    relational : relational GREATER_THAN_OR_EQUAL expr_    (52)
 
-    ADD <a href="#st58">shift 58</a>
-    SUBTRACT <a href="#st59">shift 59</a>
+    ADD <a href="#st60">shift 60</a>
+    SUBTRACT <a href="#st61">shift 61</a>
     ID reduce 52
     GREATER_THAN_OR_EQUAL reduce 52
     END_PROGRAM reduce 52
@@ -1403,13 +1411,13 @@
     END_THEN reduce 52
     . error
 
-<hr><a name="st86"><b>state 86 (entry on expr)</b></a>
+<hr><a name="st87"><b>state 87 (entry on expr)</b></a>
     expr : expr_ADD term    (13)
     expr : expr_SUBTRACT term    (14)
-    relational : relational LESS_THAN_OR_EQUAL expr_    (53)
+    relational : relational LESS_THAN expr_    (53)
 
-    ADD <a href="#st58">shift 58</a>
-    SUBTRACT <a href="#st59">shift 59</a>
+    ADD <a href="#st60">shift 60</a>
+    SUBTRACT <a href="#st61">shift 61</a>
     ID reduce 53
     GREATER_THAN_OR_EQUAL reduce 53
     END_PROGRAM reduce 53
@@ -1430,7 +1438,34 @@
     END_THEN reduce 53
     . error
 
-<hr><a name="st87"><b>state 87 (entry on factor)</b></a>
+<hr><a name="st88"><b>state 88 (entry on expr)</b></a>
+    expr : expr_ADD term    (13)
+    expr : expr_SUBTRACT term    (14)
+    relational : relational LESS_THAN_OR_EQUAL expr_    (54)
+
+    ADD <a href="#st60">shift 60</a>
+    SUBTRACT <a href="#st61">shift 61</a>
+    ID reduce 54
+    GREATER_THAN_OR_EQUAL reduce 54
+    END_PROGRAM reduce 54
+    OUTPUT reduce 54
+    GREATER_THAN reduce 54
+    NOT_EQUALS reduce 54
+    RETURN reduce 54
+    NEWLINE reduce 54
+    RIGHT_PARENTHESIS reduce 54
+    FUNCTION_DEF reduce 54
+    LESS_THAN_OR_EQUAL reduce 54
+    LESS_THAN reduce 54
+    EQUALS reduce 54
+    END_WHILE reduce 54
+    START_WHILE reduce 54
+    INPUT reduce 54
+    IF reduce 54
+    END_THEN reduce 54
+    . error
+
+<hr><a name="st89"><b>state 89 (entry on factor)</b></a>
     factor : factor_EXPONENT exp    (19)
     term : term DIVIDE factor_    (17)
 
@@ -1449,10 +1484,10 @@
     ELSE error
     LEFT_PARENTHESIS error
     ELIF error
-    EXPONENT <a href="#st60">shift 60</a>
+    EXPONENT <a href="#st62">shift 62</a>
     . reduce 17
 
-<hr><a name="st88"><b>state 88 (entry on factor)</b></a>
+<hr><a name="st90"><b>state 90 (entry on factor)</b></a>
     factor : factor_EXPONENT exp    (19)
     term : term MULTIPLY factor_    (16)
 
@@ -1471,10 +1506,10 @@
     ELSE error
     LEFT_PARENTHESIS error
     ELIF error
-    EXPONENT <a href="#st60">shift 60</a>
+    EXPONENT <a href="#st62">shift 62</a>
     . reduce 16
 
-<hr><a name="st89"><b>state 89 (entry on RIGHT_PARENTHESIS)</b></a>
+<hr><a name="st91"><b>state 91 (entry on RIGHT_PARENTHESIS)</b></a>
     exp : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS_    (21)
 
     END_FUNCTION_STATEMENTS error
@@ -1494,7 +1529,7 @@
     ELIF error
     . reduce 21
 
-<hr><a name="st90"><b>state 90 (entry on END_WHILE)</b></a>
+<hr><a name="st92"><b>state 92 (entry on END_WHILE)</b></a>
     while_statement : START_WHILE equality stmnt_list END_WHILE_    (29)
 
     ID reduce 29
@@ -1509,103 +1544,48 @@
     END_THEN reduce 29
     . error
 
-<hr><a name="st91"><b>state 91 (entry on RIGHT_PARENTHESIS)</b></a>
+<hr><a name="st93"><b>state 93 (entry on RIGHT_PARENTHESIS)</b></a>
     elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS_START_THEN stmnt_list END_THEN    (38)
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS_START_THEN stmnt_list END_THEN elif_statement    (39)
 
-    START_THEN <a href="#st97">shift 97</a>
+    START_THEN <a href="#st99">shift 99</a>
     . error
 
-<hr><a name="st92"><b>state 92 (entry on END_THEN)</b></a>
-    else_statement : ELSE START_THEN stmnt_list END_THEN_    (40)
+<hr><a name="st94"><b>state 94 (entry on END_THEN)</b></a>
+    else_statement : ELSE START_THEN stmnt_list END_THEN_    (41)
 
-    ID reduce 40
-    RETURN reduce 40
-    END_PROGRAM reduce 40
-    OUTPUT reduce 40
-    FUNCTION_DEF reduce 40
-    END_WHILE reduce 40
-    START_WHILE reduce 40
-    INPUT reduce 40
-    IF reduce 40
-    END_THEN reduce 40
+    ID reduce 41
+    RETURN reduce 41
+    END_PROGRAM reduce 41
+    OUTPUT reduce 41
+    FUNCTION_DEF reduce 41
+    END_WHILE reduce 41
+    START_WHILE reduce 41
+    INPUT reduce 41
+    IF reduce 41
+    END_THEN reduce 41
     . error
 
-<hr><a name="st93"><b>state 93 (entry on PARAMETER_COMMA)</b></a>
-    parameter_list : parameter_list PARAMETER_COMMA_ID    (45)
+<hr><a name="st95"><b>state 95 (entry on PARAMETER_COMMA)</b></a>
+    parameter_list : parameter_list PARAMETER_COMMA_ID    (46)
 
-    ID <a href="#st98">shift 98</a>
+    ID <a href="#st100">shift 100</a>
     . error
 
-<hr><a name="st94"><b>state 94 (entry on RIGHT_PARENTHESIS)</b></a>
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS_START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (44)
+<hr><a name="st96"><b>state 96 (entry on RIGHT_PARENTHESIS)</b></a>
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS_START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
 
-    START_FUNCTION_STATEMENTS <a href="#st99">shift 99</a>
+    START_FUNCTION_STATEMENTS <a href="#st101">shift 101</a>
     . error
 
-<hr><a name="st95"><b>state 95 (entry on ref)</b></a>
-    ref_list : ref_list PARAMETER_COMMA ref_    (42)
+<hr><a name="st97"><b>state 97 (entry on ref)</b></a>
+    ref_list : ref_list PARAMETER_COMMA ref_    (43)
 
-    RIGHT_PARENTHESIS reduce 42
-    PARAMETER_COMMA reduce 42
+    RIGHT_PARENTHESIS reduce 43
+    PARAMETER_COMMA reduce 43
     . error
 
-<hr><a name="st96"><b>state 96 (entry on START_THEN)</b></a>
+<hr><a name="st98"><b>state 98 (entry on START_THEN)</b></a>
     if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN_stmnt_list END_THEN    (37)
-
-    FUNCTION_DEF <a href="#st14">shift 14</a>
-    ID <a href="#st15">shift 15</a>
-    IF <a href="#st16">shift 16</a>
-    INPUT <a href="#st17">shift 17</a>
-    OUTPUT <a href="#st18">shift 18</a>
-    START_WHILE <a href="#st19">shift 19</a>
-    . error
-
-    assignment <a href="#st3">goto 3</a>
-    conditional <a href="#st4">goto 4</a>
-    function_call <a href="#st5">goto 5</a>
-    function_def <a href="#st6">goto 6</a>
-    if_statement <a href="#st7">goto 7</a>
-    input <a href="#st8">goto 8</a>
-    output <a href="#st9">goto 9</a>
-    ref <a href="#st10">goto 10</a>
-    statement <a href="#st11">goto 11</a>
-    stmnt_list <a href="#st100">goto 100</a>
-    while_statement <a href="#st13">goto 13</a>
-
-<hr><a name="st97"><b>state 97 (entry on START_THEN)</b></a>
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN_stmnt_list END_THEN    (38)
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN_stmnt_list END_THEN elif_statement    (39)
-
-    FUNCTION_DEF <a href="#st14">shift 14</a>
-    ID <a href="#st15">shift 15</a>
-    IF <a href="#st16">shift 16</a>
-    INPUT <a href="#st17">shift 17</a>
-    OUTPUT <a href="#st18">shift 18</a>
-    START_WHILE <a href="#st19">shift 19</a>
-    . error
-
-    assignment <a href="#st3">goto 3</a>
-    conditional <a href="#st4">goto 4</a>
-    function_call <a href="#st5">goto 5</a>
-    function_def <a href="#st6">goto 6</a>
-    if_statement <a href="#st7">goto 7</a>
-    input <a href="#st8">goto 8</a>
-    output <a href="#st9">goto 9</a>
-    ref <a href="#st10">goto 10</a>
-    statement <a href="#st11">goto 11</a>
-    stmnt_list <a href="#st101">goto 101</a>
-    while_statement <a href="#st13">goto 13</a>
-
-<hr><a name="st98"><b>state 98 (entry on ID)</b></a>
-    parameter_list : parameter_list PARAMETER_COMMA ID_    (45)
-
-    RIGHT_PARENTHESIS reduce 45
-    PARAMETER_COMMA reduce 45
-    . error
-
-<hr><a name="st99"><b>state 99 (entry on START_FUNCTION_STATEMENTS)</b></a>
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS_stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (44)
 
     FUNCTION_DEF <a href="#st14">shift 14</a>
     ID <a href="#st15">shift 15</a>
@@ -1627,7 +1607,60 @@
     stmnt_list <a href="#st102">goto 102</a>
     while_statement <a href="#st13">goto 13</a>
 
-<hr><a name="st100"><b>state 100 (entry on stmnt_list)</b></a>
+<hr><a name="st99"><b>state 99 (entry on START_THEN)</b></a>
+    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN_stmnt_list END_THEN    (38)
+
+    FUNCTION_DEF <a href="#st14">shift 14</a>
+    ID <a href="#st15">shift 15</a>
+    IF <a href="#st16">shift 16</a>
+    INPUT <a href="#st17">shift 17</a>
+    OUTPUT <a href="#st18">shift 18</a>
+    START_WHILE <a href="#st19">shift 19</a>
+    . error
+
+    assignment <a href="#st3">goto 3</a>
+    conditional <a href="#st4">goto 4</a>
+    function_call <a href="#st5">goto 5</a>
+    function_def <a href="#st6">goto 6</a>
+    if_statement <a href="#st7">goto 7</a>
+    input <a href="#st8">goto 8</a>
+    output <a href="#st9">goto 9</a>
+    ref <a href="#st10">goto 10</a>
+    statement <a href="#st11">goto 11</a>
+    stmnt_list <a href="#st103">goto 103</a>
+    while_statement <a href="#st13">goto 13</a>
+
+<hr><a name="st100"><b>state 100 (entry on ID)</b></a>
+    parameter_list : parameter_list PARAMETER_COMMA ID_    (46)
+
+    RIGHT_PARENTHESIS reduce 46
+    PARAMETER_COMMA reduce 46
+    . error
+
+<hr><a name="st101"><b>state 101 (entry on START_FUNCTION_STATEMENTS)</b></a>
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS_stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
+
+    FUNCTION_DEF <a href="#st14">shift 14</a>
+    ID <a href="#st15">shift 15</a>
+    IF <a href="#st16">shift 16</a>
+    INPUT <a href="#st17">shift 17</a>
+    OUTPUT <a href="#st18">shift 18</a>
+    START_WHILE <a href="#st19">shift 19</a>
+    . error
+
+    assignment <a href="#st3">goto 3</a>
+    conditional <a href="#st4">goto 4</a>
+    function_call <a href="#st5">goto 5</a>
+    function_def <a href="#st6">goto 6</a>
+    if_statement <a href="#st7">goto 7</a>
+    input <a href="#st8">goto 8</a>
+    output <a href="#st9">goto 9</a>
+    ref <a href="#st10">goto 10</a>
+    statement <a href="#st11">goto 11</a>
+    stmnt_list <a href="#st104">goto 104</a>
+    while_statement <a href="#st13">goto 13</a>
+
+<hr><a name="st102"><b>state 102 (entry on stmnt_list)</b></a>
     if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list_END_THEN    (37)
     stmnt_list : stmnt_list_statement    (2)
 
@@ -1637,7 +1670,7 @@
     INPUT <a href="#st17">shift 17</a>
     OUTPUT <a href="#st18">shift 18</a>
     START_WHILE <a href="#st19">shift 19</a>
-    END_THEN <a href="#st103">shift 103</a>
+    END_THEN <a href="#st105">shift 105</a>
     . error
 
     assignment <a href="#st3">goto 3</a>
@@ -1648,12 +1681,11 @@
     input <a href="#st8">goto 8</a>
     output <a href="#st9">goto 9</a>
     ref <a href="#st10">goto 10</a>
-    statement <a href="#st25">goto 25</a>
+    statement <a href="#st26">goto 26</a>
     while_statement <a href="#st13">goto 13</a>
 
-<hr><a name="st101"><b>state 101 (entry on stmnt_list)</b></a>
+<hr><a name="st103"><b>state 103 (entry on stmnt_list)</b></a>
     elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list_END_THEN    (38)
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list_END_THEN elif_statement    (39)
     stmnt_list : stmnt_list_statement    (2)
 
     FUNCTION_DEF <a href="#st14">shift 14</a>
@@ -1662,7 +1694,7 @@
     INPUT <a href="#st17">shift 17</a>
     OUTPUT <a href="#st18">shift 18</a>
     START_WHILE <a href="#st19">shift 19</a>
-    END_THEN <a href="#st104">shift 104</a>
+    END_THEN <a href="#st106">shift 106</a>
     . error
 
     assignment <a href="#st3">goto 3</a>
@@ -1673,11 +1705,11 @@
     input <a href="#st8">goto 8</a>
     output <a href="#st9">goto 9</a>
     ref <a href="#st10">goto 10</a>
-    statement <a href="#st25">goto 25</a>
+    statement <a href="#st26">goto 26</a>
     while_statement <a href="#st13">goto 13</a>
 
-<hr><a name="st102"><b>state 102 (entry on stmnt_list)</b></a>
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list_RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (44)
+<hr><a name="st104"><b>state 104 (entry on stmnt_list)</b></a>
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list_RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
     stmnt_list : stmnt_list_statement    (2)
 
     FUNCTION_DEF <a href="#st14">shift 14</a>
@@ -1686,7 +1718,7 @@
     INPUT <a href="#st17">shift 17</a>
     OUTPUT <a href="#st18">shift 18</a>
     START_WHILE <a href="#st19">shift 19</a>
-    RETURN <a href="#st105">shift 105</a>
+    RETURN <a href="#st107">shift 107</a>
     . error
 
     assignment <a href="#st3">goto 3</a>
@@ -1697,10 +1729,10 @@
     input <a href="#st8">goto 8</a>
     output <a href="#st9">goto 9</a>
     ref <a href="#st10">goto 10</a>
-    statement <a href="#st25">goto 25</a>
+    statement <a href="#st26">goto 26</a>
     while_statement <a href="#st13">goto 13</a>
 
-<hr><a name="st103"><b>state 103 (entry on END_THEN)</b></a>
+<hr><a name="st105"><b>state 105 (entry on END_THEN)</b></a>
     if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN_    (37)
 
     ID reduce 37
@@ -1717,11 +1749,9 @@
     ELIF reduce 37
     . error
 
-<hr><a name="st104"><b>state 104 (entry on END_THEN)</b></a>
+<hr><a name="st106"><b>state 106 (entry on END_THEN)</b></a>
     elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN_    (38)
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN_elif_statement    (39)
 
-    ELIF <a href="#st22">shift 22</a>
     ID reduce 38
     RETURN reduce 38
     END_PROGRAM reduce 38
@@ -1733,81 +1763,64 @@
     INPUT reduce 38
     IF reduce 38
     END_THEN reduce 38
+    ELIF reduce 38
     . error
 
-    elif_statement <a href="#st106">goto 106</a>
+<hr><a name="st107"><b>state 107 (entry on RETURN)</b></a>
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN_LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
 
-<hr><a name="st105"><b>state 105 (entry on RETURN)</b></a>
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN_LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (44)
-
-    LEFT_PARENTHESIS <a href="#st107">shift 107</a>
+    LEFT_PARENTHESIS <a href="#st108">shift 108</a>
     . error
 
-<hr><a name="st106"><b>state 106 (entry on elif_statement)</b></a>
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN elif_statement_    (39)
-
-    ID reduce 39
-    RETURN reduce 39
-    END_PROGRAM reduce 39
-    OUTPUT reduce 39
-    FUNCTION_DEF reduce 39
-    ELSE reduce 39
-    END_WHILE reduce 39
-    START_WHILE reduce 39
-    INPUT reduce 39
-    IF reduce 39
-    END_THEN reduce 39
-    . error
-
-<hr><a name="st107"><b>state 107 (entry on LEFT_PARENTHESIS)</b></a>
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS_expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (44)
+<hr><a name="st108"><b>state 108 (entry on LEFT_PARENTHESIS)</b></a>
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS_expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
 
     ID <a href="#st15">shift 15</a>
-    INT_LITERAL <a href="#st42">shift 42</a>
-    LEFT_PARENTHESIS <a href="#st43">shift 43</a>
-    REAL_LITERAL <a href="#st44">shift 44</a>
+    INT_LITERAL <a href="#st43">shift 43</a>
+    LEFT_PARENTHESIS <a href="#st44">shift 44</a>
+    REAL_LITERAL <a href="#st45">shift 45</a>
     . error
 
-    exp <a href="#st34">goto 34</a>
-    expr <a href="#st108">goto 108</a>
-    factor <a href="#st36">goto 36</a>
-    function_call <a href="#st37">goto 37</a>
-    ref <a href="#st39">goto 39</a>
-    term <a href="#st41">goto 41</a>
+    exp <a href="#st35">goto 35</a>
+    expr <a href="#st109">goto 109</a>
+    factor <a href="#st37">goto 37</a>
+    function_call <a href="#st38">goto 38</a>
+    ref <a href="#st40">goto 40</a>
+    term <a href="#st42">goto 42</a>
 
-<hr><a name="st108"><b>state 108 (entry on expr)</b></a>
+<hr><a name="st109"><b>state 109 (entry on expr)</b></a>
     expr : expr_ADD term    (13)
     expr : expr_SUBTRACT term    (14)
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr_RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (44)
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr_RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
 
-    ADD <a href="#st58">shift 58</a>
-    SUBTRACT <a href="#st59">shift 59</a>
-    RIGHT_PARENTHESIS <a href="#st109">shift 109</a>
+    ADD <a href="#st60">shift 60</a>
+    SUBTRACT <a href="#st61">shift 61</a>
+    RIGHT_PARENTHESIS <a href="#st110">shift 110</a>
     . error
 
-<hr><a name="st109"><b>state 109 (entry on RIGHT_PARENTHESIS)</b></a>
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS_END_FUNCTION_STATEMENTS    (44)
+<hr><a name="st110"><b>state 110 (entry on RIGHT_PARENTHESIS)</b></a>
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS_END_FUNCTION_STATEMENTS    (45)
 
-    END_FUNCTION_STATEMENTS <a href="#st110">shift 110</a>
+    END_FUNCTION_STATEMENTS <a href="#st111">shift 111</a>
     . error
 
-<hr><a name="st110"><b>state 110 (entry on END_FUNCTION_STATEMENTS)</b></a>
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS_    (44)
+<hr><a name="st111"><b>state 111 (entry on END_FUNCTION_STATEMENTS)</b></a>
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS_    (45)
 
-    ID reduce 44
-    RETURN reduce 44
-    END_PROGRAM reduce 44
-    OUTPUT reduce 44
-    FUNCTION_DEF reduce 44
-    END_WHILE reduce 44
-    START_WHILE reduce 44
-    INPUT reduce 44
-    IF reduce 44
-    END_THEN reduce 44
+    ID reduce 45
+    RETURN reduce 45
+    END_PROGRAM reduce 45
+    OUTPUT reduce 45
+    FUNCTION_DEF reduce 45
+    END_WHILE reduce 45
+    START_WHILE reduce 45
+    INPUT reduce 45
+    IF reduce 45
+    END_THEN reduce 45
     . error
 
-39 terminals, 23 nonterminals;
-54 grammar rules, 111 states;
+39 terminals, 24 nonterminals;
+55 grammar rules, 112 states;
 0 shift/reduce and 0 reduce/reduce conflicts reported.
 </pre>
 </body>

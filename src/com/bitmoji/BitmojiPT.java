@@ -213,4 +213,28 @@ public class BitmojiPT {
             return (TypeHandler.evaluate(expression));
         }
     }
+
+    public class WhileLoopNode extends StatementNode
+    {
+        Object condition;
+        StatementListNode statements;
+
+        public WhileLoopNode(Object condition, StatementListNode statements) {
+            this.condition = condition;
+            this.statements = statements;
+        }
+
+        @Override
+        public Object evaluate() {
+            try {
+                while (TypeHandler.parseBoolean(condition)) {
+                    statements.evaluate();
+                }
+            } catch (IllegalArgumentException ex) {
+                parser.yyerror("Not a valid boolean expression");
+                System.exit(1);
+            }
+            return null;
+        }
+    }
 }

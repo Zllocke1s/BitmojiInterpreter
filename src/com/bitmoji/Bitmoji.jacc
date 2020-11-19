@@ -130,6 +130,9 @@ assignable              : expr
                         ;
 
 while_statement         : START_WHILE equality stmnt_list END_WHILE
+                        {
+                            $$ = tree.new WhileLoopNode($2, (BitmojiPT.StatementListNode) $3);
+                        }
 				        ;
 				
 input                   : INPUT ref

@@ -1,4 +1,4 @@
-// Output created by jacc on Thu Nov 19 11:33:33 CST 2020
+// Output created by jacc on Thu Nov 19 11:51:42 CST 2020
 
 package com.bitmoji;
 
@@ -3599,7 +3599,10 @@ class Bitmoji implements BitmojiTokens {
     }
 
     private int yyr30() { // while_statement : START_WHILE equality stmnt_list END_WHILE
-        yysp -= 4;
+        {
+                            yyrv = tree.new WhileLoopNode(yysv[yysp-3], (BitmojiPT.StatementListNode) yysv[yysp-2]);
+                        }
+        yysv[yysp-=4] = yyrv;
         return 12;
     }
 

@@ -18,7 +18,7 @@
 // Grouping
 %token LEFT_BRACKET RIGHT_BRACKET LEFT_PARENTHESIS RIGHT_PARENTHESIS
 // Assignment
-%token INTEGER_DECL REAL_DECL STRING_DECL ARRAY_DECL ASSIGN
+%token ASSIGN
 // Control
 %token START_WHILE END_WHILE IF ELIF ELSE START_THEN END_THEN
 // Functions
@@ -120,7 +120,7 @@ exp                     : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS
 	
 assignment              : ID ASSIGN assignable
                         {
-                            $$ = tree.new AssignNode((String) $1, (BitmojiPT.PTNode) $3);
+                            $$ = tree.new AssignNode((String) $1, $3);
                         }
 		                ;
 

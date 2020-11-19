@@ -1,4 +1,4 @@
-// Output created by jacc on Thu Nov 19 10:43:05 CST 2020
+// Output created by jacc on Thu Nov 19 11:19:36 CST 2020
 
 package com.bitmoji;
 
@@ -26,13 +26,13 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 111:
+                case 112:
                     switch (yytok) {
                         case START_PROGRAM:
                             yyn = 2;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 1:
@@ -40,13 +40,13 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 112:
+                case 113:
                     switch (yytok) {
                         case ENDINPUT:
-                            yyn = 222;
+                            yyn = 224;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 2:
@@ -58,7 +58,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 113:
+                case 114:
                     yyn = yys2();
                     continue;
 
@@ -67,7 +67,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 114:
+                case 115:
                     yyn = yys3();
                     continue;
 
@@ -76,7 +76,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 115:
+                case 116:
                     yyn = yys4();
                     continue;
 
@@ -85,7 +85,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 116:
+                case 117:
                     yyn = yys5();
                     continue;
 
@@ -94,7 +94,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 117:
+                case 118:
                     yyn = yys6();
                     continue;
 
@@ -103,7 +103,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 118:
+                case 119:
                     yyn = yys7();
                     continue;
 
@@ -112,7 +112,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 119:
+                case 120:
                     yyn = yys8();
                     continue;
 
@@ -121,7 +121,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 120:
+                case 121:
                     yyn = yys9();
                     continue;
 
@@ -130,7 +130,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 121:
+                case 122:
                     yyn = yys10();
                     continue;
 
@@ -139,7 +139,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 122:
+                case 123:
                     yyn = yys11();
                     continue;
 
@@ -148,7 +148,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 123:
+                case 124:
                     yyn = yys12();
                     continue;
 
@@ -161,13 +161,13 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 124:
+                case 125:
                     switch (yytok) {
                         case ID:
                             yyn = 25;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 14:
@@ -179,7 +179,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 125:
+                case 126:
                     switch (yytok) {
                         case ASSIGN:
                             yyn = 26;
@@ -188,7 +188,7 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 27;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 15:
@@ -200,13 +200,13 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 126:
+                case 127:
                     switch (yytok) {
                         case LEFT_PARENTHESIS:
                             yyn = 28;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 16:
@@ -218,47 +218,17 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 127:
+                case 128:
                     switch (yytok) {
                         case ID:
                             yyn = 30;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 17:
                     yyst[yysp] = 17;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 128:
-                    switch (yytok) {
-                        case ID:
-                            yyn = 40;
-                            continue;
-                        case INT_LITERAL:
-                            yyn = 41;
-                            continue;
-                        case LEFT_PARENTHESIS:
-                            yyn = 42;
-                            continue;
-                        case REAL_LITERAL:
-                            yyn = 43;
-                            continue;
-                        case STRING_LITERAL:
-                            yyn = 44;
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 18:
-                    yyst[yysp] = 18;
                     yysv[yysp] = (lexer.getValue()
                                  );
                     yytok = (yynext()
@@ -280,8 +250,38 @@ class Bitmoji implements BitmojiTokens {
                         case REAL_LITERAL:
                             yyn = 43;
                             continue;
+                        case STRING_LITERAL:
+                            yyn = 44;
+                            continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
+                    continue;
+
+                case 18:
+                    yyst[yysp] = 18;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 130:
+                    switch (yytok) {
+                        case ID:
+                            yyn = 40;
+                            continue;
+                        case INT_LITERAL:
+                            yyn = 41;
+                            continue;
+                        case LEFT_PARENTHESIS:
+                            yyn = 42;
+                            continue;
+                        case REAL_LITERAL:
+                            yyn = 43;
+                            continue;
+                    }
+                    yyn = 227;
                     continue;
 
                 case 19:
@@ -289,7 +289,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 130:
+                case 131:
                     yyn = yys19();
                     continue;
 
@@ -298,7 +298,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 131:
+                case 132:
                     yyn = yys20();
                     continue;
 
@@ -311,13 +311,13 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 132:
+                case 133:
                     switch (yytok) {
                         case LEFT_PARENTHESIS:
                             yyn = 48;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 22:
@@ -329,13 +329,13 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 133:
+                case 134:
                     switch (yytok) {
                         case START_THEN:
                             yyn = 49;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 23:
@@ -343,7 +343,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 134:
+                case 135:
                     yyn = yys23();
                     continue;
 
@@ -356,13 +356,13 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 135:
+                case 136:
                     switch (yytok) {
                         case ENDINPUT:
                             yyn = yyr1();
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 25:
@@ -374,13 +374,13 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 136:
+                case 137:
                     switch (yytok) {
                         case LEFT_PARENTHESIS:
                             yyn = 50;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 26:
@@ -392,7 +392,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 137:
+                case 138:
                     switch (yytok) {
                         case ID:
                             yyn = 40;
@@ -410,7 +410,7 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 44;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 27:
@@ -422,13 +422,13 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 138:
+                case 139:
                     switch (yytok) {
                         case ID:
                             yyn = 30;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 28:
@@ -440,7 +440,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 139:
+                case 140:
                     switch (yytok) {
                         case ID:
                             yyn = 40;
@@ -455,7 +455,7 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 43;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 29:
@@ -463,7 +463,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 140:
+                case 141:
                     yyn = yys29();
                     continue;
 
@@ -476,7 +476,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 141:
+                case 142:
                     yyn = yys30();
                     continue;
 
@@ -485,7 +485,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 142:
+                case 143:
                     yyn = yys31();
                     continue;
 
@@ -494,7 +494,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 143:
+                case 144:
                     yyn = yys32();
                     continue;
 
@@ -503,7 +503,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 144:
+                case 145:
                     yyn = yys33();
                     continue;
 
@@ -512,7 +512,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 145:
+                case 146:
                     yyn = yys34();
                     continue;
 
@@ -521,7 +521,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 146:
+                case 147:
                     yyn = yys35();
                     continue;
 
@@ -530,7 +530,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 147:
+                case 148:
                     yyn = yys36();
                     continue;
 
@@ -539,7 +539,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 148:
+                case 149:
                     yyn = yys37();
                     continue;
 
@@ -548,7 +548,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 149:
+                case 150:
                     yyn = yys38();
                     continue;
 
@@ -557,7 +557,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 150:
+                case 151:
                     yyn = yys39();
                     continue;
 
@@ -570,7 +570,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 151:
+                case 152:
                     yyn = yys40();
                     continue;
 
@@ -583,7 +583,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 152:
+                case 153:
                     yyn = yys41();
                     continue;
 
@@ -596,7 +596,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 153:
+                case 154:
                     switch (yytok) {
                         case ID:
                             yyn = 40;
@@ -611,7 +611,7 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 43;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 43:
@@ -623,7 +623,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 154:
+                case 155:
                     yyn = yys43();
                     continue;
 
@@ -636,7 +636,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 155:
+                case 156:
                     yyn = yys44();
                     continue;
 
@@ -645,7 +645,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 156:
+                case 157:
                     yyn = yys45();
                     continue;
 
@@ -654,7 +654,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 157:
+                case 158:
                     yyn = yys46();
                     continue;
 
@@ -663,7 +663,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 158:
+                case 159:
                     yyn = yys47();
                     continue;
 
@@ -676,7 +676,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 159:
+                case 160:
                     switch (yytok) {
                         case ID:
                             yyn = 40;
@@ -691,7 +691,7 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 43;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 49:
@@ -703,7 +703,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 160:
+                case 161:
                     yyn = yys49();
                     continue;
 
@@ -716,13 +716,13 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 161:
+                case 162:
                     switch (yytok) {
                         case ID:
-                            yyn = 72;
+                            yyn = 73;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 51:
@@ -730,7 +730,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 162:
+                case 163:
                     yyn = yys51();
                     continue;
 
@@ -739,14 +739,14 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 163:
+                case 164:
                     switch (yytok) {
                         case PARAMETER_COMMA:
                         case RIGHT_PARENTHESIS:
-                            yyn = yyr43();
+                            yyn = yyr44();
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 53:
@@ -754,16 +754,16 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 164:
+                case 165:
                     switch (yytok) {
                         case PARAMETER_COMMA:
-                            yyn = 73;
-                            continue;
-                        case RIGHT_PARENTHESIS:
                             yyn = 74;
                             continue;
+                        case RIGHT_PARENTHESIS:
+                            yyn = 75;
+                            continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 54:
@@ -771,7 +771,7 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 165:
+                case 166:
                     switch (yytok) {
                         case EQUALS:
                             yyn = 56;
@@ -780,41 +780,14 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 57;
                             continue;
                         case RIGHT_PARENTHESIS:
-                            yyn = 75;
+                            yyn = 76;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 55:
                     yyst[yysp] = 55;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 166:
-                    switch (yytok) {
-                        case ID:
-                            yyn = 40;
-                            continue;
-                        case INT_LITERAL:
-                            yyn = 41;
-                            continue;
-                        case LEFT_PARENTHESIS:
-                            yyn = 42;
-                            continue;
-                        case REAL_LITERAL:
-                            yyn = 43;
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 56:
-                    yyst[yysp] = 56;
                     yysv[yysp] = (lexer.getValue()
                                  );
                     yytok = (yynext()
@@ -837,11 +810,11 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 43;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
-                case 57:
-                    yyst[yysp] = 57;
+                case 56:
+                    yyst[yysp] = 56;
                     yysv[yysp] = (lexer.getValue()
                                  );
                     yytok = (yynext()
@@ -864,11 +837,11 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 43;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
-                case 58:
-                    yyst[yysp] = 58;
+                case 57:
+                    yyst[yysp] = 57;
                     yysv[yysp] = (lexer.getValue()
                                  );
                     yytok = (yynext()
@@ -891,11 +864,11 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 43;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
-                case 59:
-                    yyst[yysp] = 59;
+                case 58:
+                    yyst[yysp] = 58;
                     yysv[yysp] = (lexer.getValue()
                                  );
                     yytok = (yynext()
@@ -918,11 +891,11 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 43;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
-                case 60:
-                    yyst[yysp] = 60;
+                case 59:
+                    yyst[yysp] = 59;
                     yysv[yysp] = (lexer.getValue()
                                  );
                     yytok = (yynext()
@@ -945,11 +918,11 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 43;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
-                case 61:
-                    yyst[yysp] = 61;
+                case 60:
+                    yyst[yysp] = 60;
                     yysv[yysp] = (lexer.getValue()
                                  );
                     yytok = (yynext()
@@ -972,11 +945,11 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 43;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
-                case 62:
-                    yyst[yysp] = 62;
+                case 61:
+                    yyst[yysp] = 61;
                     yysv[yysp] = (lexer.getValue()
                                  );
                     yytok = (yynext()
@@ -985,25 +958,11 @@ class Bitmoji implements BitmojiTokens {
                         yyexpand();
                     }
                 case 173:
-                    switch (yytok) {
-                        case ID:
-                            yyn = 40;
-                            continue;
-                        case INT_LITERAL:
-                            yyn = 41;
-                            continue;
-                        case LEFT_PARENTHESIS:
-                            yyn = 42;
-                            continue;
-                        case REAL_LITERAL:
-                            yyn = 43;
-                            continue;
-                    }
-                    yyn = 225;
+                    yyn = yys61();
                     continue;
 
-                case 63:
-                    yyst[yysp] = 63;
+                case 62:
+                    yyst[yysp] = 62;
                     yysv[yysp] = (lexer.getValue()
                                  );
                     yytok = (yynext()
@@ -1026,11 +985,11 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 43;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
-                case 64:
-                    yyst[yysp] = 64;
+                case 63:
+                    yyst[yysp] = 63;
                     yysv[yysp] = (lexer.getValue()
                                  );
                     yytok = (yynext()
@@ -1053,11 +1012,11 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 43;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
-                case 65:
-                    yyst[yysp] = 65;
+                case 64:
+                    yyst[yysp] = 64;
                     yysv[yysp] = (lexer.getValue()
                                  );
                     yytok = (yynext()
@@ -1080,11 +1039,11 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 43;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
-                case 66:
-                    yyst[yysp] = 66;
+                case 65:
+                    yyst[yysp] = 65;
                     yysv[yysp] = (lexer.getValue()
                                  );
                     yytok = (yynext()
@@ -1107,540 +1066,19 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 43;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
-                case 67:
-                    yyst[yysp] = 67;
+                case 66:
+                    yyst[yysp] = 66;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
                 case 178:
-                    switch (yytok) {
-                        case ADD:
-                            yyn = 58;
-                            continue;
-                        case SUBTRACT:
-                            yyn = 59;
-                            continue;
-                        case RIGHT_PARENTHESIS:
-                            yyn = 88;
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 68:
-                    yyst[yysp] = 68;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 179:
-                    yyn = yys68();
-                    continue;
-
-                case 69:
-                    yyst[yysp] = 69;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 180:
-                    switch (yytok) {
-                        case EQUALS:
-                            yyn = 56;
-                            continue;
-                        case NOT_EQUALS:
-                            yyn = 57;
-                            continue;
-                        case RIGHT_PARENTHESIS:
-                            yyn = 90;
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 70:
-                    yyst[yysp] = 70;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 181:
-                    yyn = yys70();
-                    continue;
-
-                case 71:
-                    yyst[yysp] = 71;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 182:
-                    switch (yytok) {
-                        case PARAMETER_COMMA:
-                            yyn = 92;
-                            continue;
-                        case RIGHT_PARENTHESIS:
-                            yyn = 93;
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 72:
-                    yyst[yysp] = 72;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 183:
-                    switch (yytok) {
-                        case PARAMETER_COMMA:
-                        case RIGHT_PARENTHESIS:
-                            yyn = yyr46();
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 73:
-                    yyst[yysp] = 73;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 184:
-                    switch (yytok) {
-                        case ID:
-                            yyn = 30;
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 74:
-                    yyst[yysp] = 74;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 185:
-                    yyn = yys74();
-                    continue;
-
-                case 75:
-                    yyst[yysp] = 75;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 186:
-                    switch (yytok) {
-                        case START_THEN:
-                            yyn = 95;
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 76:
-                    yyst[yysp] = 76;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 187:
-                    switch (yytok) {
-                        case ADD:
-                            yyn = 58;
-                            continue;
-                        case SUBTRACT:
-                            yyn = 59;
-                            continue;
-                        case RIGHT_BRACKET:
-                            yyn = 96;
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 77:
-                    yyst[yysp] = 77;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 188:
-                    yyn = yys77();
-                    continue;
-
-                case 78:
-                    yyst[yysp] = 78;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 189:
-                    yyn = yys78();
-                    continue;
-
-                case 79:
-                    yyst[yysp] = 79;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 190:
-                    yyn = yys79();
-                    continue;
-
-                case 80:
-                    yyst[yysp] = 80;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 191:
-                    yyn = yys80();
-                    continue;
-
-                case 81:
-                    yyst[yysp] = 81;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 192:
-                    yyn = yys81();
-                    continue;
-
-                case 82:
-                    yyst[yysp] = 82;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 193:
-                    yyn = yys82();
-                    continue;
-
-                case 83:
-                    yyst[yysp] = 83;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 194:
-                    yyn = yys83();
-                    continue;
-
-                case 84:
-                    yyst[yysp] = 84;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 195:
-                    yyn = yys84();
-                    continue;
-
-                case 85:
-                    yyst[yysp] = 85;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 196:
-                    yyn = yys85();
-                    continue;
-
-                case 86:
-                    yyst[yysp] = 86;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 197:
-                    yyn = yys86();
-                    continue;
-
-                case 87:
-                    yyst[yysp] = 87;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 198:
-                    yyn = yys87();
-                    continue;
-
-                case 88:
-                    yyst[yysp] = 88;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 199:
-                    yyn = yys88();
-                    continue;
-
-                case 89:
-                    yyst[yysp] = 89;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 200:
-                    yyn = yys89();
-                    continue;
-
-                case 90:
-                    yyst[yysp] = 90;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 201:
-                    switch (yytok) {
-                        case START_THEN:
-                            yyn = 97;
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 91:
-                    yyst[yysp] = 91;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 202:
-                    yyn = yys91();
-                    continue;
-
-                case 92:
-                    yyst[yysp] = 92;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 203:
-                    switch (yytok) {
-                        case ID:
-                            yyn = 98;
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 93:
-                    yyst[yysp] = 93;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 204:
-                    switch (yytok) {
-                        case START_FUNCTION_STATEMENTS:
-                            yyn = 99;
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 94:
-                    yyst[yysp] = 94;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 205:
-                    switch (yytok) {
-                        case PARAMETER_COMMA:
-                        case RIGHT_PARENTHESIS:
-                            yyn = yyr42();
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 95:
-                    yyst[yysp] = 95;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 206:
-                    yyn = yys95();
-                    continue;
-
-                case 96:
-                    yyst[yysp] = 96;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 207:
-                    yyn = yys96();
-                    continue;
-
-                case 97:
-                    yyst[yysp] = 97;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 208:
-                    yyn = yys97();
-                    continue;
-
-                case 98:
-                    yyst[yysp] = 98;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 209:
-                    switch (yytok) {
-                        case PARAMETER_COMMA:
-                        case RIGHT_PARENTHESIS:
-                            yyn = yyr45();
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 99:
-                    yyst[yysp] = 99;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 210:
-                    yyn = yys99();
-                    continue;
-
-                case 100:
-                    yyst[yysp] = 100;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 211:
-                    yyn = yys100();
-                    continue;
-
-                case 101:
-                    yyst[yysp] = 101;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 212:
-                    yyn = yys101();
-                    continue;
-
-                case 102:
-                    yyst[yysp] = 102;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 213:
-                    yyn = yys102();
-                    continue;
-
-                case 103:
-                    yyst[yysp] = 103;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 214:
-                    yyn = yys103();
-                    continue;
-
-                case 104:
-                    yyst[yysp] = 104;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 215:
-                    yyn = yys104();
-                    continue;
-
-                case 105:
-                    yyst[yysp] = 105;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 216:
-                    switch (yytok) {
-                        case LEFT_PARENTHESIS:
-                            yyn = 107;
-                            continue;
-                    }
-                    yyn = 225;
-                    continue;
-
-                case 106:
-                    yyst[yysp] = 106;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 217:
-                    yyn = yys106();
-                    continue;
-
-                case 107:
-                    yyst[yysp] = 107;
-                    yysv[yysp] = (lexer.getValue()
-                                 );
-                    yytok = (yynext()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 218:
                     switch (yytok) {
                         case ID:
                             yyn = 40;
@@ -1655,15 +1093,42 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 43;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
-                case 108:
-                    yyst[yysp] = 108;
+                case 67:
+                    yyst[yysp] = 67;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 219:
+                case 179:
+                    switch (yytok) {
+                        case ID:
+                            yyn = 40;
+                            continue;
+                        case INT_LITERAL:
+                            yyn = 41;
+                            continue;
+                        case LEFT_PARENTHESIS:
+                            yyn = 42;
+                            continue;
+                        case REAL_LITERAL:
+                            yyn = 43;
+                            continue;
+                    }
+                    yyn = 227;
+                    continue;
+
+                case 68:
+                    yyst[yysp] = 68;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 180:
                     switch (yytok) {
                         case ADD:
                             yyn = 58;
@@ -1672,14 +1137,515 @@ class Bitmoji implements BitmojiTokens {
                             yyn = 59;
                             continue;
                         case RIGHT_PARENTHESIS:
-                            yyn = 109;
+                            yyn = 89;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
-                case 109:
-                    yyst[yysp] = 109;
+                case 69:
+                    yyst[yysp] = 69;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 181:
+                    yyn = yys69();
+                    continue;
+
+                case 70:
+                    yyst[yysp] = 70;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 182:
+                    switch (yytok) {
+                        case EQUALS:
+                            yyn = 56;
+                            continue;
+                        case NOT_EQUALS:
+                            yyn = 57;
+                            continue;
+                        case RIGHT_PARENTHESIS:
+                            yyn = 91;
+                            continue;
+                    }
+                    yyn = 227;
+                    continue;
+
+                case 71:
+                    yyst[yysp] = 71;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 183:
+                    yyn = yys71();
+                    continue;
+
+                case 72:
+                    yyst[yysp] = 72;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 184:
+                    switch (yytok) {
+                        case PARAMETER_COMMA:
+                            yyn = 93;
+                            continue;
+                        case RIGHT_PARENTHESIS:
+                            yyn = 94;
+                            continue;
+                    }
+                    yyn = 227;
+                    continue;
+
+                case 73:
+                    yyst[yysp] = 73;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 185:
+                    switch (yytok) {
+                        case PARAMETER_COMMA:
+                        case RIGHT_PARENTHESIS:
+                            yyn = yyr47();
+                            continue;
+                    }
+                    yyn = 227;
+                    continue;
+
+                case 74:
+                    yyst[yysp] = 74;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 186:
+                    switch (yytok) {
+                        case ID:
+                            yyn = 30;
+                            continue;
+                    }
+                    yyn = 227;
+                    continue;
+
+                case 75:
+                    yyst[yysp] = 75;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 187:
+                    yyn = yys75();
+                    continue;
+
+                case 76:
+                    yyst[yysp] = 76;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 188:
+                    switch (yytok) {
+                        case START_THEN:
+                            yyn = 96;
+                            continue;
+                    }
+                    yyn = 227;
+                    continue;
+
+                case 77:
+                    yyst[yysp] = 77;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 189:
+                    switch (yytok) {
+                        case ADD:
+                            yyn = 58;
+                            continue;
+                        case SUBTRACT:
+                            yyn = 59;
+                            continue;
+                        case RIGHT_BRACKET:
+                            yyn = 97;
+                            continue;
+                    }
+                    yyn = 227;
+                    continue;
+
+                case 78:
+                    yyst[yysp] = 78;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 190:
+                    yyn = yys78();
+                    continue;
+
+                case 79:
+                    yyst[yysp] = 79;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 191:
+                    yyn = yys79();
+                    continue;
+
+                case 80:
+                    yyst[yysp] = 80;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 192:
+                    yyn = yys80();
+                    continue;
+
+                case 81:
+                    yyst[yysp] = 81;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 193:
+                    yyn = yys81();
+                    continue;
+
+                case 82:
+                    yyst[yysp] = 82;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 194:
+                    yyn = yys82();
+                    continue;
+
+                case 83:
+                    yyst[yysp] = 83;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 195:
+                    yyn = yys83();
+                    continue;
+
+                case 84:
+                    yyst[yysp] = 84;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 196:
+                    yyn = yys84();
+                    continue;
+
+                case 85:
+                    yyst[yysp] = 85;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 197:
+                    yyn = yys85();
+                    continue;
+
+                case 86:
+                    yyst[yysp] = 86;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 198:
+                    yyn = yys86();
+                    continue;
+
+                case 87:
+                    yyst[yysp] = 87;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 199:
+                    yyn = yys87();
+                    continue;
+
+                case 88:
+                    yyst[yysp] = 88;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 200:
+                    yyn = yys88();
+                    continue;
+
+                case 89:
+                    yyst[yysp] = 89;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 201:
+                    yyn = yys89();
+                    continue;
+
+                case 90:
+                    yyst[yysp] = 90;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 202:
+                    yyn = yys90();
+                    continue;
+
+                case 91:
+                    yyst[yysp] = 91;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 203:
+                    switch (yytok) {
+                        case START_THEN:
+                            yyn = 98;
+                            continue;
+                    }
+                    yyn = 227;
+                    continue;
+
+                case 92:
+                    yyst[yysp] = 92;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 204:
+                    yyn = yys92();
+                    continue;
+
+                case 93:
+                    yyst[yysp] = 93;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 205:
+                    switch (yytok) {
+                        case ID:
+                            yyn = 99;
+                            continue;
+                    }
+                    yyn = 227;
+                    continue;
+
+                case 94:
+                    yyst[yysp] = 94;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 206:
+                    switch (yytok) {
+                        case START_FUNCTION_STATEMENTS:
+                            yyn = 100;
+                            continue;
+                    }
+                    yyn = 227;
+                    continue;
+
+                case 95:
+                    yyst[yysp] = 95;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 207:
+                    switch (yytok) {
+                        case PARAMETER_COMMA:
+                        case RIGHT_PARENTHESIS:
+                            yyn = yyr43();
+                            continue;
+                    }
+                    yyn = 227;
+                    continue;
+
+                case 96:
+                    yyst[yysp] = 96;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 208:
+                    yyn = yys96();
+                    continue;
+
+                case 97:
+                    yyst[yysp] = 97;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 209:
+                    yyn = yys97();
+                    continue;
+
+                case 98:
+                    yyst[yysp] = 98;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 210:
+                    yyn = yys98();
+                    continue;
+
+                case 99:
+                    yyst[yysp] = 99;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 211:
+                    switch (yytok) {
+                        case PARAMETER_COMMA:
+                        case RIGHT_PARENTHESIS:
+                            yyn = yyr46();
+                            continue;
+                    }
+                    yyn = 227;
+                    continue;
+
+                case 100:
+                    yyst[yysp] = 100;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 212:
+                    yyn = yys100();
+                    continue;
+
+                case 101:
+                    yyst[yysp] = 101;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 213:
+                    yyn = yys101();
+                    continue;
+
+                case 102:
+                    yyst[yysp] = 102;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 214:
+                    yyn = yys102();
+                    continue;
+
+                case 103:
+                    yyst[yysp] = 103;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 215:
+                    yyn = yys103();
+                    continue;
+
+                case 104:
+                    yyst[yysp] = 104;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 216:
+                    yyn = yys104();
+                    continue;
+
+                case 105:
+                    yyst[yysp] = 105;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 217:
+                    yyn = yys105();
+                    continue;
+
+                case 106:
+                    yyst[yysp] = 106;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 218:
+                    switch (yytok) {
+                        case LEFT_PARENTHESIS:
+                            yyn = 108;
+                            continue;
+                    }
+                    yyn = 227;
+                    continue;
+
+                case 107:
+                    yyst[yysp] = 107;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 219:
+                    yyn = yys107();
+                    continue;
+
+                case 108:
+                    yyst[yysp] = 108;
                     yysv[yysp] = (lexer.getValue()
                                  );
                     yytok = (yynext()
@@ -1689,11 +1655,40 @@ class Bitmoji implements BitmojiTokens {
                     }
                 case 220:
                     switch (yytok) {
-                        case END_FUNCTION_STATEMENTS:
+                        case ID:
+                            yyn = 40;
+                            continue;
+                        case INT_LITERAL:
+                            yyn = 41;
+                            continue;
+                        case LEFT_PARENTHESIS:
+                            yyn = 42;
+                            continue;
+                        case REAL_LITERAL:
+                            yyn = 43;
+                            continue;
+                    }
+                    yyn = 227;
+                    continue;
+
+                case 109:
+                    yyst[yysp] = 109;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 221:
+                    switch (yytok) {
+                        case ADD:
+                            yyn = 58;
+                            continue;
+                        case SUBTRACT:
+                            yyn = 59;
+                            continue;
+                        case RIGHT_PARENTHESIS:
                             yyn = 110;
                             continue;
                     }
-                    yyn = 225;
+                    yyn = 227;
                     continue;
 
                 case 110:
@@ -1705,17 +1700,35 @@ class Bitmoji implements BitmojiTokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 221:
-                    yyn = yys110();
+                case 222:
+                    switch (yytok) {
+                        case END_FUNCTION_STATEMENTS:
+                            yyn = 111;
+                            continue;
+                    }
+                    yyn = 227;
                     continue;
 
-                case 222:
-                    return true;
+                case 111:
+                    yyst[yysp] = 111;
+                    yysv[yysp] = (lexer.getValue()
+                                 );
+                    yytok = (yynext()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
                 case 223:
-                    yyerror("stack overflow");
+                    yyn = yys111();
+                    continue;
+
                 case 224:
-                    return false;
+                    return true;
                 case 225:
+                    yyerror("stack overflow");
+                case 226:
+                    return false;
+                case 227:
                     yyerror("syntax error");
                     return false;
             }
@@ -1748,12 +1761,11 @@ class Bitmoji implements BitmojiTokens {
             case START_WHILE:
                 return 18;
         }
-        return 225;
+        return 227;
     }
 
     private int yys3() {
         switch (yytok) {
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -1761,16 +1773,16 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr4();
         }
-        return 225;
+        return 227;
     }
 
     private int yys4() {
         switch (yytok) {
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -1778,16 +1790,16 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr8();
         }
-        return 225;
+        return 227;
     }
 
     private int yys5() {
         switch (yytok) {
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -1795,16 +1807,16 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr9();
         }
-        return 225;
+        return 227;
     }
 
     private int yys6() {
         switch (yytok) {
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -1812,11 +1824,12 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr10();
         }
-        return 225;
+        return 227;
     }
 
     private int yys7() {
@@ -1825,7 +1838,6 @@ class Bitmoji implements BitmojiTokens {
                 return 21;
             case ELSE:
                 return 22;
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -1833,16 +1845,16 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
-                return yyr33();
+                return yyr34();
         }
-        return 225;
+        return 227;
     }
 
     private int yys8() {
         switch (yytok) {
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -1850,16 +1862,16 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr6();
         }
-        return 225;
+        return 227;
     }
 
     private int yys9() {
         switch (yytok) {
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -1867,16 +1879,16 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr7();
         }
-        return 225;
+        return 227;
     }
 
     private int yys10() {
         switch (yytok) {
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -1884,11 +1896,12 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr3();
         }
-        return 225;
+        return 227;
     }
 
     private int yys11() {
@@ -1908,12 +1921,11 @@ class Bitmoji implements BitmojiTokens {
             case END_PROGRAM:
                 return 24;
         }
-        return 225;
+        return 227;
     }
 
     private int yys12() {
         switch (yytok) {
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -1921,18 +1933,18 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr5();
         }
-        return 225;
+        return 227;
     }
 
     private int yys19() {
         switch (yytok) {
             case ELSE:
                 return 22;
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -1940,33 +1952,33 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
-            case ID:
-            case END_PROGRAM:
-                return yyr34();
-        }
-        return 225;
-    }
-
-    private int yys20() {
-        switch (yytok) {
             case RETURN:
-            case OUTPUT:
-            case FUNCTION_DEF:
-            case END_WHILE:
-            case START_WHILE:
-            case INPUT:
-            case END_THEN:
-            case IF:
             case ID:
             case END_PROGRAM:
                 return yyr35();
         }
-        return 225;
+        return 227;
+    }
+
+    private int yys20() {
+        switch (yytok) {
+            case OUTPUT:
+            case FUNCTION_DEF:
+            case END_WHILE:
+            case START_WHILE:
+            case INPUT:
+            case END_THEN:
+            case IF:
+            case RETURN:
+            case ID:
+            case END_PROGRAM:
+                return yyr36();
+        }
+        return 227;
     }
 
     private int yys23() {
         switch (yytok) {
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -1974,16 +1986,16 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr2();
         }
-        return 225;
+        return 227;
     }
 
     private int yys29() {
         switch (yytok) {
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -1991,18 +2003,18 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr31();
         }
-        return 225;
+        return 227;
     }
 
     private int yys30() {
         switch (yytok) {
             case LEFT_BRACKET:
                 return 55;
-            case RETURN:
             case PARAMETER_COMMA:
             case OUTPUT:
             case FUNCTION_DEF:
@@ -2010,13 +2022,14 @@ class Bitmoji implements BitmojiTokens {
             case START_WHILE:
             case INPUT:
             case END_THEN:
-            case IF:
             case RIGHT_PARENTHESIS:
+            case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr12();
         }
-        return 225;
+        return 227;
     }
 
     private int yys31() {
@@ -2025,43 +2038,44 @@ class Bitmoji implements BitmojiTokens {
                 return 56;
             case NOT_EQUALS:
                 return 57;
-            case RETURN:
             case OUTPUT:
+            case NEWLINE:
             case FUNCTION_DEF:
             case END_WHILE:
             case START_WHILE:
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr29();
         }
-        return 225;
+        return 227;
     }
 
     private int yys32() {
         switch (yytok) {
             case REAL_DECL:
             case LEFT_BRACKET:
-            case START_PROGRAM:
-            case REAL_LITERAL:
-            case ELSE:
-            case LEFT_PARENTHESIS:
-            case STRING_LITERAL:
-            case START_THEN:
             case START_FUNCTION_STATEMENTS:
+            case REAL_LITERAL:
+            case ASSIGN:
+            case LEFT_PARENTHESIS:
+            case STRING_DECL:
+            case START_PROGRAM:
+            case INT_LITERAL:
             case ARRAY_DECL:
             case PARAMETER_COMMA:
-            case ASSIGN:
             case END_FUNCTION_STATEMENTS:
+            case ELSE:
             case ENDINPUT:
             case error:
-            case INT_LITERAL:
-            case STRING_DECL:
+            case STRING_LITERAL:
             case INTEGER_DECL:
+            case START_THEN:
             case ELIF:
-                return 225;
+                return 227;
         }
         return yyr20();
     }
@@ -2072,16 +2086,17 @@ class Bitmoji implements BitmojiTokens {
                 return 58;
             case SUBTRACT:
                 return 59;
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
+            case NEWLINE:
             case END_WHILE:
+            case START_WHILE:
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
-            case START_WHILE:
                 return yyr27();
             case GREATER_THAN_OR_EQUAL:
             case GREATER_THAN:
@@ -2089,33 +2104,33 @@ class Bitmoji implements BitmojiTokens {
             case LESS_THAN_OR_EQUAL:
             case LESS_THAN:
             case EQUALS:
-                return yyr54();
+                return yyr55();
         }
-        return 225;
+        return 227;
     }
 
     private int yys34() {
         switch (yytok) {
             case REAL_DECL:
             case LEFT_BRACKET:
-            case START_PROGRAM:
+            case START_FUNCTION_STATEMENTS:
             case REAL_LITERAL:
             case LEFT_PARENTHESIS:
             case ENDINPUT:
-            case STRING_LITERAL:
-            case START_THEN:
-            case START_FUNCTION_STATEMENTS:
+            case STRING_DECL:
+            case START_PROGRAM:
+            case INT_LITERAL:
             case ARRAY_DECL:
-            case ELSE:
             case PARAMETER_COMMA:
             case END_FUNCTION_STATEMENTS:
+            case ELSE:
             case ASSIGN:
             case error:
-            case INT_LITERAL:
-            case STRING_DECL:
+            case STRING_LITERAL:
             case INTEGER_DECL:
+            case START_THEN:
             case ELIF:
-                return 225;
+                return 227;
             case EXPONENT:
                 return 60;
         }
@@ -2126,31 +2141,32 @@ class Bitmoji implements BitmojiTokens {
         switch (yytok) {
             case REAL_DECL:
             case LEFT_BRACKET:
-            case START_PROGRAM:
-            case REAL_LITERAL:
-            case ELSE:
-            case LEFT_PARENTHESIS:
-            case STRING_LITERAL:
-            case START_THEN:
             case START_FUNCTION_STATEMENTS:
+            case REAL_LITERAL:
+            case ASSIGN:
+            case LEFT_PARENTHESIS:
+            case STRING_DECL:
+            case START_PROGRAM:
+            case INT_LITERAL:
             case ARRAY_DECL:
             case PARAMETER_COMMA:
-            case ASSIGN:
             case END_FUNCTION_STATEMENTS:
+            case ELSE:
             case ENDINPUT:
             case error:
-            case INT_LITERAL:
-            case STRING_DECL:
+            case STRING_LITERAL:
             case INTEGER_DECL:
+            case START_THEN:
             case ELIF:
-                return 225;
+                return 227;
         }
         return yyr23();
     }
 
     private int yys36() {
         switch (yytok) {
-            case RETURN:
+            case NEWLINE:
+                return 61;
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -2158,35 +2174,36 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr32();
         }
-        return 225;
+        return 227;
     }
 
     private int yys37() {
         switch (yytok) {
             case REAL_DECL:
             case LEFT_BRACKET:
-            case START_PROGRAM:
-            case REAL_LITERAL:
-            case ELSE:
-            case LEFT_PARENTHESIS:
-            case STRING_LITERAL:
-            case START_THEN:
             case START_FUNCTION_STATEMENTS:
+            case REAL_LITERAL:
+            case ASSIGN:
+            case LEFT_PARENTHESIS:
+            case STRING_DECL:
+            case START_PROGRAM:
+            case INT_LITERAL:
             case ARRAY_DECL:
             case PARAMETER_COMMA:
-            case ASSIGN:
             case END_FUNCTION_STATEMENTS:
+            case ELSE:
             case ENDINPUT:
             case error:
-            case INT_LITERAL:
-            case STRING_DECL:
+            case STRING_LITERAL:
             case INTEGER_DECL:
+            case START_THEN:
             case ELIF:
-                return 225;
+                return 227;
         }
         return yyr22();
     }
@@ -2194,82 +2211,83 @@ class Bitmoji implements BitmojiTokens {
     private int yys38() {
         switch (yytok) {
             case GREATER_THAN:
-                return 61;
-            case GREATER_THAN_OR_EQUAL:
                 return 62;
-            case LESS_THAN:
+            case GREATER_THAN_OR_EQUAL:
                 return 63;
-            case LESS_THAN_OR_EQUAL:
+            case LESS_THAN:
                 return 64;
-            case RETURN:
+            case LESS_THAN_OR_EQUAL:
+                return 65;
             case OUTPUT:
             case NOT_EQUALS:
+            case NEWLINE:
             case FUNCTION_DEF:
             case EQUALS:
             case END_WHILE:
             case START_WHILE:
             case INPUT:
             case END_THEN:
-            case IF:
             case RIGHT_PARENTHESIS:
+            case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
-                return yyr49();
+                return yyr50();
         }
-        return 225;
+        return 227;
     }
 
     private int yys39() {
         switch (yytok) {
+            case LEFT_PARENTHESIS:
+            case error:
+            case REAL_LITERAL:
+            case ENDINPUT:
+            case EXPONENT:
+            case ELSE:
+            case START_PROGRAM:
+            case START_THEN:
+            case START_FUNCTION_STATEMENTS:
+            case ARRAY_DECL:
+            case END_FUNCTION_STATEMENTS:
+            case PARAMETER_COMMA:
+            case REAL_DECL:
+            case ASSIGN:
+            case STRING_LITERAL:
+            case INT_LITERAL:
+            case STRING_DECL:
+            case INTEGER_DECL:
+            case ELIF:
+            case LEFT_BRACKET:
+                return 227;
             case DIVIDE:
-                return 65;
-            case MULTIPLY:
                 return 66;
-            case GREATER_THAN_OR_EQUAL:
-            case GREATER_THAN:
-            case OUTPUT:
-            case NOT_EQUALS:
-            case FUNCTION_DEF:
-            case LESS_THAN_OR_EQUAL:
-            case LESS_THAN:
-            case RETURN:
-            case EQUALS:
-            case SUBTRACT:
-            case END_WHILE:
-            case START_WHILE:
-            case INPUT:
-            case END_THEN:
-            case IF:
-            case RIGHT_PARENTHESIS:
-            case RIGHT_BRACKET:
-            case ID:
-            case END_PROGRAM:
-            case ADD:
-                return yyr15();
+            case MULTIPLY:
+                return 67;
         }
-        return 225;
+        return yyr15();
     }
 
     private int yys40() {
         switch (yytok) {
-            case INTEGER_DECL:
-            case START_FUNCTION_STATEMENTS:
-            case START_PROGRAM:
-            case ELIF:
-            case ELSE:
-            case ARRAY_DECL:
-            case STRING_LITERAL:
             case START_THEN:
+            case INT_LITERAL:
+            case START_FUNCTION_STATEMENTS:
+            case ELIF:
+            case ASSIGN:
+            case ARRAY_DECL:
+            case STRING_DECL:
+            case START_PROGRAM:
             case REAL_LITERAL:
             case REAL_DECL:
             case PARAMETER_COMMA:
-            case ASSIGN:
             case END_FUNCTION_STATEMENTS:
+            case ELSE:
             case ENDINPUT:
             case error:
-            case INT_LITERAL:
-            case STRING_DECL:
-                return 225;
+            case STRING_LITERAL:
+            case INTEGER_DECL:
+                return 227;
             case LEFT_PARENTHESIS:
                 return 27;
             case LEFT_BRACKET:
@@ -2282,24 +2300,24 @@ class Bitmoji implements BitmojiTokens {
         switch (yytok) {
             case REAL_DECL:
             case LEFT_BRACKET:
-            case START_PROGRAM:
-            case REAL_LITERAL:
-            case ELSE:
-            case LEFT_PARENTHESIS:
-            case STRING_LITERAL:
-            case START_THEN:
             case START_FUNCTION_STATEMENTS:
+            case REAL_LITERAL:
+            case ASSIGN:
+            case LEFT_PARENTHESIS:
+            case STRING_DECL:
+            case START_PROGRAM:
+            case INT_LITERAL:
             case ARRAY_DECL:
             case PARAMETER_COMMA:
-            case ASSIGN:
             case END_FUNCTION_STATEMENTS:
+            case ELSE:
             case ENDINPUT:
             case error:
-            case INT_LITERAL:
-            case STRING_DECL:
+            case STRING_LITERAL:
             case INTEGER_DECL:
+            case START_THEN:
             case ELIF:
-                return 225;
+                return 227;
         }
         return yyr25();
     }
@@ -2308,43 +2326,44 @@ class Bitmoji implements BitmojiTokens {
         switch (yytok) {
             case REAL_DECL:
             case LEFT_BRACKET:
-            case START_PROGRAM:
-            case REAL_LITERAL:
-            case ELSE:
-            case LEFT_PARENTHESIS:
-            case STRING_LITERAL:
-            case START_THEN:
             case START_FUNCTION_STATEMENTS:
+            case REAL_LITERAL:
+            case ASSIGN:
+            case LEFT_PARENTHESIS:
+            case STRING_DECL:
+            case START_PROGRAM:
+            case INT_LITERAL:
             case ARRAY_DECL:
             case PARAMETER_COMMA:
-            case ASSIGN:
             case END_FUNCTION_STATEMENTS:
+            case ELSE:
             case ENDINPUT:
             case error:
-            case INT_LITERAL:
-            case STRING_DECL:
+            case STRING_LITERAL:
             case INTEGER_DECL:
+            case START_THEN:
             case ELIF:
-                return 225;
+                return 227;
         }
         return yyr24();
     }
 
     private int yys44() {
         switch (yytok) {
-            case RETURN:
             case OUTPUT:
+            case NEWLINE:
             case FUNCTION_DEF:
             case END_WHILE:
             case START_WHILE:
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr28();
         }
-        return 225;
+        return 227;
     }
 
     private int yys45() {
@@ -2366,7 +2385,7 @@ class Bitmoji implements BitmojiTokens {
             case NOT_EQUALS:
                 return 57;
         }
-        return 225;
+        return 227;
     }
 
     private int yys46() {
@@ -2376,10 +2395,10 @@ class Bitmoji implements BitmojiTokens {
             case SUBTRACT:
                 return 59;
             case GREATER_THAN_OR_EQUAL:
-            case GREATER_THAN:
             case OUTPUT:
+            case GREATER_THAN:
             case NOT_EQUALS:
-            case RETURN:
+            case NEWLINE:
             case FUNCTION_DEF:
             case LESS_THAN_OR_EQUAL:
             case LESS_THAN:
@@ -2388,18 +2407,18 @@ class Bitmoji implements BitmojiTokens {
             case START_WHILE:
             case INPUT:
             case END_THEN:
-            case IF:
             case RIGHT_PARENTHESIS:
+            case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
-                return yyr54();
+                return yyr55();
         }
-        return 225;
+        return 227;
     }
 
     private int yys47() {
         switch (yytok) {
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -2407,11 +2426,12 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
-                return yyr36();
+                return yyr37();
         }
-        return 225;
+        return 227;
     }
 
     private int yys49() {
@@ -2429,12 +2449,11 @@ class Bitmoji implements BitmojiTokens {
             case START_WHILE:
                 return 18;
         }
-        return 225;
+        return 227;
     }
 
     private int yys51() {
         switch (yytok) {
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -2442,14 +2461,32 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr26();
         }
-        return 225;
+        return 227;
     }
 
-    private int yys68() {
+    private int yys61() {
+        switch (yytok) {
+            case OUTPUT:
+            case FUNCTION_DEF:
+            case END_WHILE:
+            case START_WHILE:
+            case INPUT:
+            case END_THEN:
+            case IF:
+            case RETURN:
+            case ID:
+            case END_PROGRAM:
+                return yyr33();
+        }
+        return 227;
+    }
+
+    private int yys69() {
         switch (yytok) {
             case FUNCTION_DEF:
                 return 13;
@@ -2464,12 +2501,12 @@ class Bitmoji implements BitmojiTokens {
             case START_WHILE:
                 return 18;
             case END_WHILE:
-                return 89;
+                return 90;
         }
-        return 225;
+        return 227;
     }
 
-    private int yys70() {
+    private int yys71() {
         switch (yytok) {
             case FUNCTION_DEF:
                 return 13;
@@ -2484,207 +2521,181 @@ class Bitmoji implements BitmojiTokens {
             case START_WHILE:
                 return 18;
             case END_THEN:
-                return 91;
+                return 92;
         }
-        return 225;
+        return 227;
     }
 
-    private int yys74() {
+    private int yys75() {
         switch (yytok) {
             case REAL_DECL:
             case LEFT_BRACKET:
-            case START_PROGRAM:
-            case REAL_LITERAL:
-            case ELSE:
-            case LEFT_PARENTHESIS:
-            case STRING_LITERAL:
-            case START_THEN:
             case START_FUNCTION_STATEMENTS:
+            case REAL_LITERAL:
+            case ASSIGN:
+            case LEFT_PARENTHESIS:
+            case STRING_DECL:
+            case START_PROGRAM:
+            case INT_LITERAL:
             case ARRAY_DECL:
             case PARAMETER_COMMA:
-            case ASSIGN:
             case END_FUNCTION_STATEMENTS:
+            case ELSE:
             case ENDINPUT:
             case error:
-            case INT_LITERAL:
-            case STRING_DECL:
+            case STRING_LITERAL:
             case INTEGER_DECL:
+            case START_THEN:
             case ELIF:
-                return 225;
+                return 227;
         }
-        return yyr41();
-    }
-
-    private int yys77() {
-        switch (yytok) {
-            case GREATER_THAN:
-                return 61;
-            case GREATER_THAN_OR_EQUAL:
-                return 62;
-            case LESS_THAN:
-                return 63;
-            case LESS_THAN_OR_EQUAL:
-                return 64;
-            case RETURN:
-            case OUTPUT:
-            case NOT_EQUALS:
-            case FUNCTION_DEF:
-            case EQUALS:
-            case END_WHILE:
-            case START_WHILE:
-            case INPUT:
-            case END_THEN:
-            case IF:
-            case RIGHT_PARENTHESIS:
-            case ID:
-            case END_PROGRAM:
-                return yyr47();
-        }
-        return 225;
+        return yyr42();
     }
 
     private int yys78() {
         switch (yytok) {
             case GREATER_THAN:
-                return 61;
-            case GREATER_THAN_OR_EQUAL:
                 return 62;
-            case LESS_THAN:
+            case GREATER_THAN_OR_EQUAL:
                 return 63;
-            case LESS_THAN_OR_EQUAL:
+            case LESS_THAN:
                 return 64;
-            case RETURN:
+            case LESS_THAN_OR_EQUAL:
+                return 65;
             case OUTPUT:
             case NOT_EQUALS:
+            case NEWLINE:
             case FUNCTION_DEF:
             case EQUALS:
             case END_WHILE:
             case START_WHILE:
             case INPUT:
             case END_THEN:
-            case IF:
             case RIGHT_PARENTHESIS:
+            case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr48();
         }
-        return 225;
+        return 227;
     }
 
     private int yys79() {
         switch (yytok) {
-            case DIVIDE:
-                return 65;
-            case MULTIPLY:
-                return 66;
-            case GREATER_THAN_OR_EQUAL:
             case GREATER_THAN:
+                return 62;
+            case GREATER_THAN_OR_EQUAL:
+                return 63;
+            case LESS_THAN:
+                return 64;
+            case LESS_THAN_OR_EQUAL:
+                return 65;
             case OUTPUT:
             case NOT_EQUALS:
+            case NEWLINE:
             case FUNCTION_DEF:
-            case LESS_THAN_OR_EQUAL:
-            case LESS_THAN:
-            case RETURN:
             case EQUALS:
-            case SUBTRACT:
             case END_WHILE:
             case START_WHILE:
             case INPUT:
             case END_THEN:
-            case IF:
             case RIGHT_PARENTHESIS:
-            case RIGHT_BRACKET:
+            case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
-            case ADD:
-                return yyr13();
+                return yyr49();
         }
-        return 225;
+        return 227;
     }
 
     private int yys80() {
         switch (yytok) {
-            case DIVIDE:
-                return 65;
-            case MULTIPLY:
-                return 66;
-            case GREATER_THAN_OR_EQUAL:
-            case GREATER_THAN:
-            case OUTPUT:
-            case NOT_EQUALS:
-            case FUNCTION_DEF:
-            case LESS_THAN_OR_EQUAL:
-            case LESS_THAN:
-            case RETURN:
-            case EQUALS:
-            case SUBTRACT:
-            case END_WHILE:
-            case START_WHILE:
-            case INPUT:
-            case END_THEN:
-            case IF:
-            case RIGHT_PARENTHESIS:
-            case RIGHT_BRACKET:
-            case ID:
-            case END_PROGRAM:
-            case ADD:
-                return yyr14();
-        }
-        return 225;
-    }
-
-    private int yys81() {
-        switch (yytok) {
-            case REAL_DECL:
-            case LEFT_BRACKET:
-            case START_PROGRAM:
-            case REAL_LITERAL:
-            case ELSE:
             case LEFT_PARENTHESIS:
-            case STRING_LITERAL:
+            case error:
+            case REAL_LITERAL:
+            case ENDINPUT:
+            case EXPONENT:
+            case ELSE:
+            case START_PROGRAM:
             case START_THEN:
             case START_FUNCTION_STATEMENTS:
             case ARRAY_DECL:
-            case PARAMETER_COMMA:
-            case ASSIGN:
             case END_FUNCTION_STATEMENTS:
-            case ENDINPUT:
-            case error:
+            case PARAMETER_COMMA:
+            case REAL_DECL:
+            case ASSIGN:
+            case STRING_LITERAL:
             case INT_LITERAL:
             case STRING_DECL:
             case INTEGER_DECL:
             case ELIF:
-                return 225;
+            case LEFT_BRACKET:
+                return 227;
+            case DIVIDE:
+                return 66;
+            case MULTIPLY:
+                return 67;
         }
-        return yyr19();
+        return yyr13();
+    }
+
+    private int yys81() {
+        switch (yytok) {
+            case LEFT_PARENTHESIS:
+            case error:
+            case REAL_LITERAL:
+            case ENDINPUT:
+            case EXPONENT:
+            case ELSE:
+            case START_PROGRAM:
+            case START_THEN:
+            case START_FUNCTION_STATEMENTS:
+            case ARRAY_DECL:
+            case END_FUNCTION_STATEMENTS:
+            case PARAMETER_COMMA:
+            case REAL_DECL:
+            case ASSIGN:
+            case STRING_LITERAL:
+            case INT_LITERAL:
+            case STRING_DECL:
+            case INTEGER_DECL:
+            case ELIF:
+            case LEFT_BRACKET:
+                return 227;
+            case DIVIDE:
+                return 66;
+            case MULTIPLY:
+                return 67;
+        }
+        return yyr14();
     }
 
     private int yys82() {
         switch (yytok) {
-            case ADD:
-                return 58;
-            case SUBTRACT:
-                return 59;
-            case GREATER_THAN_OR_EQUAL:
-            case GREATER_THAN:
-            case OUTPUT:
-            case NOT_EQUALS:
-            case RETURN:
-            case FUNCTION_DEF:
-            case LESS_THAN_OR_EQUAL:
-            case LESS_THAN:
-            case EQUALS:
-            case END_WHILE:
-            case START_WHILE:
-            case INPUT:
-            case END_THEN:
-            case IF:
-            case RIGHT_PARENTHESIS:
-            case ID:
-            case END_PROGRAM:
-                return yyr50();
+            case REAL_DECL:
+            case LEFT_BRACKET:
+            case START_FUNCTION_STATEMENTS:
+            case REAL_LITERAL:
+            case ASSIGN:
+            case LEFT_PARENTHESIS:
+            case STRING_DECL:
+            case START_PROGRAM:
+            case INT_LITERAL:
+            case ARRAY_DECL:
+            case PARAMETER_COMMA:
+            case END_FUNCTION_STATEMENTS:
+            case ELSE:
+            case ENDINPUT:
+            case error:
+            case STRING_LITERAL:
+            case INTEGER_DECL:
+            case START_THEN:
+            case ELIF:
+                return 227;
         }
-        return 225;
+        return yyr19();
     }
 
     private int yys83() {
@@ -2694,10 +2705,10 @@ class Bitmoji implements BitmojiTokens {
             case SUBTRACT:
                 return 59;
             case GREATER_THAN_OR_EQUAL:
-            case GREATER_THAN:
             case OUTPUT:
+            case GREATER_THAN:
             case NOT_EQUALS:
-            case RETURN:
+            case NEWLINE:
             case FUNCTION_DEF:
             case LESS_THAN_OR_EQUAL:
             case LESS_THAN:
@@ -2706,13 +2717,14 @@ class Bitmoji implements BitmojiTokens {
             case START_WHILE:
             case INPUT:
             case END_THEN:
-            case IF:
             case RIGHT_PARENTHESIS:
+            case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr51();
         }
-        return 225;
+        return 227;
     }
 
     private int yys84() {
@@ -2722,10 +2734,10 @@ class Bitmoji implements BitmojiTokens {
             case SUBTRACT:
                 return 59;
             case GREATER_THAN_OR_EQUAL:
-            case GREATER_THAN:
             case OUTPUT:
+            case GREATER_THAN:
             case NOT_EQUALS:
-            case RETURN:
+            case NEWLINE:
             case FUNCTION_DEF:
             case LESS_THAN_OR_EQUAL:
             case LESS_THAN:
@@ -2734,13 +2746,14 @@ class Bitmoji implements BitmojiTokens {
             case START_WHILE:
             case INPUT:
             case END_THEN:
-            case IF:
             case RIGHT_PARENTHESIS:
+            case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr52();
         }
-        return 225;
+        return 227;
     }
 
     private int yys85() {
@@ -2750,10 +2763,10 @@ class Bitmoji implements BitmojiTokens {
             case SUBTRACT:
                 return 59;
             case GREATER_THAN_OR_EQUAL:
-            case GREATER_THAN:
             case OUTPUT:
+            case GREATER_THAN:
             case NOT_EQUALS:
-            case RETURN:
+            case NEWLINE:
             case FUNCTION_DEF:
             case LESS_THAN_OR_EQUAL:
             case LESS_THAN:
@@ -2762,100 +2775,129 @@ class Bitmoji implements BitmojiTokens {
             case START_WHILE:
             case INPUT:
             case END_THEN:
-            case IF:
             case RIGHT_PARENTHESIS:
+            case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr53();
         }
-        return 225;
+        return 227;
     }
 
     private int yys86() {
         switch (yytok) {
-            case REAL_DECL:
-            case LEFT_BRACKET:
-            case START_PROGRAM:
-            case REAL_LITERAL:
-            case LEFT_PARENTHESIS:
-            case ENDINPUT:
-            case STRING_LITERAL:
-            case START_THEN:
-            case START_FUNCTION_STATEMENTS:
-            case ARRAY_DECL:
-            case ELSE:
-            case PARAMETER_COMMA:
-            case END_FUNCTION_STATEMENTS:
-            case ASSIGN:
-            case error:
-            case INT_LITERAL:
-            case STRING_DECL:
-            case INTEGER_DECL:
-            case ELIF:
-                return 225;
-            case EXPONENT:
-                return 60;
+            case ADD:
+                return 58;
+            case SUBTRACT:
+                return 59;
+            case GREATER_THAN_OR_EQUAL:
+            case OUTPUT:
+            case GREATER_THAN:
+            case NOT_EQUALS:
+            case NEWLINE:
+            case FUNCTION_DEF:
+            case LESS_THAN_OR_EQUAL:
+            case LESS_THAN:
+            case EQUALS:
+            case END_WHILE:
+            case START_WHILE:
+            case INPUT:
+            case END_THEN:
+            case RIGHT_PARENTHESIS:
+            case IF:
+            case RETURN:
+            case ID:
+            case END_PROGRAM:
+                return yyr54();
         }
-        return yyr17();
+        return 227;
     }
 
     private int yys87() {
         switch (yytok) {
             case REAL_DECL:
             case LEFT_BRACKET:
-            case START_PROGRAM:
+            case START_FUNCTION_STATEMENTS:
             case REAL_LITERAL:
             case LEFT_PARENTHESIS:
             case ENDINPUT:
-            case STRING_LITERAL:
-            case START_THEN:
-            case START_FUNCTION_STATEMENTS:
+            case STRING_DECL:
+            case START_PROGRAM:
+            case INT_LITERAL:
             case ARRAY_DECL:
-            case ELSE:
             case PARAMETER_COMMA:
             case END_FUNCTION_STATEMENTS:
+            case ELSE:
             case ASSIGN:
             case error:
-            case INT_LITERAL:
-            case STRING_DECL:
+            case STRING_LITERAL:
             case INTEGER_DECL:
+            case START_THEN:
             case ELIF:
-                return 225;
+                return 227;
             case EXPONENT:
                 return 60;
         }
-        return yyr16();
+        return yyr17();
     }
 
     private int yys88() {
         switch (yytok) {
             case REAL_DECL:
             case LEFT_BRACKET:
-            case START_PROGRAM:
-            case REAL_LITERAL:
-            case ELSE:
-            case LEFT_PARENTHESIS:
-            case STRING_LITERAL:
-            case START_THEN:
             case START_FUNCTION_STATEMENTS:
+            case REAL_LITERAL:
+            case LEFT_PARENTHESIS:
+            case ENDINPUT:
+            case STRING_DECL:
+            case START_PROGRAM:
+            case INT_LITERAL:
             case ARRAY_DECL:
             case PARAMETER_COMMA:
-            case ASSIGN:
             case END_FUNCTION_STATEMENTS:
-            case ENDINPUT:
+            case ELSE:
+            case ASSIGN:
             case error:
-            case INT_LITERAL:
-            case STRING_DECL:
+            case STRING_LITERAL:
             case INTEGER_DECL:
+            case START_THEN:
             case ELIF:
-                return 225;
+                return 227;
+            case EXPONENT:
+                return 60;
         }
-        return yyr21();
+        return yyr16();
     }
 
     private int yys89() {
         switch (yytok) {
-            case RETURN:
+            case REAL_DECL:
+            case LEFT_BRACKET:
+            case START_FUNCTION_STATEMENTS:
+            case REAL_LITERAL:
+            case ASSIGN:
+            case LEFT_PARENTHESIS:
+            case STRING_DECL:
+            case START_PROGRAM:
+            case INT_LITERAL:
+            case ARRAY_DECL:
+            case PARAMETER_COMMA:
+            case END_FUNCTION_STATEMENTS:
+            case ELSE:
+            case ENDINPUT:
+            case error:
+            case STRING_LITERAL:
+            case INTEGER_DECL:
+            case START_THEN:
+            case ELIF:
+                return 227;
+        }
+        return yyr21();
+    }
+
+    private int yys90() {
+        switch (yytok) {
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -2863,16 +2905,16 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr30();
         }
-        return 225;
+        return 227;
     }
 
-    private int yys91() {
+    private int yys92() {
         switch (yytok) {
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -2880,14 +2922,15 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
-                return yyr40();
+                return yyr41();
         }
-        return 225;
+        return 227;
     }
 
-    private int yys95() {
+    private int yys96() {
         switch (yytok) {
             case FUNCTION_DEF:
                 return 13;
@@ -2902,35 +2945,35 @@ class Bitmoji implements BitmojiTokens {
             case START_WHILE:
                 return 18;
         }
-        return 225;
+        return 227;
     }
 
-    private int yys96() {
+    private int yys97() {
         switch (yytok) {
             case REAL_DECL:
             case ELIF:
-            case START_PROGRAM:
+            case START_FUNCTION_STATEMENTS:
             case REAL_LITERAL:
             case ELSE:
             case LEFT_BRACKET:
-            case STRING_LITERAL:
-            case START_THEN:
-            case START_FUNCTION_STATEMENTS:
+            case STRING_DECL:
+            case START_PROGRAM:
+            case INT_LITERAL:
             case ARRAY_DECL:
             case END_FUNCTION_STATEMENTS:
             case ASSIGN:
             case ENDINPUT:
             case LEFT_PARENTHESIS:
             case error:
-            case INT_LITERAL:
-            case STRING_DECL:
+            case STRING_LITERAL:
             case INTEGER_DECL:
-                return 225;
+            case START_THEN:
+                return 227;
         }
         return yyr11();
     }
 
-    private int yys97() {
+    private int yys98() {
         switch (yytok) {
             case FUNCTION_DEF:
                 return 13;
@@ -2945,25 +2988,7 @@ class Bitmoji implements BitmojiTokens {
             case START_WHILE:
                 return 18;
         }
-        return 225;
-    }
-
-    private int yys99() {
-        switch (yytok) {
-            case FUNCTION_DEF:
-                return 13;
-            case ID:
-                return 14;
-            case IF:
-                return 15;
-            case INPUT:
-                return 16;
-            case OUTPUT:
-                return 17;
-            case START_WHILE:
-                return 18;
-        }
-        return 225;
+        return 227;
     }
 
     private int yys100() {
@@ -2980,10 +3005,8 @@ class Bitmoji implements BitmojiTokens {
                 return 17;
             case START_WHILE:
                 return 18;
-            case END_THEN:
-                return 103;
         }
-        return 225;
+        return 227;
     }
 
     private int yys101() {
@@ -3003,7 +3026,7 @@ class Bitmoji implements BitmojiTokens {
             case END_THEN:
                 return 104;
         }
-        return 225;
+        return 227;
     }
 
     private int yys102() {
@@ -3020,54 +3043,55 @@ class Bitmoji implements BitmojiTokens {
                 return 17;
             case START_WHILE:
                 return 18;
-            case RETURN:
+            case END_THEN:
                 return 105;
         }
-        return 225;
+        return 227;
     }
 
     private int yys103() {
         switch (yytok) {
-            case RETURN:
-            case OUTPUT:
             case FUNCTION_DEF:
-            case ELSE:
-            case END_WHILE:
-            case ELIF:
-            case START_WHILE:
-            case INPUT:
-            case END_THEN:
-            case IF:
+                return 13;
             case ID:
-            case END_PROGRAM:
-                return yyr37();
+                return 14;
+            case IF:
+                return 15;
+            case INPUT:
+                return 16;
+            case OUTPUT:
+                return 17;
+            case START_WHILE:
+                return 18;
+            case RETURN:
+                return 106;
         }
-        return 225;
+        return 227;
     }
 
     private int yys104() {
         switch (yytok) {
-            case ELIF:
-                return 21;
-            case RETURN:
             case OUTPUT:
             case FUNCTION_DEF:
             case ELSE:
             case END_WHILE:
+            case ELIF:
             case START_WHILE:
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr38();
         }
-        return 225;
+        return 227;
     }
 
-    private int yys106() {
+    private int yys105() {
         switch (yytok) {
-            case RETURN:
+            case ELIF:
+                return 21;
             case OUTPUT:
             case FUNCTION_DEF:
             case ELSE:
@@ -3076,16 +3100,34 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
                 return yyr39();
         }
-        return 225;
+        return 227;
     }
 
-    private int yys110() {
+    private int yys107() {
         switch (yytok) {
+            case OUTPUT:
+            case FUNCTION_DEF:
+            case ELSE:
+            case END_WHILE:
+            case START_WHILE:
+            case INPUT:
+            case END_THEN:
+            case IF:
             case RETURN:
+            case ID:
+            case END_PROGRAM:
+                return yyr40();
+        }
+        return 227;
+    }
+
+    private int yys111() {
+        switch (yytok) {
             case OUTPUT:
             case FUNCTION_DEF:
             case END_WHILE:
@@ -3093,11 +3135,12 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case END_THEN:
             case IF:
+            case RETURN:
             case ID:
             case END_PROGRAM:
-                return yyr44();
+                return yyr45();
         }
-        return 225;
+        return 227;
     }
 
     private int yyr1() { // program : START_PROGRAM stmnt_list END_PROGRAM
@@ -3116,32 +3159,32 @@ class Bitmoji implements BitmojiTokens {
         return 3;
     }
 
-    private int yyr33() { // conditional : if_statement
+    private int yyr34() { // conditional : if_statement
         yysp -= 1;
         return 4;
     }
 
-    private int yyr34() { // conditional : if_statement elif_statement
+    private int yyr35() { // conditional : if_statement elif_statement
         yysp -= 2;
         return 4;
     }
 
-    private int yyr35() { // conditional : if_statement else_statement
+    private int yyr36() { // conditional : if_statement else_statement
         yysp -= 2;
         return 4;
     }
 
-    private int yyr36() { // conditional : if_statement elif_statement else_statement
+    private int yyr37() { // conditional : if_statement elif_statement else_statement
         yysp -= 3;
         return 4;
     }
 
-    private int yyr38() { // elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN
+    private int yyr39() { // elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN
         yysp -= 7;
         return yypelif_statement();
     }
 
-    private int yyr39() { // elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN elif_statement
+    private int yyr40() { // elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN elif_statement
         yysp -= 8;
         return yypelif_statement();
     }
@@ -3149,11 +3192,11 @@ class Bitmoji implements BitmojiTokens {
     private int yypelif_statement() {
         switch (yyst[yysp-1]) {
             case 7: return 19;
-            default: return 106;
+            default: return 107;
         }
     }
 
-    private int yyr40() { // else_statement : ELSE START_THEN stmnt_list END_THEN
+    private int yyr41() { // else_statement : ELSE START_THEN stmnt_list END_THEN
         yysp -= 4;
         switch (yyst[yysp-1]) {
             case 7: return 20;
@@ -3161,7 +3204,7 @@ class Bitmoji implements BitmojiTokens {
         }
     }
 
-    private int yyr47() { // equality : equality EQUALS relational
+    private int yyr48() { // equality : equality EQUALS relational
         {
                             yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], "==");
                         }
@@ -3169,7 +3212,7 @@ class Bitmoji implements BitmojiTokens {
         return yypequality();
     }
 
-    private int yyr48() { // equality : equality NOT_EQUALS relational
+    private int yyr49() { // equality : equality NOT_EQUALS relational
         {
                             yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], "!=");
                         }
@@ -3177,14 +3220,14 @@ class Bitmoji implements BitmojiTokens {
         return yypequality();
     }
 
-    private int yyr49() { // equality : relational
+    private int yyr50() { // equality : relational
         yysp -= 1;
         return yypequality();
     }
 
     private int yypequality() {
         switch (yyst[yysp-1]) {
-            case 48: return 69;
+            case 48: return 70;
             case 28: return 54;
             case 18: return 45;
             default: return 31;
@@ -3224,7 +3267,7 @@ class Bitmoji implements BitmojiTokens {
 
     private int yypexp() {
         switch (yyst[yysp-1]) {
-            case 60: return 81;
+            case 60: return 82;
             default: return 32;
         }
     }
@@ -3252,13 +3295,13 @@ class Bitmoji implements BitmojiTokens {
 
     private int yypexpr() {
         switch (yyst[yysp-1]) {
-            case 107: return 108;
+            case 108: return 109;
+            case 65: return 86;
             case 64: return 85;
             case 63: return 84;
             case 62: return 83;
-            case 61: return 82;
-            case 55: return 76;
-            case 42: return 67;
+            case 55: return 77;
+            case 42: return 68;
             case 26: return 33;
             case 17: return 33;
             default: return 46;
@@ -3280,23 +3323,23 @@ class Bitmoji implements BitmojiTokens {
 
     private int yypfactor() {
         switch (yyst[yysp-1]) {
+            case 67: return 88;
             case 66: return 87;
-            case 65: return 86;
             default: return 34;
         }
     }
 
-    private int yyr41() { // function_call : ID LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS
+    private int yyr42() { // function_call : ID LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS
         yysp -= 4;
         switch (yyst[yysp-1]) {
+            case 103: return 5;
             case 102: return 5;
             case 101: return 5;
             case 100: return 5;
-            case 99: return 5;
-            case 97: return 5;
-            case 95: return 5;
-            case 70: return 5;
-            case 68: return 5;
+            case 98: return 5;
+            case 96: return 5;
+            case 71: return 5;
+            case 69: return 5;
             case 49: return 5;
             case 45: return 5;
             case 11: return 5;
@@ -3305,12 +3348,12 @@ class Bitmoji implements BitmojiTokens {
         }
     }
 
-    private int yyr44() { // function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS
+    private int yyr45() { // function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS
         yysp -= 12;
         return 6;
     }
 
-    private int yyr37() { // if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN
+    private int yyr38() { // if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN
         yysp -= 7;
         return 7;
     }
@@ -3325,20 +3368,28 @@ class Bitmoji implements BitmojiTokens {
 
     private int yyr32() { // output : OUTPUT assignable
         {
-                            yyrv = tree.new OutputNode(yysv[yysp-1]);
+                            yyrv = tree.new OutputNode(yysv[yysp-1], false);
                         }
         yysv[yysp-=2] = yyrv;
         return 9;
     }
 
-    private int yyr45() { // parameter_list : parameter_list PARAMETER_COMMA ID
-        yysp -= 3;
-        return 71;
+    private int yyr33() { // output : OUTPUT assignable NEWLINE
+        {
+                            yyrv = tree.new OutputNode(yysv[yysp-2], true);
+                        }
+        yysv[yysp-=3] = yyrv;
+        return 9;
     }
 
-    private int yyr46() { // parameter_list : ID
+    private int yyr46() { // parameter_list : parameter_list PARAMETER_COMMA ID
+        yysp -= 3;
+        return 72;
+    }
+
+    private int yyr47() { // parameter_list : ID
         yysp -= 1;
-        return 71;
+        return 72;
     }
 
     private int yyr27() { // assignable : expr
@@ -3378,24 +3429,24 @@ class Bitmoji implements BitmojiTokens {
 
     private int yypref() {
         switch (yyst[yysp-1]) {
-            case 73: return 94;
+            case 74: return 95;
             case 27: return 52;
             case 16: return 29;
             default: return 37;
         }
     }
 
-    private int yyr42() { // ref_list : ref_list PARAMETER_COMMA ref
+    private int yyr43() { // ref_list : ref_list PARAMETER_COMMA ref
         yysp -= 3;
         return 53;
     }
 
-    private int yyr43() { // ref_list : ref
+    private int yyr44() { // ref_list : ref
         yysp -= 1;
         return 53;
     }
 
-    private int yyr50() { // relational : relational GREATER_THAN expr
+    private int yyr51() { // relational : relational GREATER_THAN expr
         {
                             yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], ">");
                         }
@@ -3403,7 +3454,7 @@ class Bitmoji implements BitmojiTokens {
         return yyprelational();
     }
 
-    private int yyr51() { // relational : relational GREATER_THAN_OR_EQUAL expr
+    private int yyr52() { // relational : relational GREATER_THAN_OR_EQUAL expr
         {
                             yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], ">=");
                         }
@@ -3411,7 +3462,7 @@ class Bitmoji implements BitmojiTokens {
         return yyprelational();
     }
 
-    private int yyr52() { // relational : relational LESS_THAN expr
+    private int yyr53() { // relational : relational LESS_THAN expr
         {
                             yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], "<");
                         }
@@ -3419,7 +3470,7 @@ class Bitmoji implements BitmojiTokens {
         return yyprelational();
     }
 
-    private int yyr53() { // relational : relational LESS_THAN_OR_EQUAL expr
+    private int yyr54() { // relational : relational LESS_THAN_OR_EQUAL expr
         {
                             yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], "<=");
                         }
@@ -3427,15 +3478,15 @@ class Bitmoji implements BitmojiTokens {
         return yyprelational();
     }
 
-    private int yyr54() { // relational : expr
+    private int yyr55() { // relational : expr
         yysp -= 1;
         return yyprelational();
     }
 
     private int yyprelational() {
         switch (yyst[yysp-1]) {
-            case 57: return 78;
-            case 56: return 77;
+            case 57: return 79;
+            case 56: return 78;
             default: return 38;
         }
     }
@@ -3477,9 +3528,9 @@ class Bitmoji implements BitmojiTokens {
 
     private int yypstatement() {
         switch (yyst[yysp-1]) {
-            case 99: return 10;
-            case 97: return 10;
-            case 95: return 10;
+            case 100: return 10;
+            case 98: return 10;
+            case 96: return 10;
             case 49: return 10;
             case 45: return 10;
             case 2: return 10;
@@ -3506,12 +3557,12 @@ class Bitmoji implements BitmojiTokens {
 
     private int yypstmnt_list() {
         switch (yyst[yysp-1]) {
-            case 97: return 101;
-            case 95: return 100;
-            case 49: return 70;
-            case 45: return 68;
+            case 98: return 102;
+            case 96: return 101;
+            case 49: return 71;
+            case 45: return 69;
             case 2: return 11;
-            default: return 102;
+            default: return 103;
         }
     }
 
@@ -3538,8 +3589,8 @@ class Bitmoji implements BitmojiTokens {
 
     private int yypterm() {
         switch (yyst[yysp-1]) {
-            case 59: return 80;
-            case 58: return 79;
+            case 59: return 81;
+            case 58: return 80;
             default: return 39;
         }
     }

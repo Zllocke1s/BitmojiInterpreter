@@ -167,14 +167,20 @@ public class BitmojiPT {
     public class OutputNode extends StatementNode
     {
         private Object node;
+        private Boolean newline;
 
-        public OutputNode(Object node) {
+        public OutputNode(Object node, Boolean newline) {
             this.node = node;
+            this.newline = newline;
         }
 
         @Override
         public Object evaluate() {
-            System.out.print(TypeHandler.parseString(node));
+            if (newline) {
+                System.out.println(TypeHandler.parseString(node));
+            } else {
+                System.out.print(TypeHandler.parseString(node));
+            }
             return null;
         }
     }

@@ -119,20 +119,20 @@ public class BitmojiPT {
             if(globalSymbolTable.hasName(name))
             {
                 HashMap<Object, Object>map = (HashMap<Object, Object>)globalSymbolTable.getValue(name);
-                if(map.containsKey(index))
+                if(map.containsKey(TypeHandler.evaluate(index)))
                 {
-                    map.replace(index, TypeHandler.evaluate(expression));
+                    map.replace(TypeHandler.evaluate(index), TypeHandler.evaluate(expression));
                 }
                 else
                 {
-                    map.put(index, TypeHandler.evaluate(expression));
+                    map.put(TypeHandler.evaluate(index), TypeHandler.evaluate(expression));
                 }
                 globalSymbolTable.assignValue(name, map);
             }
             else
             {
                 HashMap<Object, Object> newMap = new HashMap<>();
-                newMap.put(index, TypeHandler.evaluate(expression));
+                newMap.put(TypeHandler.evaluate(index), TypeHandler.evaluate(expression));
                 globalSymbolTable.assignValue(name, newMap);
             }
 
@@ -140,7 +140,7 @@ public class BitmojiPT {
 
         @Override
         public Object evaluate() {
-            return ((HashMap<Object, Object>)(globalSymbolTable.getValue(name))).get(index);
+            return ((HashMap<Object, Object>)(globalSymbolTable.getValue(name))).get(TypeHandler.evaluate(index));
         }
     }
 

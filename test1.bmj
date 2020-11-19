@@ -1,6 +1,13 @@
 🎃
-    abcd🤜0.1🤛 🚸 🕷Hello, world🕷
-    abcd🤜1🤛 🚸 3
-    ➡ abcd🤜0.1🤛
-    ➡ abcd🤜1🤛
+    count 🚸 0
+    ♻ 10 🥃 count
+        arr🤜count🤛 🚸 count 🤺 count
+        count 🚸 count 🎄 1
+    🛑
+    count 🚸 0
+    ♻ 10 🥃 count
+        ➡ arr🤜count🤛
+        ➡ 🕷, 🕷
+        count 🚸 count 🎄 1
+    🛑
 ☣

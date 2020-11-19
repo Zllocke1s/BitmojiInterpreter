@@ -60,7 +60,7 @@ public class BitmojiPT {
         @Override
         public Object evaluate() {
             ReferenceNode referenceNode = new ReferenceNode(name);
-            referenceNode.setValue(expression);
+            referenceNode.setValue(this.expression);
             return null;
         }
     }
@@ -197,6 +197,20 @@ public class BitmojiPT {
         public Object evaluate() {
             node.setValue((new Scanner(System.in)).nextLine());
             return null;
+        }
+    }
+
+    public class GroupNode implements PTNode
+    {
+        Object expression;
+
+        public GroupNode(Object expression) {
+            this.expression = expression;
+        }
+
+        @Override
+        public Object evaluate() {
+            return (TypeHandler.evaluate(expression));
         }
     }
 }

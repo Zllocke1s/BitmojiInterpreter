@@ -111,7 +111,7 @@ public class BitmojiPT {
                     default -> null;
                 };
                 if (result != null) {
-                    if (left instanceof Integer && right instanceof Integer) {
+                    if (TypeHandler.evaluate(left) instanceof Integer && TypeHandler.evaluate(right) instanceof Integer) {
                         return ((Number) result).intValue();
                     }
                     return (Double) result;

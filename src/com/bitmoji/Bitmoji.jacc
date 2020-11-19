@@ -103,6 +103,9 @@ factor                  : factor EXPONENT exp
 	                    ;
 
 exp                     : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS
+                        {
+                            $$ = tree.new GroupNode($2);
+                        }
 	                    | ref
 	                    | function_call
 	                    | REAL_LITERAL

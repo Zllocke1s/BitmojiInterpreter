@@ -1,6 +1,7 @@
 package com.bitmoji;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class BitmojiPT {
 
@@ -62,9 +63,9 @@ public class BitmojiPT {
     public class AssignNode extends StatementNode
     {
         private String name;
-        private PTNode expression;
+        private Object expression;
 
-        public AssignNode(String name, PTNode expression) {
+        public AssignNode(String name, Object expression) {
             this.name = name;
             this.expression = expression;
         }
@@ -85,8 +86,8 @@ public class BitmojiPT {
             this.name = name;
         }
 
-        public void setValue(PTNode expression) {
-            globalSymbolTable.assignValue(name, expression.evaluate());
+        public void setValue(Object expression) {
+            globalSymbolTable.assignValue(name, TypeHandler.evaluate(expression));
         }
 
         @Override
@@ -131,6 +132,36 @@ public class BitmojiPT {
                 parser.yyerror("Invalid type for binary operation.");
                 System.exit(1);
             }
+            return null;
+        }
+    }
+
+    public class OutputNode extends StatementNode
+    {
+        private Object node;
+
+        public OutputNode(Object node) {
+            this.node = node;
+        }
+
+        @Override
+        public Object evaluate() {
+            System.out.print(TypeHandler.parseString(node));
+            return null;
+        }
+    }
+
+    public class InputNode extends StatementNode
+    {
+        private ReferenceNode node;
+
+        public InputNode(ReferenceNode node) {
+            this.node = node;
+        }
+
+        @Override
+        public Object evaluate() {
+            node.setValue((new Scanner(System.in)).nextLine());
             return null;
         }
     }

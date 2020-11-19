@@ -24,7 +24,8 @@
 // Functions
 %token FUNCTION_DEF START_FUNCTION_STATEMENTS END_FUNCTION_STATEMENTS RETURN PARAMETER_COMMA
 // Literals
-%token REAL_LITERAL INT_LITERAL STRING_LITERAL
+%token REAL_LITERAL INT_LITERAL
+%token <String> STRING_LITERAL
 // IO
 %token INPUT OUTPUT
 // Other
@@ -66,6 +67,9 @@ statement               : assignment
 
 ref                     : ID LEFT_BRACKET expr RIGHT_BRACKET
 	                    | ID
+	                    {
+	                        $$ = tree.new ReferenceNode($1.toString());
+	                    }
 	                    ;
 
 		   
@@ -111,20 +115,30 @@ exp                     : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS
                         }
 	                    ;
 	
-assignment              : ID ASSIGN expr
+assignment              : ID ASSIGN assignable
                         {
                             $$ = tree.new AssignNode((String) $1, (BitmojiPT.PTNode) $3);
                         }
 		                ;
 
+assignable              : expr
+                        | STRING_LITERAL
+                        | equality
+                        ;
+
 while_statement         : START_WHILE equality stmnt_list END_WHILE
 				        ;
 				
 input                   : INPUT ref
+                        {
+                            $$ = tree.new InputNode((BitmojiPT.ReferenceNode) $2);
+                        }
 	                    ;
 
-output                  : OUTPUT expr
-                        | OUTPUT STRING_LITERAL
+output                  : OUTPUT assignable
+                        {
+                            $$ = tree.new OutputNode($2);
+                        }
 	                    ;
 
 conditional             : if_statement
@@ -169,6 +183,7 @@ relational              : relational GREATER_THAN expr
 		                | relational LESS_THAN_OR_EQUAL expr
 		                | expr
 		                ;
+
 
 
 %%

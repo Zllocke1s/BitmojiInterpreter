@@ -124,8 +124,7 @@ assignment              : ID ASSIGN assignable
                         }
 		                ;
 
-assignable              : expr
-                        | STRING_LITERAL
+assignable              : STRING_LITERAL
                         | equality
                         ;
 

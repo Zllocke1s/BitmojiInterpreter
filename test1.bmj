@@ -1,8 +1,12 @@
 🎃
-    abcd🤜0🤛 🚸 0
-    👀 🌜abcd🤜0🤛 🍔 0🌛
-    👶
-        ➡ 🕷abcd equals 0🕷
-    🧓
-
+    count 🚸 0
+    ♻ 10 🥃 count
+        arr🤜count🤛 🚸 count 🤺 count
+        count 🚸 count 🎄 1
+    🛑
+    count 🚸 0
+    ♻ 10 🥃 count
+        ➡ arr🤜count🤛
+        count 🚸 count 🎄 1
+    🛑
 ☣

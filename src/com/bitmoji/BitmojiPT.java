@@ -309,11 +309,16 @@ public class BitmojiPT {
             this.statements = statements;
         }
 
+        public boolean conditionEval() {
+            return TypeHandler.parseBoolean(condition);
+        }
+
         @Override
         public Object evaluate() {
             try {
                 if (TypeHandler.parseBoolean(condition)) {
                     statements.evaluate();
+
                     return true;
                 }
                 else

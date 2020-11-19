@@ -1,4 +1,4 @@
-// Output created by jacc on Tue Nov 17 23:46:27 CST 2020
+// Output created by jacc on Wed Nov 18 20:11:25 CST 2020
 
 package com.bitmoji;
 
@@ -804,7 +804,7 @@ class Bitmoji implements BitmojiTokens {
                 case 163:
                     switch (yytok) {
                         case ID:
-                            yyn = 30;
+                            yyn = 37;
                             continue;
                         case INT_LITERAL:
                             yyn = 38;
@@ -831,7 +831,7 @@ class Bitmoji implements BitmojiTokens {
                 case 164:
                     switch (yytok) {
                         case ID:
-                            yyn = 30;
+                            yyn = 37;
                             continue;
                         case INT_LITERAL:
                             yyn = 38;
@@ -858,7 +858,7 @@ class Bitmoji implements BitmojiTokens {
                 case 165:
                     switch (yytok) {
                         case ID:
-                            yyn = 30;
+                            yyn = 37;
                             continue;
                         case INT_LITERAL:
                             yyn = 38;
@@ -885,7 +885,7 @@ class Bitmoji implements BitmojiTokens {
                 case 166:
                     switch (yytok) {
                         case ID:
-                            yyn = 30;
+                            yyn = 37;
                             continue;
                         case INT_LITERAL:
                             yyn = 38;
@@ -912,7 +912,7 @@ class Bitmoji implements BitmojiTokens {
                 case 167:
                     switch (yytok) {
                         case ID:
-                            yyn = 30;
+                            yyn = 37;
                             continue;
                         case INT_LITERAL:
                             yyn = 38;
@@ -1979,28 +1979,23 @@ class Bitmoji implements BitmojiTokens {
 
     private int yys30() {
         switch (yytok) {
-            case INTEGER_DECL:
-            case ELIF:
-            case START_PROGRAM:
-            case REAL_DECL:
-            case ELSE:
-            case START_FUNCTION_STATEMENTS:
-            case STRING_LITERAL:
-            case START_THEN:
-            case REAL_LITERAL:
-            case ARRAY_DECL:
-            case END_FUNCTION_STATEMENTS:
-            case ASSIGN:
-            case ENDINPUT:
-            case LEFT_PARENTHESIS:
-            case error:
-            case INT_LITERAL:
-            case STRING_DECL:
-                return 221;
             case LEFT_BRACKET:
                 return 53;
+            case RETURN:
+            case PARAMETER_COMMA:
+            case OUTPUT:
+            case FUNCTION_DEF:
+            case END_WHILE:
+            case START_WHILE:
+            case INPUT:
+            case END_THEN:
+            case IF:
+            case RIGHT_PARENTHESIS:
+            case ID:
+            case END_PROGRAM:
+                return yyr12();
         }
-        return yyr12();
+        return 221;
     }
 
     private int yys31() {
@@ -2026,7 +2021,7 @@ class Bitmoji implements BitmojiTokens {
             case ELIF:
                 return 221;
         }
-        return yyr21();
+        return yyr20();
     }
 
     private int yys32() {
@@ -2075,34 +2070,33 @@ class Bitmoji implements BitmojiTokens {
             case EXPONENT:
                 return 56;
         }
-        return yyr19();
+        return yyr18();
     }
 
     private int yys34() {
         switch (yytok) {
-            case GREATER_THAN_OR_EQUAL:
-            case GREATER_THAN:
-            case OUTPUT:
-            case NOT_EQUALS:
-            case FUNCTION_DEF:
-            case LESS_THAN_OR_EQUAL:
-            case LESS_THAN:
-            case RETURN:
-            case EQUALS:
-            case SUBTRACT:
-            case END_WHILE:
-            case START_WHILE:
-            case INPUT:
-            case END_THEN:
-            case IF:
-            case RIGHT_PARENTHESIS:
-            case RIGHT_BRACKET:
-            case ID:
-            case END_PROGRAM:
-            case ADD:
-                return yyr16();
+            case REAL_DECL:
+            case LEFT_BRACKET:
+            case START_PROGRAM:
+            case REAL_LITERAL:
+            case ELSE:
+            case LEFT_PARENTHESIS:
+            case STRING_LITERAL:
+            case START_THEN:
+            case START_FUNCTION_STATEMENTS:
+            case ARRAY_DECL:
+            case PARAMETER_COMMA:
+            case ASSIGN:
+            case END_FUNCTION_STATEMENTS:
+            case ENDINPUT:
+            case error:
+            case INT_LITERAL:
+            case STRING_DECL:
+            case INTEGER_DECL:
+            case ELIF:
+                return 221;
         }
-        return 221;
+        return yyr23();
     }
 
     private int yys35() {
@@ -2128,7 +2122,7 @@ class Bitmoji implements BitmojiTokens {
             case ELIF:
                 return 221;
         }
-        return yyr23();
+        return yyr22();
     }
 
     private int yys36() {
@@ -2427,29 +2421,28 @@ class Bitmoji implements BitmojiTokens {
 
     private int yys72() {
         switch (yytok) {
-            case GREATER_THAN_OR_EQUAL:
-            case GREATER_THAN:
-            case OUTPUT:
-            case NOT_EQUALS:
-            case FUNCTION_DEF:
-            case LESS_THAN_OR_EQUAL:
-            case LESS_THAN:
-            case RETURN:
-            case EQUALS:
-            case SUBTRACT:
-            case END_WHILE:
-            case START_WHILE:
-            case INPUT:
-            case END_THEN:
-            case IF:
-            case RIGHT_PARENTHESIS:
-            case RIGHT_BRACKET:
-            case ID:
-            case END_PROGRAM:
-            case ADD:
-                return yyr39();
+            case REAL_DECL:
+            case LEFT_BRACKET:
+            case START_PROGRAM:
+            case REAL_LITERAL:
+            case ELSE:
+            case LEFT_PARENTHESIS:
+            case STRING_LITERAL:
+            case START_THEN:
+            case START_FUNCTION_STATEMENTS:
+            case ARRAY_DECL:
+            case PARAMETER_COMMA:
+            case ASSIGN:
+            case END_FUNCTION_STATEMENTS:
+            case ENDINPUT:
+            case error:
+            case INT_LITERAL:
+            case STRING_DECL:
+            case INTEGER_DECL:
+            case ELIF:
+                return 221;
         }
-        return 221;
+        return yyr39();
     }
 
     private int yys75() {
@@ -2537,7 +2530,7 @@ class Bitmoji implements BitmojiTokens {
             case ELIF:
                 return 221;
         }
-        return yyr20();
+        return yyr19();
     }
 
     private int yys78() {
@@ -2565,7 +2558,7 @@ class Bitmoji implements BitmojiTokens {
             case EXPONENT:
                 return 56;
         }
-        return yyr18();
+        return yyr17();
     }
 
     private int yys79() {
@@ -2593,7 +2586,7 @@ class Bitmoji implements BitmojiTokens {
             case EXPONENT:
                 return 56;
         }
-        return yyr17();
+        return yyr16();
     }
 
     private int yys80() {
@@ -2619,7 +2612,7 @@ class Bitmoji implements BitmojiTokens {
             case ELIF:
                 return 221;
         }
-        return yyr22();
+        return yyr21();
     }
 
     private int yys81() {
@@ -3015,7 +3008,7 @@ class Bitmoji implements BitmojiTokens {
 
     private int yyr1() { // program : START_PROGRAM stmnt_list END_PROGRAM
         {
-
+                            program = (BitmojiPT.StatementListNode) yysv[yysp-2];
                         }
         yysv[yysp-=3] = yyrv;
         return 1;
@@ -3089,23 +3082,34 @@ class Bitmoji implements BitmojiTokens {
         }
     }
 
-    private int yyr22() { // exp : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS
+    private int yyr21() { // exp : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS
         yysp -= 3;
         return yypexp();
     }
 
-    private int yyr23() { // exp : ref
+    private int yyr22() { // exp : ref
+        yysp -= 1;
+        return yypexp();
+    }
+
+    private int yyr23() { // exp : function_call
         yysp -= 1;
         return yypexp();
     }
 
     private int yyr24() { // exp : REAL_LITERAL
-        yysp -= 1;
+        {
+                            yyrv = tree.new BMReal((Double) yysv[yysp-1]);
+                        }
+        yysv[yysp-=1] = yyrv;
         return yypexp();
     }
 
     private int yyr25() { // exp : INT_LITERAL
-        yysp -= 1;
+        {
+                            yyrv = tree.new BMInteger((Integer) yysv[yysp-1]);
+                        }
+        yysv[yysp-=1] = yyrv;
         return yypexp();
     }
 
@@ -3117,21 +3121,22 @@ class Bitmoji implements BitmojiTokens {
     }
 
     private int yyr13() { // expr : expr ADD term
-        yysp -= 3;
+        {
+                            yyrv = tree.new BinaryOperatorNode((BitmojiPT.PTNode) yysv[yysp-3], (BitmojiPT.PTNode) yysv[yysp-1], "+");
+                        }
+        yysv[yysp-=3] = yyrv;
         return yypexpr();
     }
 
     private int yyr14() { // expr : expr SUBTRACT term
-        yysp -= 3;
+        {
+                            yyrv = tree.new BinaryOperatorNode((BitmojiPT.PTNode) yysv[yysp-3], (BitmojiPT.PTNode) yysv[yysp-1], "-");
+                        }
+        yysv[yysp-=3] = yyrv;
         return yypexpr();
     }
 
     private int yyr15() { // expr : term
-        yysp -= 1;
-        return yypexpr();
-    }
-
-    private int yyr16() { // expr : function_call
         yysp -= 1;
         return yypexpr();
     }
@@ -3151,12 +3156,15 @@ class Bitmoji implements BitmojiTokens {
         }
     }
 
-    private int yyr20() { // factor : factor EXPONENT exp
-        yysp -= 3;
+    private int yyr19() { // factor : factor EXPONENT exp
+        {
+                            yyrv = tree.new BinaryOperatorNode((BitmojiPT.PTNode) yysv[yysp-3], (BitmojiPT.PTNode) yysv[yysp-1], "**");
+                        }
+        yysv[yysp-=3] = yyrv;
         return yypfactor();
     }
 
-    private int yyr21() { // factor : exp
+    private int yyr20() { // factor : exp
         yysp -= 1;
         return yypfactor();
     }
@@ -3224,7 +3232,10 @@ class Bitmoji implements BitmojiTokens {
     }
 
     private int yyr26() { // assignment : ID ASSIGN expr
-        yysp -= 3;
+        {
+                            yyrv = tree.new AssignNode((String) yysv[yysp-3], (BitmojiPT.PTNode) yysv[yysp-1]);
+                        }
+        yysv[yysp-=3] = yyrv;
         return 9;
     }
 
@@ -3338,12 +3349,19 @@ class Bitmoji implements BitmojiTokens {
     }
 
     private int yyr2() { // stmnt_list : stmnt_list statement
-        yysp -= 2;
+        {
+                            ((BitmojiPT.StatementListNode) yysv[yysp-2]).add((BitmojiPT.StatementNode) yysv[yysp-1]);
+                            yyrv = yysv[yysp-2];
+                        }
+        yysv[yysp-=2] = yyrv;
         return yypstmnt_list();
     }
 
     private int yyr3() { // stmnt_list : statement
-        yysp -= 1;
+        {
+                                        yyrv = tree.new StatementListNode((BitmojiPT.StatementNode) yysv[yysp-1]);
+                                    }
+        yysv[yysp-=1] = yyrv;
         return yypstmnt_list();
     }
 
@@ -3358,17 +3376,23 @@ class Bitmoji implements BitmojiTokens {
         }
     }
 
-    private int yyr17() { // term : term MULTIPLY factor
-        yysp -= 3;
+    private int yyr16() { // term : term MULTIPLY factor
+        {
+                            yyrv = tree.new BinaryOperatorNode((BitmojiPT.PTNode) yysv[yysp-3], (BitmojiPT.PTNode) yysv[yysp-1], "*");
+                        }
+        yysv[yysp-=3] = yyrv;
         return yypterm();
     }
 
-    private int yyr18() { // term : term DIVIDE factor
-        yysp -= 3;
+    private int yyr17() { // term : term DIVIDE factor
+        {
+                            yyrv = tree.new BinaryOperatorNode((BitmojiPT.PTNode) yysv[yysp-3], (BitmojiPT.PTNode) yysv[yysp-1], "/");
+                        }
+        yysv[yysp-=3] = yyrv;
         return yypterm();
     }
 
-    private int yyr19() { // term : factor
+    private int yyr18() { // term : factor
         yysp -= 1;
         return yypterm();
     }
@@ -3397,8 +3421,8 @@ class Bitmoji implements BitmojiTokens {
     private BitmojiLexer lexer;
     private int token;
     private Object yylvalue;
-    private BitmojiParseTree tree;
-    private BitmojiParseTree.ProgramNode program;
+    private BitmojiPT tree;
+    private BitmojiPT.PTNode program;
 
     public int yynext() {
         lexer.next();
@@ -3414,14 +3438,12 @@ class Bitmoji implements BitmojiTokens {
 
     public Bitmoji(java.io.InputStream in) {
         lexer = new BitmojiLexer(in);
-        tree = new BitmojiParseTree(this);
+        tree = new BitmojiPT(this);
     }
 
-
-    public BitmojiParseTree.ProgramNode getProgram() {
+    public BitmojiPT.PTNode getProgram() {
         return program;
     }
-
 
     public static void main(String [] args) {
         boolean interpret = true;
@@ -3429,39 +3451,14 @@ class Bitmoji implements BitmojiTokens {
         boolean compile = false;
         String filename="";
 
-        //process command line
-        for(int i=0; i<args.length; i++) {
-            if(args[i].equals("-c")) {
-                interpret = false;
-                compile = true;
-            } else if(args[i].equals("-t")) {
-                printTree = true;
-            } else {
-                filename = args[i];
-            }
-        }
+        filename = args[0];
 
         try {
             Bitmoji parser = new Bitmoji(new java.io.FileInputStream(filename));
             parser.yynext();
             parser.parse();
- 
-            //print the tree
-            if(printTree) {
-                parser.getProgram().print("");
-            }
 
-            //interpret the code
-            if(interpret) {
-                parser.getProgram().evaluate();
-            }
-
-            //compile the code to c
-            if(compile) {
-                java.io.FileOutputStream file = new java.io.FileOutputStream(filename.split("\\.")[0] + ".c");
-                file.write(parser.getProgram().generate().getBytes());
-                file.close();
-            }
+            parser.getProgram().evaluate();
 
         } catch(java.io.FileNotFoundException e) {
             System.err.println("Could not open file.");

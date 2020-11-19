@@ -37,6 +37,9 @@ public interface TypeHandler {
             return ((Double) node).toString();
         } else if (node instanceof String) {
             return ((String) node);
+        } else if (node instanceof Boolean) {
+            // TODO: If we add boolean literals, outputting their emojis would be done here.
+            return ((Boolean) node).toString();
         } else {
             throw new IllegalArgumentException();
         }

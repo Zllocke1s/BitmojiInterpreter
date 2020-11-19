@@ -1,4 +1,4 @@
-// Output created by jacc on Wed Nov 18 23:05:50 CST 2020
+// Output created by jacc on Thu Nov 19 10:43:05 CST 2020
 
 package com.bitmoji;
 
@@ -3162,12 +3162,18 @@ class Bitmoji implements BitmojiTokens {
     }
 
     private int yyr47() { // equality : equality EQUALS relational
-        yysp -= 3;
+        {
+                            yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], "==");
+                        }
+        yysv[yysp-=3] = yyrv;
         return yypequality();
     }
 
     private int yyr48() { // equality : equality NOT_EQUALS relational
-        yysp -= 3;
+        {
+                            yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], "!=");
+                        }
+        yysv[yysp-=3] = yyrv;
         return yypequality();
     }
 
@@ -3390,22 +3396,34 @@ class Bitmoji implements BitmojiTokens {
     }
 
     private int yyr50() { // relational : relational GREATER_THAN expr
-        yysp -= 3;
+        {
+                            yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], ">");
+                        }
+        yysv[yysp-=3] = yyrv;
         return yyprelational();
     }
 
     private int yyr51() { // relational : relational GREATER_THAN_OR_EQUAL expr
-        yysp -= 3;
+        {
+                            yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], ">=");
+                        }
+        yysv[yysp-=3] = yyrv;
         return yyprelational();
     }
 
     private int yyr52() { // relational : relational LESS_THAN expr
-        yysp -= 3;
+        {
+                            yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], "<");
+                        }
+        yysv[yysp-=3] = yyrv;
         return yyprelational();
     }
 
     private int yyr53() { // relational : relational LESS_THAN_OR_EQUAL expr
-        yysp -= 3;
+        {
+                            yyrv = tree.new BinaryOperatorNode(yysv[yysp-3], yysv[yysp-1], "<=");
+                        }
+        yysv[yysp-=3] = yyrv;
         return yyprelational();
     }
 

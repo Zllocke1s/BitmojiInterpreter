@@ -27,6 +27,18 @@ public interface TypeHandler {
             throw new IllegalArgumentException();
         }
     }
+
+    static Boolean parseBoolean(Object node) {
+        if (node instanceof BitmojiPT.PTNode) {
+            return parseBoolean(((BitmojiPT.PTNode) node).evaluate());
+        }
+        if (node instanceof Boolean) {
+            return ((Boolean) node);
+        } else {
+            throw new IllegalArgumentException();
+        }
+    }
+
     static String parseString(Object node) {
         if (node instanceof BitmojiPT.PTNode) {
             return parseString(((BitmojiPT.PTNode) node).evaluate());

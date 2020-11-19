@@ -47,19 +47,6 @@ public class BitmojiPT {
         }
     }
 
-    public class ProgramNode implements PTNode {
-        private final StatementListNode statementList;
-
-        public ProgramNode(StatementListNode statementList) {
-            this.statementList = statementList;
-        }
-
-        public Object evaluate() {
-            statementList.evaluate();
-            return null;
-        }
-    }
-
     public class AssignNode extends StatementNode
     {
         private String name;
@@ -108,8 +95,7 @@ public class BitmojiPT {
             this.operator = operator;
         }
 
-        @Override
-        public Object evaluate() {
+        private Number arithmeticEval() {
             //perform the operation
             Double left_value;
             Double right_value;
@@ -122,14 +108,56 @@ public class BitmojiPT {
                     case "*" -> left_value * right_value;
                     case "/" -> left_value / right_value;
                     case "**" -> Math.pow(left_value, right_value);
-                    default -> (double) 0;
+                    default -> null;
                 };
-                if (left instanceof Integer && right instanceof Integer) {
-                    return ((Number) result).intValue();
+                if (result != null) {
+                    if (left instanceof Integer && right instanceof Integer) {
+                        return ((Number) result).intValue();
+                    }
+                    return (Double) result;
+                } else {
+                    return null;
                 }
-                return (Double) result;
             } catch (IllegalArgumentException ex) {
-                parser.yyerror("Invalid type for binary operation.");
+                return null;
+            }
+        }
+
+        private Boolean conditionalEval() {
+            //perform the operation
+            Double left_value;
+            Double right_value;
+            try {
+                left_value = TypeHandler.parseDouble(left);
+                right_value = TypeHandler.parseDouble(right);
+                Boolean result = switch (operator) {
+                    case "==" -> left_value.equals(right_value);
+                    case "!=" -> !left_value.equals(right_value);
+                    case ">" -> left_value > right_value;
+                    case ">=" -> left_value >= right_value;
+                    case "<" -> left_value < right_value;
+                    case "<=" -> left_value <= right_value;
+                    default -> null;
+                };
+                return result;
+            } catch (IllegalArgumentException ex) {
+                return null;
+            }
+        }
+
+        // TODO: Add concat eval for string '+' operator (Needs to run first and must check type)
+
+        @Override
+        public Object evaluate() {
+            Boolean condition = conditionalEval();
+            if (condition != null) {
+                return condition;
+            }
+            Number result = arithmeticEval();
+            if (result != null) {
+                return result;
+            } else {
+                parser.yyerror("Type error");
                 System.exit(1);
             }
             return null;

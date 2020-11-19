@@ -298,4 +298,33 @@ public class BitmojiPT {
             return null;
         }
     }
+
+    public class IfConditionNode extends StatementNode
+    {
+        Object condition;
+        StatementListNode statements;
+
+        public IfConditionNode(Object condition, StatementListNode statements) {
+            this.condition = condition;
+            this.statements = statements;
+        }
+
+        @Override
+        public Object evaluate() {
+            try {
+                if (TypeHandler.parseBoolean(condition)) {
+                    statements.evaluate();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            } catch (IllegalArgumentException ex) {
+                parser.yyerror("Not a valid boolean expression");
+                System.exit(1);
+            }
+            return null;
+        }
+    }
 }

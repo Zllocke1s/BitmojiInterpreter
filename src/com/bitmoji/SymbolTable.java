@@ -1,6 +1,6 @@
 package com.bitmoji;
 
-public class SymbolTable implements BitmojiParseTree.PTNode
+public class SymbolTable implements BitmojiPT.PTNode
 {
     //the map of objects
     private java.util.Map<String, Object> map;

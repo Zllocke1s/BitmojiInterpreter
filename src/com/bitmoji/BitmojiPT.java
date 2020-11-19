@@ -2,12 +2,12 @@ package com.bitmoji;
 
 import java.util.ArrayList;
 
-public class BitmojiParseTree {
+public class BitmojiPT {
 
     private Bitmoji parser;
     private SymbolTable globalSymbolTable;
 
-    public BitmojiParseTree(Bitmoji parser) {
+    public BitmojiPT(Bitmoji parser) {
         this.parser = parser;
         globalSymbolTable = new SymbolTable();
     }
@@ -61,17 +61,18 @@ public class BitmojiParseTree {
 
     public class AssignNode extends StatementNode
     {
-        private ReferenceNode referenceNode;
+        private String name;
         private PTNode expression;
 
-        public AssignNode(ReferenceNode referenceNode, PTNode expression) {
-            this.referenceNode = referenceNode;
+        public AssignNode(String name, PTNode expression) {
+            this.name = name;
             this.expression = expression;
         }
 
         @Override
         public Object evaluate() {
-            this.referenceNode.setValue(expression);
+            ReferenceNode referenceNode = new ReferenceNode(name);
+            referenceNode.setValue(expression);
             return null;
         }
     }
@@ -109,34 +110,28 @@ public class BitmojiParseTree {
         @Override
         public Object evaluate() {
             //perform the operation
-            Object left_eval = left.evaluate();
-            Object right_eval = right.evaluate();
-            Double left_val = ((Number) left_eval).doubleValue();
-            Double right_val = ((Number) right_eval).doubleValue();
-
-            Double result = (double) 0;
-
-            switch (operator) {
-                case "-":
-                    result = left_val - right_val;
-                    break;
-                case "+":
-                    result = left_val + right_val;
-                    break;
-                case "*":
-                    result = left_val * right_val;
-                    break;
-                case "/":
-                    result = left_val / right_val;
-                    break;
-                case "**":
-                    result =  Math.pow(left_val, right_val);
-                    break;
+            Double left_value;
+            Double right_value;
+            try {
+                left_value = TypeHandler.parseDouble(left);
+                right_value = TypeHandler.parseDouble(right);
+                Double result = switch (operator) {
+                    case "-" -> left_value - right_value;
+                    case "+" -> left_value + right_value;
+                    case "*" -> left_value * right_value;
+                    case "/" -> left_value / right_value;
+                    case "**" -> Math.pow(left_value, right_value);
+                    default -> (double) 0;
+                };
+                if (TypeHandler.isBMInteger(left) && TypeHandler.isBMInteger(right)) {
+                    return ((Number) result).intValue();
+                }
+                return (Double) result;
+            } catch (IllegalArgumentException ex) {
+                parser.yyerror("Invalid type for binary operation.");
+                System.exit(1);
             }
-            if (left_eval instanceof BMInteger && right_eval instanceof BMInteger) {
-                return result.intValue();
-            }
-            return result;
+            return null;
         }
     }
 

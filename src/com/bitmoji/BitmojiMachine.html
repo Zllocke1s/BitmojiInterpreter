@@ -3,7 +3,7 @@
 <body>
 <h1>Generated machine for Bitmoji</h1>
 <pre>
-// Output created by jacc on Wed Nov 18 10:40:00 CST 2020
+// Output created by jacc on Wed Nov 18 20:11:25 CST 2020
 
 <hr><a name="st0"><b>state 0 (entry on program)</b></a>
     $accept : _program $end
@@ -407,28 +407,23 @@
     ref : ID_LEFT_BRACKET expr RIGHT_BRACKET    (11)
     ref : ID_    (12)
 
-    INTEGER_DECL error
-    ELIF error
-    START_PROGRAM error
-    REAL_DECL error
-    ELSE error
-    START_FUNCTION_STATEMENTS error
-    STRING_LITERAL error
-    START_THEN error
-    REAL_LITERAL error
-    ARRAY_DECL error
-    END_FUNCTION_STATEMENTS error
-    ASSIGN error
-    $end error
-    LEFT_PARENTHESIS error
-    error error
-    INT_LITERAL error
-    STRING_DECL error
     LEFT_BRACKET <a href="#st53">shift 53</a>
-    . reduce 12
+    RETURN reduce 12
+    PARAMETER_COMMA reduce 12
+    OUTPUT reduce 12
+    FUNCTION_DEF reduce 12
+    END_WHILE reduce 12
+    START_WHILE reduce 12
+    INPUT reduce 12
+    END_THEN reduce 12
+    IF reduce 12
+    RIGHT_PARENTHESIS reduce 12
+    ID reduce 12
+    END_PROGRAM reduce 12
+    . error
 
 <hr><a name="st31"><b>state 31 (entry on exp)</b></a>
-    factor : exp_    (21)
+    factor : exp_    (20)
 
     REAL_DECL error
     LEFT_BRACKET error
@@ -449,7 +444,7 @@
     STRING_DECL error
     INTEGER_DECL error
     ELIF error
-    . reduce 21
+    . reduce 20
 
 <hr><a name="st32"><b>state 32 (entry on expr)</b></a>
     expr : expr_ADD term    (13)
@@ -471,8 +466,8 @@
     . error
 
 <hr><a name="st33"><b>state 33 (entry on factor)</b></a>
-    factor : factor_EXPONENT exp    (20)
-    term : factor_    (19)
+    factor : factor_EXPONENT exp    (19)
+    term : factor_    (18)
 
     REAL_DECL error
     LEFT_BRACKET error
@@ -494,35 +489,10 @@
     INTEGER_DECL error
     ELIF error
     EXPONENT <a href="#st56">shift 56</a>
-    . reduce 19
+    . reduce 18
 
 <hr><a name="st34"><b>state 34 (entry on function_call)</b></a>
-    expr : function_call_    (16)
-
-    GREATER_THAN_OR_EQUAL reduce 16
-    GREATER_THAN reduce 16
-    OUTPUT reduce 16
-    NOT_EQUALS reduce 16
-    FUNCTION_DEF reduce 16
-    LESS_THAN_OR_EQUAL reduce 16
-    LESS_THAN reduce 16
-    RETURN reduce 16
-    EQUALS reduce 16
-    SUBTRACT reduce 16
-    END_WHILE reduce 16
-    START_WHILE reduce 16
-    INPUT reduce 16
-    END_THEN reduce 16
-    IF reduce 16
-    RIGHT_PARENTHESIS reduce 16
-    RIGHT_BRACKET reduce 16
-    ID reduce 16
-    END_PROGRAM reduce 16
-    ADD reduce 16
-    . error
-
-<hr><a name="st35"><b>state 35 (entry on ref)</b></a>
-    exp : ref_    (23)
+    exp : function_call_    (23)
 
     REAL_DECL error
     LEFT_BRACKET error
@@ -545,10 +515,34 @@
     ELIF error
     . reduce 23
 
+<hr><a name="st35"><b>state 35 (entry on ref)</b></a>
+    exp : ref_    (22)
+
+    REAL_DECL error
+    LEFT_BRACKET error
+    START_PROGRAM error
+    REAL_LITERAL error
+    ELSE error
+    LEFT_PARENTHESIS error
+    STRING_LITERAL error
+    START_THEN error
+    START_FUNCTION_STATEMENTS error
+    ARRAY_DECL error
+    PARAMETER_COMMA error
+    ASSIGN error
+    END_FUNCTION_STATEMENTS error
+    $end error
+    error error
+    INT_LITERAL error
+    STRING_DECL error
+    INTEGER_DECL error
+    ELIF error
+    . reduce 22
+
 <hr><a name="st36"><b>state 36 (entry on term)</b></a>
     expr : term_    (15)
-    term : term_MULTIPLY factor    (17)
-    term : term_DIVIDE factor    (18)
+    term : term_MULTIPLY factor    (16)
+    term : term_DIVIDE factor    (17)
 
     DIVIDE <a href="#st57">shift 57</a>
     MULTIPLY <a href="#st58">shift 58</a>
@@ -625,7 +619,7 @@
     . reduce 25
 
 <hr><a name="st39"><b>state 39 (entry on LEFT_PARENTHESIS)</b></a>
-    exp : LEFT_PARENTHESIS_expr RIGHT_PARENTHESIS    (22)
+    exp : LEFT_PARENTHESIS_expr RIGHT_PARENTHESIS    (21)
 
     ID <a href="#st37">shift 37</a>
     INT_LITERAL <a href="#st38">shift 38</a>
@@ -876,7 +870,7 @@
 <hr><a name="st54"><b>state 54 (entry on ADD)</b></a>
     expr : expr ADD_term    (13)
 
-    ID <a href="#st30">shift 30</a>
+    ID <a href="#st37">shift 37</a>
     INT_LITERAL <a href="#st38">shift 38</a>
     LEFT_PARENTHESIS <a href="#st39">shift 39</a>
     REAL_LITERAL <a href="#st40">shift 40</a>
@@ -884,13 +878,14 @@
 
     exp <a href="#st31">goto 31</a>
     factor <a href="#st33">goto 33</a>
+    function_call <a href="#st34">goto 34</a>
     ref <a href="#st35">goto 35</a>
     term <a href="#st75">goto 75</a>
 
 <hr><a name="st55"><b>state 55 (entry on SUBTRACT)</b></a>
     expr : expr SUBTRACT_term    (14)
 
-    ID <a href="#st30">shift 30</a>
+    ID <a href="#st37">shift 37</a>
     INT_LITERAL <a href="#st38">shift 38</a>
     LEFT_PARENTHESIS <a href="#st39">shift 39</a>
     REAL_LITERAL <a href="#st40">shift 40</a>
@@ -898,25 +893,27 @@
 
     exp <a href="#st31">goto 31</a>
     factor <a href="#st33">goto 33</a>
+    function_call <a href="#st34">goto 34</a>
     ref <a href="#st35">goto 35</a>
     term <a href="#st76">goto 76</a>
 
 <hr><a name="st56"><b>state 56 (entry on EXPONENT)</b></a>
-    factor : factor EXPONENT_exp    (20)
+    factor : factor EXPONENT_exp    (19)
 
-    ID <a href="#st30">shift 30</a>
+    ID <a href="#st37">shift 37</a>
     INT_LITERAL <a href="#st38">shift 38</a>
     LEFT_PARENTHESIS <a href="#st39">shift 39</a>
     REAL_LITERAL <a href="#st40">shift 40</a>
     . error
 
     exp <a href="#st77">goto 77</a>
+    function_call <a href="#st34">goto 34</a>
     ref <a href="#st35">goto 35</a>
 
 <hr><a name="st57"><b>state 57 (entry on DIVIDE)</b></a>
-    term : term DIVIDE_factor    (18)
+    term : term DIVIDE_factor    (17)
 
-    ID <a href="#st30">shift 30</a>
+    ID <a href="#st37">shift 37</a>
     INT_LITERAL <a href="#st38">shift 38</a>
     LEFT_PARENTHESIS <a href="#st39">shift 39</a>
     REAL_LITERAL <a href="#st40">shift 40</a>
@@ -924,12 +921,13 @@
 
     exp <a href="#st31">goto 31</a>
     factor <a href="#st78">goto 78</a>
+    function_call <a href="#st34">goto 34</a>
     ref <a href="#st35">goto 35</a>
 
 <hr><a name="st58"><b>state 58 (entry on MULTIPLY)</b></a>
-    term : term MULTIPLY_factor    (17)
+    term : term MULTIPLY_factor    (16)
 
-    ID <a href="#st30">shift 30</a>
+    ID <a href="#st37">shift 37</a>
     INT_LITERAL <a href="#st38">shift 38</a>
     LEFT_PARENTHESIS <a href="#st39">shift 39</a>
     REAL_LITERAL <a href="#st40">shift 40</a>
@@ -937,10 +935,11 @@
 
     exp <a href="#st31">goto 31</a>
     factor <a href="#st79">goto 79</a>
+    function_call <a href="#st34">goto 34</a>
     ref <a href="#st35">goto 35</a>
 
 <hr><a name="st59"><b>state 59 (entry on expr)</b></a>
-    exp : LEFT_PARENTHESIS expr_RIGHT_PARENTHESIS    (22)
+    exp : LEFT_PARENTHESIS expr_RIGHT_PARENTHESIS    (21)
     expr : expr_ADD term    (13)
     expr : expr_SUBTRACT term    (14)
 
@@ -1130,27 +1129,26 @@
 <hr><a name="st72"><b>state 72 (entry on RIGHT_PARENTHESIS)</b></a>
     function_call : ID LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS_    (39)
 
-    GREATER_THAN_OR_EQUAL reduce 39
-    GREATER_THAN reduce 39
-    OUTPUT reduce 39
-    NOT_EQUALS reduce 39
-    FUNCTION_DEF reduce 39
-    LESS_THAN_OR_EQUAL reduce 39
-    LESS_THAN reduce 39
-    RETURN reduce 39
-    EQUALS reduce 39
-    SUBTRACT reduce 39
-    END_WHILE reduce 39
-    START_WHILE reduce 39
-    INPUT reduce 39
-    END_THEN reduce 39
-    IF reduce 39
-    RIGHT_PARENTHESIS reduce 39
-    RIGHT_BRACKET reduce 39
-    ID reduce 39
-    END_PROGRAM reduce 39
-    ADD reduce 39
-    . error
+    REAL_DECL error
+    LEFT_BRACKET error
+    START_PROGRAM error
+    REAL_LITERAL error
+    ELSE error
+    LEFT_PARENTHESIS error
+    STRING_LITERAL error
+    START_THEN error
+    START_FUNCTION_STATEMENTS error
+    ARRAY_DECL error
+    PARAMETER_COMMA error
+    ASSIGN error
+    END_FUNCTION_STATEMENTS error
+    $end error
+    error error
+    INT_LITERAL error
+    STRING_DECL error
+    INTEGER_DECL error
+    ELIF error
+    . reduce 39
 
 <hr><a name="st73"><b>state 73 (entry on RIGHT_PARENTHESIS)</b></a>
     if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS_START_THEN stmnt_list END_THEN    (35)
@@ -1170,8 +1168,8 @@
 
 <hr><a name="st75"><b>state 75 (entry on term)</b></a>
     expr : expr ADD term_    (13)
-    term : term_MULTIPLY factor    (17)
-    term : term_DIVIDE factor    (18)
+    term : term_MULTIPLY factor    (16)
+    term : term_DIVIDE factor    (17)
 
     DIVIDE <a href="#st57">shift 57</a>
     MULTIPLY <a href="#st58">shift 58</a>
@@ -1199,8 +1197,8 @@
 
 <hr><a name="st76"><b>state 76 (entry on term)</b></a>
     expr : expr SUBTRACT term_    (14)
-    term : term_MULTIPLY factor    (17)
-    term : term_DIVIDE factor    (18)
+    term : term_MULTIPLY factor    (16)
+    term : term_DIVIDE factor    (17)
 
     DIVIDE <a href="#st57">shift 57</a>
     MULTIPLY <a href="#st58">shift 58</a>
@@ -1227,7 +1225,7 @@
     . error
 
 <hr><a name="st77"><b>state 77 (entry on exp)</b></a>
-    factor : factor EXPONENT exp_    (20)
+    factor : factor EXPONENT exp_    (19)
 
     REAL_DECL error
     LEFT_BRACKET error
@@ -1248,37 +1246,11 @@
     STRING_DECL error
     INTEGER_DECL error
     ELIF error
-    . reduce 20
+    . reduce 19
 
 <hr><a name="st78"><b>state 78 (entry on factor)</b></a>
-    factor : factor_EXPONENT exp    (20)
-    term : term DIVIDE factor_    (18)
-
-    REAL_DECL error
-    LEFT_BRACKET error
-    START_PROGRAM error
-    REAL_LITERAL error
-    LEFT_PARENTHESIS error
-    $end error
-    STRING_LITERAL error
-    START_THEN error
-    START_FUNCTION_STATEMENTS error
-    ARRAY_DECL error
-    ELSE error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    ASSIGN error
-    error error
-    INT_LITERAL error
-    STRING_DECL error
-    INTEGER_DECL error
-    ELIF error
-    EXPONENT <a href="#st56">shift 56</a>
-    . reduce 18
-
-<hr><a name="st79"><b>state 79 (entry on factor)</b></a>
-    factor : factor_EXPONENT exp    (20)
-    term : term MULTIPLY factor_    (17)
+    factor : factor_EXPONENT exp    (19)
+    term : term DIVIDE factor_    (17)
 
     REAL_DECL error
     LEFT_BRACKET error
@@ -1302,8 +1274,34 @@
     EXPONENT <a href="#st56">shift 56</a>
     . reduce 17
 
+<hr><a name="st79"><b>state 79 (entry on factor)</b></a>
+    factor : factor_EXPONENT exp    (19)
+    term : term MULTIPLY factor_    (16)
+
+    REAL_DECL error
+    LEFT_BRACKET error
+    START_PROGRAM error
+    REAL_LITERAL error
+    LEFT_PARENTHESIS error
+    $end error
+    STRING_LITERAL error
+    START_THEN error
+    START_FUNCTION_STATEMENTS error
+    ARRAY_DECL error
+    ELSE error
+    PARAMETER_COMMA error
+    END_FUNCTION_STATEMENTS error
+    ASSIGN error
+    error error
+    INT_LITERAL error
+    STRING_DECL error
+    INTEGER_DECL error
+    ELIF error
+    EXPONENT <a href="#st56">shift 56</a>
+    . reduce 16
+
 <hr><a name="st80"><b>state 80 (entry on RIGHT_PARENTHESIS)</b></a>
-    exp : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS_    (22)
+    exp : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS_    (21)
 
     REAL_DECL error
     LEFT_BRACKET error
@@ -1324,7 +1322,7 @@
     STRING_DECL error
     INTEGER_DECL error
     ELIF error
-    . reduce 22
+    . reduce 21
 
 <hr><a name="st81"><b>state 81 (entry on END_WHILE)</b></a>
     while_statement : START_WHILE equality stmnt_list END_WHILE_    (27)

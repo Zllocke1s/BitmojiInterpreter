@@ -36,108 +36,139 @@
 //////////////////////////////////////////
 // Grammar Rules
 //////////////////////////////////////////
-program : START_PROGRAM stmnt_list END_PROGRAM
+program                 : START_PROGRAM stmnt_list END_PROGRAM
                         {
-
+                            program = (BitmojiPT.StatementListNode) $2;
                         }
                         ;
 
-stmnt_list : stmnt_list statement
-			| statement
-			;
+stmnt_list              : stmnt_list statement
+                        {
+                            ((BitmojiPT.StatementListNode) $1).add((BitmojiPT.StatementNode) $2);
+                            $$ = $1;
+                        }
+			            | statement
+			            {
+			                $$ = tree.new StatementListNode((BitmojiPT.StatementNode) $1);
+			            }
+			            ;
 
-statement : assignment 
-		  | while_statement
-		  | input
-		  | output
-		  | conditional
-		  | function_call
-		  | function_def //Does this go in the program NT or does it go outside program NT?
-		  ;
+statement               : assignment
+		                | while_statement
+		                | input
+		                | output
+		                | conditional
+		                | function_call
+		                | function_def //Does this go in the program NT or does it go outside program NT?
+		                ;
 
 
 
-ref : ID LEFT_BRACKET expr RIGHT_BRACKET
-	| ID
-	;
+ref                     : ID LEFT_BRACKET expr RIGHT_BRACKET
+	                    | ID
+	                    ;
 
 		   
-expr : expr ADD term
-	 | expr SUBTRACT term
-	 | term
-	 | function_call
-	 ;
+expr                    : expr ADD term
+                        {
+                            $$ = tree.new BinaryOperatorNode((BitmojiPT.PTNode) $1, (BitmojiPT.PTNode) $3, "+");
+                        }
+	                    | expr SUBTRACT term
+                        {
+                            $$ = tree.new BinaryOperatorNode((BitmojiPT.PTNode) $1, (BitmojiPT.PTNode) $3, "-");
+                        }
+	                    | term
+	                    ;
 	 
-term : term MULTIPLY factor
-	 | term DIVIDE factor
-	 | factor
-	 ;
+term                    : term MULTIPLY factor
+                        {
+                            $$ = tree.new BinaryOperatorNode((BitmojiPT.PTNode) $1, (BitmojiPT.PTNode) $3, "*");
+                        }
+	                    | term DIVIDE factor
+                        {
+                            $$ = tree.new BinaryOperatorNode((BitmojiPT.PTNode) $1, (BitmojiPT.PTNode) $3, "/");
+                        }
+	                    | factor
+	                    ;
 	 
-factor : factor EXPONENT exp
-	   | exp
-	   ;
-	   
-exp : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS
-	| ref
-	| REAL_LITERAL
-	| INT_LITERAL
-	;
+factor                  : factor EXPONENT exp
+                        {
+                            $$ = tree.new BinaryOperatorNode((BitmojiPT.PTNode) $1, (BitmojiPT.PTNode) $3, "**");
+                        }
+	                    | exp
+	                    ;
+
+exp                     : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS
+	                    | ref
+	                    | function_call
+	                    | REAL_LITERAL
+	                    {
+                            $$ = tree.new BMReal((Double) $1);
+                        }
+	                    | INT_LITERAL
+	                    {
+                            $$ = tree.new BMInteger((Integer) $1);
+                        }
+	                    ;
 	
-assignment : ID ASSIGN expr
-		   ;
+assignment              : ID ASSIGN expr
+                        {
+                            $$ = tree.new AssignNode((String) $1, (BitmojiPT.PTNode) $3);
+                        }
+		                ;
 
-while_statement : START_WHILE equality stmnt_list END_WHILE
-				;
+while_statement         : START_WHILE equality stmnt_list END_WHILE
+				        ;
 				
-input : INPUT ref
-	  ;
+input                   : INPUT ref
+	                    ;
 
-output : OUTPUT expr
-	   | OUTPUT STRING_LITERAL
-	   ;
+output                  : OUTPUT expr
+                        | OUTPUT STRING_LITERAL
+	                    ;
 
-conditional : if_statement
-			| if_statement elif_statement
-			| if_statement else_statement
-			| if_statement elif_statement else_statement
-			;
+conditional             : if_statement
+			            | if_statement elif_statement
+			            | if_statement else_statement
+			            | if_statement elif_statement else_statement
+			            ;
 
-if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN
-			 ;
+if_statement            : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN
+			            ;
 
-elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN
-			   | ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN elif_statement
-			   ;
+elif_statement          : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN
+			            | ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN elif_statement
+			            ;
 
-else_statement : ELSE START_THEN stmnt_list END_THEN
-			   ;
+else_statement          : ELSE START_THEN stmnt_list END_THEN
+			            ;
 
-function_call : ID LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS
-			  ;
+function_call           : ID LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS
+			            ;
 			  
-ref_list : ref_list PARAMETER_COMMA ref
-		 | ref
-		 ;
+ref_list                : ref_list PARAMETER_COMMA ref
+		                | ref
+		                ;
 
-function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS
-			 ;
+function_def            : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS
+			            ;
 		   
-parameter_list : parameter_list PARAMETER_COMMA ID
-			   | ID
-			   ;
+parameter_list          : parameter_list PARAMETER_COMMA ID
+			            | ID
+			            ;
 			   
 
-equality : equality EQUALS relational
-		 | equality NOT_EQUALS relational
-		 | relational
-		 ;
+equality                : equality EQUALS relational
+		                | equality NOT_EQUALS relational
+		                | relational
+		                ;
 		 
-relational : relational GREATER_THAN expr
-		   | relational GREATER_THAN_OR_EQUAL expr
-		   | relational LESS_THAN expr
-		   | relational LESS_THAN_OR_EQUAL expr
-		   | expr
-		   ;
+relational              : relational GREATER_THAN expr
+		                | relational GREATER_THAN_OR_EQUAL expr
+		                | relational LESS_THAN expr
+		                | relational LESS_THAN_OR_EQUAL expr
+		                | expr
+		                ;
 
 
 %%
@@ -149,8 +180,8 @@ relational : relational GREATER_THAN expr
     private BitmojiLexer lexer;
     private int token;
     private Object yylvalue;
-    private BitmojiParseTree tree;
-    private BitmojiParseTree.PTNode program;
+    private BitmojiPT tree;
+    private BitmojiPT.PTNode program;
 
     public int yynext() {
         lexer.next();
@@ -166,10 +197,10 @@ relational : relational GREATER_THAN expr
 
     public Bitmoji(java.io.InputStream in) {
         lexer = new BitmojiLexer(in);
-        tree = new BitmojiParseTree(this);
+        tree = new BitmojiPT(this);
     }
 
-    public BitmojiParseTree.PTNode getProgram() {
+    public BitmojiPT.PTNode getProgram() {
         return program;
     }
 
@@ -179,27 +210,14 @@ relational : relational GREATER_THAN expr
         boolean compile = false;
         String filename="";
 
-        //process command line
-        for(int i=0; i<args.length; i++) {
-            if(args[i].equals("-c")) {
-                interpret = false;
-                compile = true;
-            } else if(args[i].equals("-t")) {
-                printTree = true;
-            } else {
-                filename = args[i];
-            }
-        }
+        filename = args[0];
 
         try {
             Bitmoji parser = new Bitmoji(new java.io.FileInputStream(filename));
             parser.yynext();
             parser.parse();
 
-            //interpret the code
-            if(interpret) {
-                parser.getProgram().evaluate();
-            }
+            parser.getProgram().evaluate();
 
         } catch(java.io.FileNotFoundException e) {
             System.err.println("Could not open file.");

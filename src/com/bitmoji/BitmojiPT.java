@@ -51,6 +51,7 @@ public class BitmojiPT {
 
     public class AssignNode extends StatementNode
     {
+        private ReferenceNode node;
         private Object expression;
 
         public AssignNode(ReferenceNode name, Object expression) {

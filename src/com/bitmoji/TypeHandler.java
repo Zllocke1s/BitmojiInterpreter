@@ -2,9 +2,7 @@ package com.bitmoji;
 
 public interface TypeHandler {
 
-
-
-    public static Integer parseInt(Object node) {
+    static Integer parseInt(Object node) {
         if (node instanceof BitmojiPT.PTNode) {
             return parseInt(((BitmojiPT.PTNode) node).evaluate());
         }
@@ -17,7 +15,7 @@ public interface TypeHandler {
         }
     }
 
-    public static Double parseDouble(Object node) {
+    static Double parseDouble(Object node) {
         if (node instanceof BitmojiPT.PTNode) {
             return parseDouble(((BitmojiPT.PTNode) node).evaluate());
         }
@@ -29,5 +27,25 @@ public interface TypeHandler {
             throw new IllegalArgumentException();
         }
     }
+    static String parseString(Object node) {
+        if (node instanceof BitmojiPT.PTNode) {
+            return parseString(((BitmojiPT.PTNode) node).evaluate());
+        }
+        if (node instanceof Integer) {
+            return ((Integer) node).toString();
+        } else if (node instanceof Double) {
+            return ((Double) node).toString();
+        } else if (node instanceof String) {
+            return ((String) node);
+        } else {
+            throw new IllegalArgumentException();
+        }
+    }
 
+    static Object evaluate(Object node) {
+        if (node instanceof BitmojiPT.PTNode) {
+            return evaluate(((BitmojiPT.PTNode) node).evaluate());
+        }
+        return node;
+    }
 }

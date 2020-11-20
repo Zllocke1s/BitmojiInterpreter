@@ -153,23 +153,52 @@ output                  : OUTPUT assignable
 	                    ;
 
 conditional             : if_statement
-			            | if_statement elif_statement
+			            | if_statement elif_block_statement
+                        	 {
+                                ((BitmojiPT.ConditionalBlockNode) $1).addToList((BitmojiPT.ElifBlockNode) $2);
+                                $$ = $1;
+                             }
 			            | if_statement else_statement
-			            | if_statement elif_statement else_statement
-			            ;
+			             {
+                            ((BitmojiPT.ConditionalBlockNode) $1).addToList((BitmojiPT.ConditionalNode) $2);
+                            $$ = $1;
+                         }
+                         | if_statement elif_block_statement else_statement
+                         {
+                            ((BitmojiPT.ConditionalBlockNode) $1).addToList((BitmojiPT.ElifBlockNode) $2);
+                            ((BitmojiPT.ConditionalBlockNode) $1).addToList((BitmojiPT.ConditionalNode) $3);
+                            $$ = $1;
+                         }
+                         ;
 
 if_statement            : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN
                         {
-                            $$ = tree.new IfConditionNode($3, (BitmojiPT.StatementListNode) $6);
+                            $$ = tree.new ConditionalBlockNode($3, (BitmojiPT.StatementListNode) $6);
                         }
 
 			            ;
 
 elif_statement          : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN
-			            | ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN elif_statement
+			             {
+                            $$ = tree.new ConditionalNode($3, (BitmojiPT.StatementListNode) $6);
+                         }
+                         ;
+
+elif_block_statement    : elif_statement
+                        {
+                            $$ = tree.new ElifBlockNode((BitmojiPT.ConditionalNode)$1);
+                        }
+                        | elif_block_statement elif_statement
+                        {
+                            ((BitmojiPT.ElifBlockNode) $1).addToList((BitmojiPT.ConditionalNode) $2);
+                            $$ = $1;
+                        }
 			            ;
 
 else_statement          : ELSE START_THEN stmnt_list END_THEN
+                        {
+                            $$ = tree.new ConditionalNode(true, (BitmojiPT.StatementListNode) $3);
+                        }
 			            ;
 
 function_call           : ID LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS

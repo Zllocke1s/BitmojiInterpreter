@@ -348,12 +348,75 @@ public class BitmojiPT {
         }
     }
 
-    public class IfConditionNode extends StatementNode
+
+    public class ConditionalBlockNode extends StatementNode
+    {
+        ArrayList<ConditionalNode> list;
+
+        public ConditionalBlockNode()
+        {
+            list = new ArrayList<>();
+        }
+
+        public ConditionalBlockNode(Object condition, StatementListNode statements) {
+            list = new ArrayList<>();
+            list.add(new ConditionalNode(condition, statements));
+        }
+
+        public void addToList(ConditionalNode node) {
+            list.add(node);
+        }
+
+        public void addToList(ElifBlockNode elseIfs)
+        {
+            ArrayList<ConditionalNode> elseIfStatements = elseIfs.getStatements();
+            list.addAll(elseIfStatements);
+        }
+
+        @Override
+        public Object evaluate() {
+            for (ConditionalNode condition : list) {
+                if((Boolean)condition.evaluate())
+                {
+                    break;
+                }
+            }
+            return null;
+        }
+    }
+
+    public class ElifBlockNode extends StatementNode
+    {
+
+        ArrayList<ConditionalNode> elseIfStatements;
+
+        public ElifBlockNode(ConditionalNode elseIfStatement) {
+            this.elseIfStatements = new ArrayList<>();
+            elseIfStatements.add(elseIfStatement);
+        }
+
+        public void addToList(ConditionalNode newStatement) {
+            elseIfStatements.add(newStatement);
+        }
+
+        public ArrayList<ConditionalNode> getStatements() {
+            return elseIfStatements;
+        }
+
+        @Override
+        public Object evaluate() {
+            return null;
+        }
+    }
+
+
+
+    public class ConditionalNode extends StatementNode
     {
         Object condition;
         StatementListNode statements;
 
-        public IfConditionNode(Object condition, StatementListNode statements) {
+        public ConditionalNode(Object condition, StatementListNode statements) {
             this.condition = condition;
             this.statements = statements;
         }

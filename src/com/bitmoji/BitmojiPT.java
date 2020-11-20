@@ -180,6 +180,7 @@ public class BitmojiPT {
                     return null;
                 }
             } catch (IllegalArgumentException ex) {
+
                 return null;
             }
         }
@@ -206,13 +207,25 @@ public class BitmojiPT {
             }
         }
 
-        // TODO: Add concat eval for string '+' operator (Needs to run first and must check type)
+        private String stringEval() {
+            try {
+                String s = ((String) left).concat((String) right);
+                return s;
+            }
+            catch (IllegalArgumentException ex) {
+                return null;
+            }
+        }
 
         @Override
         public Object evaluate() {
             Boolean condition = conditionalEval();
             if (condition != null) {
                 return condition;
+            }
+            String word = stringEval();
+            if(word != null) {
+                return word;
             }
             Number result = arithmeticEval();
             if (result != null) {

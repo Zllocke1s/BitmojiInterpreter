@@ -1,4 +1,4 @@
-// Output created by jacc on Thu Nov 19 12:19:42 CST 2020
+// Output created by jacc on Thu Nov 19 23:16:11 CST 2020
 
 state 0 (entry on program)
     $accept : _program $end
@@ -17,12 +17,12 @@ state 1 (entry on program)
 state 2 (entry on START_PROGRAM)
     program : START_PROGRAM_stmnt_list END_PROGRAM    (1)
 
-    FUNCTION_DEF shift 13
-    ID shift 14
-    IF shift 15
-    INPUT shift 16
-    OUTPUT shift 17
-    START_WHILE shift 18
+    FUNCTION_DEF shift 14
+    ID shift 15
+    IF shift 16
+    INPUT shift 17
+    OUTPUT shift 18
+    START_WHILE shift 19
     . error
 
     assignment goto 3
@@ -32,149 +32,157 @@ state 2 (entry on START_PROGRAM)
     if_statement goto 7
     input goto 8
     output goto 9
-    statement goto 10
-    stmnt_list goto 11
-    while_statement goto 12
+    ref goto 10
+    statement goto 11
+    stmnt_list goto 12
+    while_statement goto 13
 
 state 3 (entry on assignment)
     statement : assignment_    (4)
 
-    OUTPUT reduce 4
-    FUNCTION_DEF reduce 4
-    END_WHILE reduce 4
-    START_WHILE reduce 4
-    INPUT reduce 4
-    END_THEN reduce 4
-    IF reduce 4
     RETURN reduce 4
     ID reduce 4
     END_PROGRAM reduce 4
+    OUTPUT reduce 4
+    FUNCTION_DEF reduce 4
+    START_WHILE reduce 4
+    END_WHILE reduce 4
+    INPUT reduce 4
+    IF reduce 4
+    END_THEN reduce 4
     . error
 
 state 4 (entry on conditional)
     statement : conditional_    (8)
 
-    OUTPUT reduce 8
-    FUNCTION_DEF reduce 8
-    END_WHILE reduce 8
-    START_WHILE reduce 8
-    INPUT reduce 8
-    END_THEN reduce 8
-    IF reduce 8
     RETURN reduce 8
     ID reduce 8
     END_PROGRAM reduce 8
+    OUTPUT reduce 8
+    FUNCTION_DEF reduce 8
+    START_WHILE reduce 8
+    END_WHILE reduce 8
+    INPUT reduce 8
+    IF reduce 8
+    END_THEN reduce 8
     . error
 
 state 5 (entry on function_call)
     statement : function_call_    (9)
 
-    OUTPUT reduce 9
-    FUNCTION_DEF reduce 9
-    END_WHILE reduce 9
-    START_WHILE reduce 9
-    INPUT reduce 9
-    END_THEN reduce 9
-    IF reduce 9
     RETURN reduce 9
     ID reduce 9
     END_PROGRAM reduce 9
+    OUTPUT reduce 9
+    FUNCTION_DEF reduce 9
+    START_WHILE reduce 9
+    END_WHILE reduce 9
+    INPUT reduce 9
+    IF reduce 9
+    END_THEN reduce 9
     . error
 
 state 6 (entry on function_def)
     statement : function_def_    (10)
 
-    OUTPUT reduce 10
-    FUNCTION_DEF reduce 10
-    END_WHILE reduce 10
-    START_WHILE reduce 10
-    INPUT reduce 10
-    END_THEN reduce 10
-    IF reduce 10
     RETURN reduce 10
     ID reduce 10
     END_PROGRAM reduce 10
+    OUTPUT reduce 10
+    FUNCTION_DEF reduce 10
+    START_WHILE reduce 10
+    END_WHILE reduce 10
+    INPUT reduce 10
+    IF reduce 10
+    END_THEN reduce 10
     . error
 
 state 7 (entry on if_statement)
-    conditional : if_statement_    (34)
-    conditional : if_statement_elif_statement    (35)
-    conditional : if_statement_else_statement    (36)
-    conditional : if_statement_elif_statement else_statement    (37)
+    conditional : if_statement_    (35)
+    conditional : if_statement_elif_block_statement    (36)
+    conditional : if_statement_else_statement    (37)
+    conditional : if_statement_elif_block_statement else_statement    (38)
 
-    ELIF shift 21
-    ELSE shift 22
-    OUTPUT reduce 34
-    FUNCTION_DEF reduce 34
-    END_WHILE reduce 34
-    START_WHILE reduce 34
-    INPUT reduce 34
-    END_THEN reduce 34
-    IF reduce 34
-    RETURN reduce 34
-    ID reduce 34
-    END_PROGRAM reduce 34
+    ELIF shift 23
+    ELSE shift 24
+    RETURN reduce 35
+    ID reduce 35
+    END_PROGRAM reduce 35
+    OUTPUT reduce 35
+    FUNCTION_DEF reduce 35
+    START_WHILE reduce 35
+    END_WHILE reduce 35
+    INPUT reduce 35
+    IF reduce 35
+    END_THEN reduce 35
     . error
 
-    elif_statement goto 19
-    else_statement goto 20
+    elif_block_statement goto 20
+    elif_statement goto 21
+    else_statement goto 22
 
 state 8 (entry on input)
     statement : input_    (6)
 
-    OUTPUT reduce 6
-    FUNCTION_DEF reduce 6
-    END_WHILE reduce 6
-    START_WHILE reduce 6
-    INPUT reduce 6
-    END_THEN reduce 6
-    IF reduce 6
     RETURN reduce 6
     ID reduce 6
     END_PROGRAM reduce 6
+    OUTPUT reduce 6
+    FUNCTION_DEF reduce 6
+    START_WHILE reduce 6
+    END_WHILE reduce 6
+    INPUT reduce 6
+    IF reduce 6
+    END_THEN reduce 6
     . error
 
 state 9 (entry on output)
     statement : output_    (7)
 
-    OUTPUT reduce 7
-    FUNCTION_DEF reduce 7
-    END_WHILE reduce 7
-    START_WHILE reduce 7
-    INPUT reduce 7
-    END_THEN reduce 7
-    IF reduce 7
     RETURN reduce 7
     ID reduce 7
     END_PROGRAM reduce 7
+    OUTPUT reduce 7
+    FUNCTION_DEF reduce 7
+    START_WHILE reduce 7
+    END_WHILE reduce 7
+    INPUT reduce 7
+    IF reduce 7
+    END_THEN reduce 7
     . error
 
-state 10 (entry on statement)
+state 10 (entry on ref)
+    assignment : ref_ASSIGN assignable    (28)
+
+    ASSIGN shift 25
+    . error
+
+state 11 (entry on statement)
     stmnt_list : statement_    (3)
 
-    OUTPUT reduce 3
-    FUNCTION_DEF reduce 3
-    END_WHILE reduce 3
-    START_WHILE reduce 3
-    INPUT reduce 3
-    END_THEN reduce 3
-    IF reduce 3
     RETURN reduce 3
     ID reduce 3
     END_PROGRAM reduce 3
+    OUTPUT reduce 3
+    FUNCTION_DEF reduce 3
+    START_WHILE reduce 3
+    END_WHILE reduce 3
+    INPUT reduce 3
+    IF reduce 3
+    END_THEN reduce 3
     . error
 
-state 11 (entry on stmnt_list)
+state 12 (entry on stmnt_list)
     program : START_PROGRAM stmnt_list_END_PROGRAM    (1)
     stmnt_list : stmnt_list_statement    (2)
 
-    FUNCTION_DEF shift 13
-    ID shift 14
-    IF shift 15
-    INPUT shift 16
-    OUTPUT shift 17
-    START_WHILE shift 18
-    END_PROGRAM shift 24
+    FUNCTION_DEF shift 14
+    ID shift 15
+    IF shift 16
+    INPUT shift 17
+    OUTPUT shift 18
+    START_WHILE shift 19
+    END_PROGRAM shift 27
     . error
 
     assignment goto 3
@@ -184,1528 +192,1191 @@ state 11 (entry on stmnt_list)
     if_statement goto 7
     input goto 8
     output goto 9
-    statement goto 23
-    while_statement goto 12
+    ref goto 10
+    statement goto 26
+    while_statement goto 13
 
-state 12 (entry on while_statement)
+state 13 (entry on while_statement)
     statement : while_statement_    (5)
 
-    OUTPUT reduce 5
-    FUNCTION_DEF reduce 5
-    END_WHILE reduce 5
-    START_WHILE reduce 5
-    INPUT reduce 5
-    END_THEN reduce 5
-    IF reduce 5
     RETURN reduce 5
     ID reduce 5
     END_PROGRAM reduce 5
+    OUTPUT reduce 5
+    FUNCTION_DEF reduce 5
+    START_WHILE reduce 5
+    END_WHILE reduce 5
+    INPUT reduce 5
+    IF reduce 5
+    END_THEN reduce 5
     . error
 
-state 13 (entry on FUNCTION_DEF)
-    function_def : FUNCTION_DEF_ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
+state 14 (entry on FUNCTION_DEF)
+    function_def : FUNCTION_DEF_ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (47)
 
-    ID shift 25
+    ID shift 28
     . error
 
-state 14 (entry on ID)
-    assignment : ID_ASSIGN assignable    (26)
-    function_call : ID_LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS    (42)
+state 15 (entry on ID)
+    function_call : ID_LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS    (44)
+    ref : ID_LEFT_BRACKET expr RIGHT_BRACKET    (11)
+    ref : ID_    (12)
 
-    ASSIGN shift 26
-    LEFT_PARENTHESIS shift 27
+    ELSE error
+    INT_LITERAL error
+    START_THEN error
+    STRING_LITERAL error
+    $end error
+    REAL_TYPE error
+    STRING_TYPE error
+    INTEGER_TYPE error
+    REAL_LITERAL error
+    ELIF error
+    PARAMETER_COMMA error
+    END_FUNCTION_STATEMENTS error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    error error
+    LEFT_BRACKET shift 29
+    LEFT_PARENTHESIS shift 30
+    . reduce 12
+
+state 16 (entry on IF)
+    if_statement : IF_LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (39)
+
+    LEFT_PARENTHESIS shift 31
     . error
 
-state 15 (entry on IF)
-    if_statement : IF_LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (38)
+state 17 (entry on INPUT)
+    input : INPUT_ref    (32)
 
-    LEFT_PARENTHESIS shift 28
+    ID shift 33
     . error
 
-state 16 (entry on INPUT)
-    input : INPUT_ref    (31)
+    ref goto 32
 
-    ID shift 30
+state 18 (entry on OUTPUT)
+    output : OUTPUT_assignable    (33)
+    output : OUTPUT_assignable NEWLINE    (34)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_LITERAL shift 49
+    STRING_TYPE shift 50
     . error
 
-    ref goto 29
+    cast goto 34
+    equality goto 35
+    exp goto 36
+    expr goto 37
+    factor goto 38
+    function_call goto 39
+    assignable goto 40
+    ref goto 41
+    relational goto 42
+    term goto 43
 
-state 17 (entry on OUTPUT)
-    output : OUTPUT_assignable    (32)
-    output : OUTPUT_assignable NEWLINE    (33)
+state 19 (entry on START_WHILE)
+    while_statement : START_WHILE_equality stmnt_list END_WHILE    (31)
 
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    STRING_LITERAL shift 44
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
     . error
 
-    equality goto 31
-    exp goto 32
-    expr goto 33
-    factor goto 34
-    function_call goto 35
-    assignable goto 36
-    ref goto 37
-    relational goto 38
-    term goto 39
+    cast goto 34
+    equality goto 51
+    exp goto 36
+    expr goto 37
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    relational goto 42
+    term goto 43
 
-state 18 (entry on START_WHILE)
-    while_statement : START_WHILE_equality stmnt_list END_WHILE    (30)
+state 20 (entry on elif_block_statement)
+    conditional : if_statement elif_block_statement_    (36)
+    conditional : if_statement elif_block_statement_else_statement    (38)
+    elif_block_statement : elif_block_statement_elif_statement    (42)
 
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    . error
-
-    equality goto 45
-    exp goto 32
-    expr goto 46
-    factor goto 34
-    function_call goto 35
-    ref goto 37
-    relational goto 38
-    term goto 39
-
-state 19 (entry on elif_statement)
-    conditional : if_statement elif_statement_    (35)
-    conditional : if_statement elif_statement_else_statement    (37)
-
-    ELSE shift 22
-    OUTPUT reduce 35
-    FUNCTION_DEF reduce 35
-    END_WHILE reduce 35
-    START_WHILE reduce 35
-    INPUT reduce 35
-    END_THEN reduce 35
-    IF reduce 35
-    RETURN reduce 35
-    ID reduce 35
-    END_PROGRAM reduce 35
-    . error
-
-    else_statement goto 47
-
-state 20 (entry on else_statement)
-    conditional : if_statement else_statement_    (36)
-
-    OUTPUT reduce 36
-    FUNCTION_DEF reduce 36
-    END_WHILE reduce 36
-    START_WHILE reduce 36
-    INPUT reduce 36
-    END_THEN reduce 36
-    IF reduce 36
+    ELIF shift 23
+    ELSE shift 24
     RETURN reduce 36
     ID reduce 36
     END_PROGRAM reduce 36
+    OUTPUT reduce 36
+    FUNCTION_DEF reduce 36
+    START_WHILE reduce 36
+    END_WHILE reduce 36
+    INPUT reduce 36
+    IF reduce 36
+    END_THEN reduce 36
     . error
 
-state 21 (entry on ELIF)
-    elif_statement : ELIF_LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (39)
-    elif_statement : ELIF_LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN elif_statement    (40)
+    elif_statement goto 53
+    else_statement goto 54
 
-    LEFT_PARENTHESIS shift 48
+state 21 (entry on elif_statement)
+    elif_block_statement : elif_statement_    (41)
+
+    RETURN reduce 41
+    ID reduce 41
+    END_PROGRAM reduce 41
+    OUTPUT reduce 41
+    FUNCTION_DEF reduce 41
+    ELSE reduce 41
+    START_WHILE reduce 41
+    END_WHILE reduce 41
+    INPUT reduce 41
+    IF reduce 41
+    END_THEN reduce 41
+    ELIF reduce 41
     . error
 
-state 22 (entry on ELSE)
-    else_statement : ELSE_START_THEN stmnt_list END_THEN    (41)
+state 22 (entry on else_statement)
+    conditional : if_statement else_statement_    (37)
 
-    START_THEN shift 49
+    RETURN reduce 37
+    ID reduce 37
+    END_PROGRAM reduce 37
+    OUTPUT reduce 37
+    FUNCTION_DEF reduce 37
+    START_WHILE reduce 37
+    END_WHILE reduce 37
+    INPUT reduce 37
+    IF reduce 37
+    END_THEN reduce 37
     . error
 
-state 23 (entry on statement)
+state 23 (entry on ELIF)
+    elif_statement : ELIF_LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (40)
+
+    LEFT_PARENTHESIS shift 55
+    . error
+
+state 24 (entry on ELSE)
+    else_statement : ELSE_START_THEN stmnt_list END_THEN    (43)
+
+    START_THEN shift 56
+    . error
+
+state 25 (entry on ASSIGN)
+    assignment : ref ASSIGN_assignable    (28)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_LITERAL shift 49
+    STRING_TYPE shift 50
+    . error
+
+    cast goto 34
+    equality goto 35
+    exp goto 36
+    expr goto 37
+    factor goto 38
+    function_call goto 39
+    assignable goto 57
+    ref goto 41
+    relational goto 42
+    term goto 43
+
+state 26 (entry on statement)
     stmnt_list : stmnt_list statement_    (2)
 
-    OUTPUT reduce 2
-    FUNCTION_DEF reduce 2
-    END_WHILE reduce 2
-    START_WHILE reduce 2
-    INPUT reduce 2
-    END_THEN reduce 2
-    IF reduce 2
     RETURN reduce 2
     ID reduce 2
     END_PROGRAM reduce 2
+    OUTPUT reduce 2
+    FUNCTION_DEF reduce 2
+    START_WHILE reduce 2
+    END_WHILE reduce 2
+    INPUT reduce 2
+    IF reduce 2
+    END_THEN reduce 2
     . error
 
-state 24 (entry on END_PROGRAM)
+state 27 (entry on END_PROGRAM)
     program : START_PROGRAM stmnt_list END_PROGRAM_    (1)
 
     $end reduce 1
     . error
 
-state 25 (entry on ID)
-    function_def : FUNCTION_DEF ID_LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
+state 28 (entry on ID)
+    function_def : FUNCTION_DEF ID_LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (47)
 
-    LEFT_PARENTHESIS shift 50
+    LEFT_PARENTHESIS shift 58
     . error
 
-state 26 (entry on ASSIGN)
-    assignment : ID ASSIGN_assignable    (26)
+state 29 (entry on LEFT_BRACKET)
+    ref : ID LEFT_BRACKET_expr RIGHT_BRACKET    (11)
 
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    STRING_LITERAL shift 44
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
     . error
 
-    equality goto 31
-    exp goto 32
-    expr goto 33
-    factor goto 34
-    function_call goto 35
-    assignable goto 51
-    ref goto 37
-    relational goto 38
-    term goto 39
+    cast goto 34
+    exp goto 36
+    expr goto 59
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    term goto 43
 
-state 27 (entry on LEFT_PARENTHESIS)
-    function_call : ID LEFT_PARENTHESIS_ref_list RIGHT_PARENTHESIS    (42)
+state 30 (entry on LEFT_PARENTHESIS)
+    function_call : ID LEFT_PARENTHESIS_ref_list RIGHT_PARENTHESIS    (44)
 
-    ID shift 30
+    ID shift 33
     . error
 
-    ref goto 52
-    ref_list goto 53
+    ref goto 60
+    ref_list goto 61
 
-state 28 (entry on LEFT_PARENTHESIS)
-    if_statement : IF LEFT_PARENTHESIS_equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (38)
+state 31 (entry on LEFT_PARENTHESIS)
+    if_statement : IF LEFT_PARENTHESIS_equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (39)
 
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
     . error
 
-    equality goto 54
-    exp goto 32
-    expr goto 46
-    factor goto 34
-    function_call goto 35
-    ref goto 37
-    relational goto 38
-    term goto 39
+    cast goto 34
+    equality goto 62
+    exp goto 36
+    expr goto 37
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    relational goto 42
+    term goto 43
 
-state 29 (entry on ref)
-    input : INPUT ref_    (31)
+state 32 (entry on ref)
+    input : INPUT ref_    (32)
 
-    OUTPUT reduce 31
-    FUNCTION_DEF reduce 31
-    END_WHILE reduce 31
-    START_WHILE reduce 31
-    INPUT reduce 31
-    END_THEN reduce 31
-    IF reduce 31
-    RETURN reduce 31
-    ID reduce 31
-    END_PROGRAM reduce 31
-    . error
-
-state 30 (entry on ID)
-    ref : ID_LEFT_BRACKET expr RIGHT_BRACKET    (11)
-    ref : ID_    (12)
-
-    LEFT_BRACKET shift 55
-    PARAMETER_COMMA reduce 12
-    OUTPUT reduce 12
-    FUNCTION_DEF reduce 12
-    END_WHILE reduce 12
-    START_WHILE reduce 12
-    INPUT reduce 12
-    END_THEN reduce 12
-    RIGHT_PARENTHESIS reduce 12
-    IF reduce 12
-    RETURN reduce 12
-    ID reduce 12
-    END_PROGRAM reduce 12
-    . error
-
-state 31 (entry on equality)
-    equality : equality_EQUALS relational    (48)
-    equality : equality_NOT_EQUALS relational    (49)
-    assignable : equality_    (29)
-
-    EQUALS shift 56
-    NOT_EQUALS shift 57
-    OUTPUT reduce 29
-    NEWLINE reduce 29
-    FUNCTION_DEF reduce 29
-    END_WHILE reduce 29
-    START_WHILE reduce 29
-    INPUT reduce 29
-    END_THEN reduce 29
-    IF reduce 29
-    RETURN reduce 29
-    ID reduce 29
-    END_PROGRAM reduce 29
-    . error
-
-state 32 (entry on exp)
-    factor : exp_    (20)
-
-    REAL_DECL error
-    LEFT_BRACKET error
-    START_FUNCTION_STATEMENTS error
-    REAL_LITERAL error
-    ASSIGN error
-    LEFT_PARENTHESIS error
-    STRING_DECL error
-    START_PROGRAM error
-    INT_LITERAL error
-    ARRAY_DECL error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    ELSE error
-    $end error
-    error error
-    STRING_LITERAL error
-    INTEGER_DECL error
-    START_THEN error
-    ELIF error
-    . reduce 20
-
-33: reduce/reduce conflict (red'ns 27 and 55) on END_PROGRAM
-33: reduce/reduce conflict (red'ns 27 and 55) on END_THEN
-33: reduce/reduce conflict (red'ns 27 and 55) on END_WHILE
-33: reduce/reduce conflict (red'ns 27 and 55) on FUNCTION_DEF
-33: reduce/reduce conflict (red'ns 27 and 55) on ID
-33: reduce/reduce conflict (red'ns 27 and 55) on IF
-33: reduce/reduce conflict (red'ns 27 and 55) on INPUT
-33: reduce/reduce conflict (red'ns 27 and 55) on NEWLINE
-33: reduce/reduce conflict (red'ns 27 and 55) on OUTPUT
-33: reduce/reduce conflict (red'ns 27 and 55) on RETURN
-33: reduce/reduce conflict (red'ns 27 and 55) on START_WHILE
-state 33 (entry on expr)
-    expr : expr_ADD term    (13)
-    expr : expr_SUBTRACT term    (14)
-    assignable : expr_    (27)
-    relational : expr_    (55)
-
-    ADD shift 58
-    SUBTRACT shift 59
-    OUTPUT reduce 27
-    FUNCTION_DEF reduce 27
-    NEWLINE reduce 27
-    END_WHILE reduce 27
-    START_WHILE reduce 27
-    INPUT reduce 27
-    END_THEN reduce 27
-    IF reduce 27
-    RETURN reduce 27
-    ID reduce 27
-    END_PROGRAM reduce 27
-    GREATER_THAN_OR_EQUAL reduce 55
-    GREATER_THAN reduce 55
-    NOT_EQUALS reduce 55
-    LESS_THAN_OR_EQUAL reduce 55
-    LESS_THAN reduce 55
-    EQUALS reduce 55
-    . error
-
-state 34 (entry on factor)
-    factor : factor_EXPONENT exp    (19)
-    term : factor_    (18)
-
-    REAL_DECL error
-    LEFT_BRACKET error
-    START_FUNCTION_STATEMENTS error
-    REAL_LITERAL error
-    LEFT_PARENTHESIS error
-    $end error
-    STRING_DECL error
-    START_PROGRAM error
-    INT_LITERAL error
-    ARRAY_DECL error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    ELSE error
-    ASSIGN error
-    error error
-    STRING_LITERAL error
-    INTEGER_DECL error
-    START_THEN error
-    ELIF error
-    EXPONENT shift 60
-    . reduce 18
-
-state 35 (entry on function_call)
-    exp : function_call_    (23)
-
-    REAL_DECL error
-    LEFT_BRACKET error
-    START_FUNCTION_STATEMENTS error
-    REAL_LITERAL error
-    ASSIGN error
-    LEFT_PARENTHESIS error
-    STRING_DECL error
-    START_PROGRAM error
-    INT_LITERAL error
-    ARRAY_DECL error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    ELSE error
-    $end error
-    error error
-    STRING_LITERAL error
-    INTEGER_DECL error
-    START_THEN error
-    ELIF error
-    . reduce 23
-
-state 36 (entry on assignable)
-    output : OUTPUT assignable_    (32)
-    output : OUTPUT assignable_NEWLINE    (33)
-
-    NEWLINE shift 61
-    OUTPUT reduce 32
-    FUNCTION_DEF reduce 32
-    END_WHILE reduce 32
-    START_WHILE reduce 32
-    INPUT reduce 32
-    END_THEN reduce 32
-    IF reduce 32
     RETURN reduce 32
     ID reduce 32
     END_PROGRAM reduce 32
+    OUTPUT reduce 32
+    FUNCTION_DEF reduce 32
+    START_WHILE reduce 32
+    END_WHILE reduce 32
+    INPUT reduce 32
+    IF reduce 32
+    END_THEN reduce 32
     . error
 
-state 37 (entry on ref)
-    exp : ref_    (22)
+state 33 (entry on ID)
+    ref : ID_LEFT_BRACKET expr RIGHT_BRACKET    (11)
+    ref : ID_    (12)
 
-    REAL_DECL error
-    LEFT_BRACKET error
-    START_FUNCTION_STATEMENTS error
-    REAL_LITERAL error
-    ASSIGN error
-    LEFT_PARENTHESIS error
-    STRING_DECL error
-    START_PROGRAM error
-    INT_LITERAL error
-    ARRAY_DECL error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
+    LEFT_BRACKET shift 29
+    RETURN reduce 12
+    ID reduce 12
+    PARAMETER_COMMA reduce 12
+    END_PROGRAM reduce 12
+    OUTPUT reduce 12
+    FUNCTION_DEF reduce 12
+    START_WHILE reduce 12
+    END_WHILE reduce 12
+    INPUT reduce 12
+    RIGHT_PARENTHESIS reduce 12
+    IF reduce 12
+    END_THEN reduce 12
+    . error
+
+state 34 (entry on cast)
+    exp : cast_    (27)
+
+    REAL_TYPE error
     ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
-    STRING_LITERAL error
-    INTEGER_DECL error
-    START_THEN error
-    ELIF error
-    . reduce 22
+    STRING_TYPE error
+    INT_LITERAL error
+    . reduce 27
 
-state 38 (entry on relational)
-    equality : relational_    (50)
-    relational : relational_GREATER_THAN expr    (51)
-    relational : relational_GREATER_THAN_OR_EQUAL expr    (52)
-    relational : relational_LESS_THAN expr    (53)
-    relational : relational_LESS_THAN_OR_EQUAL expr    (54)
+state 35 (entry on equality)
+    equality : equality_EQUALS relational    (50)
+    equality : equality_NOT_EQUALS relational    (51)
+    assignable : equality_    (30)
 
-    GREATER_THAN shift 62
-    GREATER_THAN_OR_EQUAL shift 63
-    LESS_THAN shift 64
-    LESS_THAN_OR_EQUAL shift 65
-    OUTPUT reduce 50
-    NOT_EQUALS reduce 50
-    NEWLINE reduce 50
-    FUNCTION_DEF reduce 50
-    EQUALS reduce 50
-    END_WHILE reduce 50
-    START_WHILE reduce 50
-    INPUT reduce 50
-    END_THEN reduce 50
-    RIGHT_PARENTHESIS reduce 50
-    IF reduce 50
-    RETURN reduce 50
-    ID reduce 50
-    END_PROGRAM reduce 50
+    EQUALS shift 63
+    NOT_EQUALS shift 64
+    RETURN reduce 30
+    ID reduce 30
+    END_PROGRAM reduce 30
+    OUTPUT reduce 30
+    NEWLINE reduce 30
+    FUNCTION_DEF reduce 30
+    START_WHILE reduce 30
+    END_WHILE reduce 30
+    INPUT reduce 30
+    IF reduce 30
+    END_THEN reduce 30
     . error
 
-state 39 (entry on term)
+state 36 (entry on exp)
+    factor : exp_    (20)
+
+    REAL_TYPE error
+    ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    . reduce 20
+
+state 37 (entry on expr)
+    expr : expr_ADD term    (13)
+    expr : expr_SUBTRACT term    (14)
+    relational : expr_    (57)
+
+    ADD shift 65
+    SUBTRACT shift 66
+    ID reduce 57
+    GREATER_THAN_OR_EQUAL reduce 57
+    END_PROGRAM reduce 57
+    OUTPUT reduce 57
+    NOT_EQUALS reduce 57
+    RETURN reduce 57
+    GREATER_THAN reduce 57
+    NEWLINE reduce 57
+    FUNCTION_DEF reduce 57
+    LESS_THAN_OR_EQUAL reduce 57
+    LESS_THAN reduce 57
+    EQUALS reduce 57
+    START_WHILE reduce 57
+    END_WHILE reduce 57
+    INPUT reduce 57
+    RIGHT_PARENTHESIS reduce 57
+    IF reduce 57
+    END_THEN reduce 57
+    . error
+
+state 38 (entry on factor)
+    factor : factor_EXPONENT exp    (19)
+    term : factor_    (18)
+
+    ELSE error
+    LEFT_PARENTHESIS error
+    INTEGER_TYPE error
+    ELIF error
+    REAL_TYPE error
+    START_FUNCTION_STATEMENTS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    REAL_LITERAL error
+    PARAMETER_COMMA error
+    END_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    EXPONENT shift 67
+    . reduce 18
+
+state 39 (entry on function_call)
+    exp : function_call_    (23)
+
+    REAL_TYPE error
+    ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    . reduce 23
+
+state 40 (entry on assignable)
+    output : OUTPUT assignable_    (33)
+    output : OUTPUT assignable_NEWLINE    (34)
+
+    NEWLINE shift 68
+    RETURN reduce 33
+    ID reduce 33
+    END_PROGRAM reduce 33
+    OUTPUT reduce 33
+    FUNCTION_DEF reduce 33
+    START_WHILE reduce 33
+    END_WHILE reduce 33
+    INPUT reduce 33
+    IF reduce 33
+    END_THEN reduce 33
+    . error
+
+state 41 (entry on ref)
+    exp : ref_    (22)
+
+    REAL_TYPE error
+    ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    . reduce 22
+
+state 42 (entry on relational)
+    equality : relational_    (52)
+    relational : relational_GREATER_THAN expr    (53)
+    relational : relational_GREATER_THAN_OR_EQUAL expr    (54)
+    relational : relational_LESS_THAN expr    (55)
+    relational : relational_LESS_THAN_OR_EQUAL expr    (56)
+
+    GREATER_THAN shift 69
+    GREATER_THAN_OR_EQUAL shift 70
+    LESS_THAN shift 71
+    LESS_THAN_OR_EQUAL shift 72
+    RETURN reduce 52
+    ID reduce 52
+    END_PROGRAM reduce 52
+    OUTPUT reduce 52
+    NOT_EQUALS reduce 52
+    NEWLINE reduce 52
+    FUNCTION_DEF reduce 52
+    EQUALS reduce 52
+    START_WHILE reduce 52
+    END_WHILE reduce 52
+    INPUT reduce 52
+    RIGHT_PARENTHESIS reduce 52
+    IF reduce 52
+    END_THEN reduce 52
+    . error
+
+state 43 (entry on term)
     expr : term_    (15)
     term : term_MULTIPLY factor    (16)
     term : term_DIVIDE factor    (17)
 
+    ELIF error
     LEFT_PARENTHESIS error
-    error error
-    REAL_LITERAL error
-    $end error
+    INTEGER_TYPE error
+    ASSIGN error
     EXPONENT error
-    ELSE error
-    START_PROGRAM error
+    REAL_LITERAL error
+    LEFT_BRACKET error
+    STRING_LITERAL error
     START_THEN error
     START_FUNCTION_STATEMENTS error
-    ARRAY_DECL error
-    END_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     PARAMETER_COMMA error
-    REAL_DECL error
-    ASSIGN error
-    STRING_LITERAL error
+    REAL_TYPE error
+    END_FUNCTION_STATEMENTS error
+    $end error
+    error error
+    STRING_TYPE error
     INT_LITERAL error
-    STRING_DECL error
-    INTEGER_DECL error
-    ELIF error
-    LEFT_BRACKET error
-    DIVIDE shift 66
-    MULTIPLY shift 67
+    ELSE error
+    DIVIDE shift 73
+    MULTIPLY shift 74
     . reduce 15
 
-state 40 (entry on ID)
-    function_call : ID_LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS    (42)
-    ref : ID_LEFT_BRACKET expr RIGHT_BRACKET    (11)
-    ref : ID_    (12)
+state 44 (entry on INTEGER_TYPE)
+    cast : INTEGER_TYPE_LEFT_PARENTHESIS relational RIGHT_PARENTHESIS    (59)
 
-    START_THEN error
-    INT_LITERAL error
-    START_FUNCTION_STATEMENTS error
-    ELIF error
-    ASSIGN error
-    ARRAY_DECL error
-    STRING_DECL error
-    START_PROGRAM error
-    REAL_LITERAL error
-    REAL_DECL error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    ELSE error
-    $end error
-    error error
-    STRING_LITERAL error
-    INTEGER_DECL error
-    LEFT_PARENTHESIS shift 27
-    LEFT_BRACKET shift 55
-    . reduce 12
-
-state 41 (entry on INT_LITERAL)
-    exp : INT_LITERAL_    (25)
-
-    REAL_DECL error
-    LEFT_BRACKET error
-    START_FUNCTION_STATEMENTS error
-    REAL_LITERAL error
-    ASSIGN error
-    LEFT_PARENTHESIS error
-    STRING_DECL error
-    START_PROGRAM error
-    INT_LITERAL error
-    ARRAY_DECL error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    ELSE error
-    $end error
-    error error
-    STRING_LITERAL error
-    INTEGER_DECL error
-    START_THEN error
-    ELIF error
-    . reduce 25
-
-state 42 (entry on LEFT_PARENTHESIS)
-    exp : LEFT_PARENTHESIS_expr RIGHT_PARENTHESIS    (21)
-
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
+    LEFT_PARENTHESIS shift 75
     . error
 
-    exp goto 32
-    expr goto 68
-    factor goto 34
-    function_call goto 35
-    ref goto 37
-    term goto 39
+state 45 (entry on INT_LITERAL)
+    exp : INT_LITERAL_    (26)
 
-state 43 (entry on REAL_LITERAL)
-    exp : REAL_LITERAL_    (24)
-
-    REAL_DECL error
-    LEFT_BRACKET error
-    START_FUNCTION_STATEMENTS error
-    REAL_LITERAL error
-    ASSIGN error
-    LEFT_PARENTHESIS error
-    STRING_DECL error
-    START_PROGRAM error
-    INT_LITERAL error
-    ARRAY_DECL error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
+    REAL_TYPE error
     ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
-    STRING_LITERAL error
-    INTEGER_DECL error
-    START_THEN error
+    STRING_TYPE error
+    INT_LITERAL error
+    . reduce 26
+
+state 46 (entry on LEFT_PARENTHESIS)
+    exp : LEFT_PARENTHESIS_expr RIGHT_PARENTHESIS    (21)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    expr goto 76
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    term goto 43
+
+state 47 (entry on REAL_LITERAL)
+    exp : REAL_LITERAL_    (25)
+
+    REAL_TYPE error
+    ELSE error
+    INTEGER_TYPE error
     ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    . reduce 25
+
+state 48 (entry on REAL_TYPE)
+    cast : REAL_TYPE_LEFT_PARENTHESIS relational RIGHT_PARENTHESIS    (60)
+
+    LEFT_PARENTHESIS shift 77
+    . error
+
+49: reduce/reduce conflict (red'ns 24 and 29) on END_PROGRAM
+49: reduce/reduce conflict (red'ns 24 and 29) on END_THEN
+49: reduce/reduce conflict (red'ns 24 and 29) on END_WHILE
+49: reduce/reduce conflict (red'ns 24 and 29) on FUNCTION_DEF
+49: reduce/reduce conflict (red'ns 24 and 29) on ID
+49: reduce/reduce conflict (red'ns 24 and 29) on IF
+49: reduce/reduce conflict (red'ns 24 and 29) on INPUT
+49: reduce/reduce conflict (red'ns 24 and 29) on NEWLINE
+49: reduce/reduce conflict (red'ns 24 and 29) on OUTPUT
+49: reduce/reduce conflict (red'ns 24 and 29) on RETURN
+49: reduce/reduce conflict (red'ns 24 and 29) on START_WHILE
+state 49 (entry on STRING_LITERAL)
+    exp : STRING_LITERAL_    (24)
+    assignable : STRING_LITERAL_    (29)
+
+    RIGHT_PARENTHESIS error
+    INTEGER_TYPE error
+    STRING_TYPE error
+    START_FUNCTION_STATEMENTS error
+    REAL_LITERAL error
+    START_THEN error
+    $end error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_PROGRAM error
+    REAL_TYPE error
+    PARAMETER_COMMA error
+    RIGHT_BRACKET error
+    END_FUNCTION_STATEMENTS error
+    ELIF error
+    ASSIGN error
+    error error
+    INT_LITERAL error
+    ELSE error
+    LEFT_PARENTHESIS error
     . reduce 24
 
-state 44 (entry on STRING_LITERAL)
-    assignable : STRING_LITERAL_    (28)
+state 50 (entry on STRING_TYPE)
+    cast : STRING_TYPE_LEFT_PARENTHESIS relational RIGHT_PARENTHESIS    (58)
 
-    OUTPUT reduce 28
-    NEWLINE reduce 28
-    FUNCTION_DEF reduce 28
-    END_WHILE reduce 28
-    START_WHILE reduce 28
-    INPUT reduce 28
-    END_THEN reduce 28
-    IF reduce 28
+    LEFT_PARENTHESIS shift 78
+    . error
+
+state 51 (entry on equality)
+    equality : equality_EQUALS relational    (50)
+    equality : equality_NOT_EQUALS relational    (51)
+    while_statement : START_WHILE equality_stmnt_list END_WHILE    (31)
+
+    FUNCTION_DEF shift 14
+    ID shift 15
+    IF shift 16
+    INPUT shift 17
+    OUTPUT shift 18
+    START_WHILE shift 19
+    EQUALS shift 63
+    NOT_EQUALS shift 64
+    . error
+
+    assignment goto 3
+    conditional goto 4
+    function_call goto 5
+    function_def goto 6
+    if_statement goto 7
+    input goto 8
+    output goto 9
+    ref goto 10
+    statement goto 11
+    stmnt_list goto 79
+    while_statement goto 13
+
+state 52 (entry on STRING_LITERAL)
+    exp : STRING_LITERAL_    (24)
+
+    REAL_TYPE error
+    ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    . reduce 24
+
+state 53 (entry on elif_statement)
+    elif_block_statement : elif_block_statement elif_statement_    (42)
+
+    RETURN reduce 42
+    ID reduce 42
+    END_PROGRAM reduce 42
+    OUTPUT reduce 42
+    FUNCTION_DEF reduce 42
+    ELSE reduce 42
+    START_WHILE reduce 42
+    END_WHILE reduce 42
+    INPUT reduce 42
+    IF reduce 42
+    END_THEN reduce 42
+    ELIF reduce 42
+    . error
+
+state 54 (entry on else_statement)
+    conditional : if_statement elif_block_statement else_statement_    (38)
+
+    RETURN reduce 38
+    ID reduce 38
+    END_PROGRAM reduce 38
+    OUTPUT reduce 38
+    FUNCTION_DEF reduce 38
+    START_WHILE reduce 38
+    END_WHILE reduce 38
+    INPUT reduce 38
+    IF reduce 38
+    END_THEN reduce 38
+    . error
+
+state 55 (entry on LEFT_PARENTHESIS)
+    elif_statement : ELIF LEFT_PARENTHESIS_equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (40)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    equality goto 80
+    exp goto 36
+    expr goto 37
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    relational goto 42
+    term goto 43
+
+state 56 (entry on START_THEN)
+    else_statement : ELSE START_THEN_stmnt_list END_THEN    (43)
+
+    FUNCTION_DEF shift 14
+    ID shift 15
+    IF shift 16
+    INPUT shift 17
+    OUTPUT shift 18
+    START_WHILE shift 19
+    . error
+
+    assignment goto 3
+    conditional goto 4
+    function_call goto 5
+    function_def goto 6
+    if_statement goto 7
+    input goto 8
+    output goto 9
+    ref goto 10
+    statement goto 11
+    stmnt_list goto 81
+    while_statement goto 13
+
+state 57 (entry on assignable)
+    assignment : ref ASSIGN assignable_    (28)
+
     RETURN reduce 28
     ID reduce 28
     END_PROGRAM reduce 28
+    OUTPUT reduce 28
+    FUNCTION_DEF reduce 28
+    START_WHILE reduce 28
+    END_WHILE reduce 28
+    INPUT reduce 28
+    IF reduce 28
+    END_THEN reduce 28
     . error
 
-state 45 (entry on equality)
-    equality : equality_EQUALS relational    (48)
-    equality : equality_NOT_EQUALS relational    (49)
-    while_statement : START_WHILE equality_stmnt_list END_WHILE    (30)
+state 58 (entry on LEFT_PARENTHESIS)
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS_parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (47)
 
-    FUNCTION_DEF shift 13
-    ID shift 14
-    IF shift 15
-    INPUT shift 16
-    OUTPUT shift 17
-    START_WHILE shift 18
-    EQUALS shift 56
-    NOT_EQUALS shift 57
+    ID shift 83
     . error
 
-    assignment goto 3
-    conditional goto 4
-    function_call goto 5
-    function_def goto 6
-    if_statement goto 7
-    input goto 8
-    output goto 9
-    statement goto 10
-    stmnt_list goto 69
-    while_statement goto 12
+    parameter_list goto 82
 
-state 46 (entry on expr)
-    expr : expr_ADD term    (13)
-    expr : expr_SUBTRACT term    (14)
-    relational : expr_    (55)
-
-    ADD shift 58
-    SUBTRACT shift 59
-    GREATER_THAN_OR_EQUAL reduce 55
-    OUTPUT reduce 55
-    GREATER_THAN reduce 55
-    NOT_EQUALS reduce 55
-    NEWLINE reduce 55
-    FUNCTION_DEF reduce 55
-    LESS_THAN_OR_EQUAL reduce 55
-    LESS_THAN reduce 55
-    EQUALS reduce 55
-    END_WHILE reduce 55
-    START_WHILE reduce 55
-    INPUT reduce 55
-    END_THEN reduce 55
-    RIGHT_PARENTHESIS reduce 55
-    IF reduce 55
-    RETURN reduce 55
-    ID reduce 55
-    END_PROGRAM reduce 55
-    . error
-
-state 47 (entry on else_statement)
-    conditional : if_statement elif_statement else_statement_    (37)
-
-    OUTPUT reduce 37
-    FUNCTION_DEF reduce 37
-    END_WHILE reduce 37
-    START_WHILE reduce 37
-    INPUT reduce 37
-    END_THEN reduce 37
-    IF reduce 37
-    RETURN reduce 37
-    ID reduce 37
-    END_PROGRAM reduce 37
-    . error
-
-state 48 (entry on LEFT_PARENTHESIS)
-    elif_statement : ELIF LEFT_PARENTHESIS_equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (39)
-    elif_statement : ELIF LEFT_PARENTHESIS_equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN elif_statement    (40)
-
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    . error
-
-    equality goto 70
-    exp goto 32
-    expr goto 46
-    factor goto 34
-    function_call goto 35
-    ref goto 37
-    relational goto 38
-    term goto 39
-
-state 49 (entry on START_THEN)
-    else_statement : ELSE START_THEN_stmnt_list END_THEN    (41)
-
-    FUNCTION_DEF shift 13
-    ID shift 14
-    IF shift 15
-    INPUT shift 16
-    OUTPUT shift 17
-    START_WHILE shift 18
-    . error
-
-    assignment goto 3
-    conditional goto 4
-    function_call goto 5
-    function_def goto 6
-    if_statement goto 7
-    input goto 8
-    output goto 9
-    statement goto 10
-    stmnt_list goto 71
-    while_statement goto 12
-
-state 50 (entry on LEFT_PARENTHESIS)
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS_parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
-
-    ID shift 73
-    . error
-
-    parameter_list goto 72
-
-state 51 (entry on assignable)
-    assignment : ID ASSIGN assignable_    (26)
-
-    OUTPUT reduce 26
-    FUNCTION_DEF reduce 26
-    END_WHILE reduce 26
-    START_WHILE reduce 26
-    INPUT reduce 26
-    END_THEN reduce 26
-    IF reduce 26
-    RETURN reduce 26
-    ID reduce 26
-    END_PROGRAM reduce 26
-    . error
-
-state 52 (entry on ref)
-    ref_list : ref_    (44)
-
-    PARAMETER_COMMA reduce 44
-    RIGHT_PARENTHESIS reduce 44
-    . error
-
-state 53 (entry on ref_list)
-    function_call : ID LEFT_PARENTHESIS ref_list_RIGHT_PARENTHESIS    (42)
-    ref_list : ref_list_PARAMETER_COMMA ref    (43)
-
-    PARAMETER_COMMA shift 74
-    RIGHT_PARENTHESIS shift 75
-    . error
-
-state 54 (entry on equality)
-    equality : equality_EQUALS relational    (48)
-    equality : equality_NOT_EQUALS relational    (49)
-    if_statement : IF LEFT_PARENTHESIS equality_RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (38)
-
-    EQUALS shift 56
-    NOT_EQUALS shift 57
-    RIGHT_PARENTHESIS shift 76
-    . error
-
-state 55 (entry on LEFT_BRACKET)
-    ref : ID LEFT_BRACKET_expr RIGHT_BRACKET    (11)
-
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    . error
-
-    exp goto 32
-    expr goto 77
-    factor goto 34
-    function_call goto 35
-    ref goto 37
-    term goto 39
-
-state 56 (entry on EQUALS)
-    equality : equality EQUALS_relational    (48)
-
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    . error
-
-    exp goto 32
-    expr goto 46
-    factor goto 34
-    function_call goto 35
-    ref goto 37
-    relational goto 78
-    term goto 39
-
-state 57 (entry on NOT_EQUALS)
-    equality : equality NOT_EQUALS_relational    (49)
-
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    . error
-
-    exp goto 32
-    expr goto 46
-    factor goto 34
-    function_call goto 35
-    ref goto 37
-    relational goto 79
-    term goto 39
-
-state 58 (entry on ADD)
-    expr : expr ADD_term    (13)
-
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    . error
-
-    exp goto 32
-    factor goto 34
-    function_call goto 35
-    ref goto 37
-    term goto 80
-
-state 59 (entry on SUBTRACT)
-    expr : expr SUBTRACT_term    (14)
-
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    . error
-
-    exp goto 32
-    factor goto 34
-    function_call goto 35
-    ref goto 37
-    term goto 81
-
-state 60 (entry on EXPONENT)
-    factor : factor EXPONENT_exp    (19)
-
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    . error
-
-    exp goto 82
-    function_call goto 35
-    ref goto 37
-
-state 61 (entry on NEWLINE)
-    output : OUTPUT assignable NEWLINE_    (33)
-
-    OUTPUT reduce 33
-    FUNCTION_DEF reduce 33
-    END_WHILE reduce 33
-    START_WHILE reduce 33
-    INPUT reduce 33
-    END_THEN reduce 33
-    IF reduce 33
-    RETURN reduce 33
-    ID reduce 33
-    END_PROGRAM reduce 33
-    . error
-
-state 62 (entry on GREATER_THAN)
-    relational : relational GREATER_THAN_expr    (51)
-
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    . error
-
-    exp goto 32
-    expr goto 83
-    factor goto 34
-    function_call goto 35
-    ref goto 37
-    term goto 39
-
-state 63 (entry on GREATER_THAN_OR_EQUAL)
-    relational : relational GREATER_THAN_OR_EQUAL_expr    (52)
-
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    . error
-
-    exp goto 32
-    expr goto 84
-    factor goto 34
-    function_call goto 35
-    ref goto 37
-    term goto 39
-
-state 64 (entry on LESS_THAN)
-    relational : relational LESS_THAN_expr    (53)
-
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    . error
-
-    exp goto 32
-    expr goto 85
-    factor goto 34
-    function_call goto 35
-    ref goto 37
-    term goto 39
-
-state 65 (entry on LESS_THAN_OR_EQUAL)
-    relational : relational LESS_THAN_OR_EQUAL_expr    (54)
-
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    . error
-
-    exp goto 32
-    expr goto 86
-    factor goto 34
-    function_call goto 35
-    ref goto 37
-    term goto 39
-
-state 66 (entry on DIVIDE)
-    term : term DIVIDE_factor    (17)
-
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    . error
-
-    exp goto 32
-    factor goto 87
-    function_call goto 35
-    ref goto 37
-
-state 67 (entry on MULTIPLY)
-    term : term MULTIPLY_factor    (16)
-
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
-    . error
-
-    exp goto 32
-    factor goto 88
-    function_call goto 35
-    ref goto 37
-
-state 68 (entry on expr)
-    exp : LEFT_PARENTHESIS expr_RIGHT_PARENTHESIS    (21)
-    expr : expr_ADD term    (13)
-    expr : expr_SUBTRACT term    (14)
-
-    ADD shift 58
-    SUBTRACT shift 59
-    RIGHT_PARENTHESIS shift 89
-    . error
-
-state 69 (entry on stmnt_list)
-    stmnt_list : stmnt_list_statement    (2)
-    while_statement : START_WHILE equality stmnt_list_END_WHILE    (30)
-
-    FUNCTION_DEF shift 13
-    ID shift 14
-    IF shift 15
-    INPUT shift 16
-    OUTPUT shift 17
-    START_WHILE shift 18
-    END_WHILE shift 90
-    . error
-
-    assignment goto 3
-    conditional goto 4
-    function_call goto 5
-    function_def goto 6
-    if_statement goto 7
-    input goto 8
-    output goto 9
-    statement goto 23
-    while_statement goto 12
-
-state 70 (entry on equality)
-    elif_statement : ELIF LEFT_PARENTHESIS equality_RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (39)
-    elif_statement : ELIF LEFT_PARENTHESIS equality_RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN elif_statement    (40)
-    equality : equality_EQUALS relational    (48)
-    equality : equality_NOT_EQUALS relational    (49)
-
-    EQUALS shift 56
-    NOT_EQUALS shift 57
-    RIGHT_PARENTHESIS shift 91
-    . error
-
-state 71 (entry on stmnt_list)
-    else_statement : ELSE START_THEN stmnt_list_END_THEN    (41)
-    stmnt_list : stmnt_list_statement    (2)
-
-    FUNCTION_DEF shift 13
-    ID shift 14
-    IF shift 15
-    INPUT shift 16
-    OUTPUT shift 17
-    START_WHILE shift 18
-    END_THEN shift 92
-    . error
-
-    assignment goto 3
-    conditional goto 4
-    function_call goto 5
-    function_def goto 6
-    if_statement goto 7
-    input goto 8
-    output goto 9
-    statement goto 23
-    while_statement goto 12
-
-state 72 (entry on parameter_list)
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list_RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
-    parameter_list : parameter_list_PARAMETER_COMMA ID    (46)
-
-    PARAMETER_COMMA shift 93
-    RIGHT_PARENTHESIS shift 94
-    . error
-
-state 73 (entry on ID)
-    parameter_list : ID_    (47)
-
-    PARAMETER_COMMA reduce 47
-    RIGHT_PARENTHESIS reduce 47
-    . error
-
-state 74 (entry on PARAMETER_COMMA)
-    ref_list : ref_list PARAMETER_COMMA_ref    (43)
-
-    ID shift 30
-    . error
-
-    ref goto 95
-
-state 75 (entry on RIGHT_PARENTHESIS)
-    function_call : ID LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS_    (42)
-
-    REAL_DECL error
-    LEFT_BRACKET error
-    START_FUNCTION_STATEMENTS error
-    REAL_LITERAL error
-    ASSIGN error
-    LEFT_PARENTHESIS error
-    STRING_DECL error
-    START_PROGRAM error
-    INT_LITERAL error
-    ARRAY_DECL error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    ELSE error
-    $end error
-    error error
-    STRING_LITERAL error
-    INTEGER_DECL error
-    START_THEN error
-    ELIF error
-    . reduce 42
-
-state 76 (entry on RIGHT_PARENTHESIS)
-    if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS_START_THEN stmnt_list END_THEN    (38)
-
-    START_THEN shift 96
-    . error
-
-state 77 (entry on expr)
+state 59 (entry on expr)
     expr : expr_ADD term    (13)
     expr : expr_SUBTRACT term    (14)
     ref : ID LEFT_BRACKET expr_RIGHT_BRACKET    (11)
 
-    ADD shift 58
-    SUBTRACT shift 59
-    RIGHT_BRACKET shift 97
+    ADD shift 65
+    SUBTRACT shift 66
+    RIGHT_BRACKET shift 84
     . error
 
-state 78 (entry on relational)
-    equality : equality EQUALS relational_    (48)
-    relational : relational_GREATER_THAN expr    (51)
-    relational : relational_GREATER_THAN_OR_EQUAL expr    (52)
-    relational : relational_LESS_THAN expr    (53)
-    relational : relational_LESS_THAN_OR_EQUAL expr    (54)
-
-    GREATER_THAN shift 62
-    GREATER_THAN_OR_EQUAL shift 63
-    LESS_THAN shift 64
-    LESS_THAN_OR_EQUAL shift 65
-    OUTPUT reduce 48
-    NOT_EQUALS reduce 48
-    NEWLINE reduce 48
-    FUNCTION_DEF reduce 48
-    EQUALS reduce 48
-    END_WHILE reduce 48
-    START_WHILE reduce 48
-    INPUT reduce 48
-    END_THEN reduce 48
-    RIGHT_PARENTHESIS reduce 48
-    IF reduce 48
-    RETURN reduce 48
-    ID reduce 48
-    END_PROGRAM reduce 48
-    . error
-
-state 79 (entry on relational)
-    equality : equality NOT_EQUALS relational_    (49)
-    relational : relational_GREATER_THAN expr    (51)
-    relational : relational_GREATER_THAN_OR_EQUAL expr    (52)
-    relational : relational_LESS_THAN expr    (53)
-    relational : relational_LESS_THAN_OR_EQUAL expr    (54)
-
-    GREATER_THAN shift 62
-    GREATER_THAN_OR_EQUAL shift 63
-    LESS_THAN shift 64
-    LESS_THAN_OR_EQUAL shift 65
-    OUTPUT reduce 49
-    NOT_EQUALS reduce 49
-    NEWLINE reduce 49
-    FUNCTION_DEF reduce 49
-    EQUALS reduce 49
-    END_WHILE reduce 49
-    START_WHILE reduce 49
-    INPUT reduce 49
-    END_THEN reduce 49
-    RIGHT_PARENTHESIS reduce 49
-    IF reduce 49
-    RETURN reduce 49
-    ID reduce 49
-    END_PROGRAM reduce 49
-    . error
-
-state 80 (entry on term)
-    expr : expr ADD term_    (13)
-    term : term_MULTIPLY factor    (16)
-    term : term_DIVIDE factor    (17)
-
-    LEFT_PARENTHESIS error
-    error error
-    REAL_LITERAL error
-    $end error
-    EXPONENT error
-    ELSE error
-    START_PROGRAM error
-    START_THEN error
-    START_FUNCTION_STATEMENTS error
-    ARRAY_DECL error
-    END_FUNCTION_STATEMENTS error
-    PARAMETER_COMMA error
-    REAL_DECL error
-    ASSIGN error
-    STRING_LITERAL error
-    INT_LITERAL error
-    STRING_DECL error
-    INTEGER_DECL error
-    ELIF error
-    LEFT_BRACKET error
-    DIVIDE shift 66
-    MULTIPLY shift 67
-    . reduce 13
-
-state 81 (entry on term)
-    expr : expr SUBTRACT term_    (14)
-    term : term_MULTIPLY factor    (16)
-    term : term_DIVIDE factor    (17)
-
-    LEFT_PARENTHESIS error
-    error error
-    REAL_LITERAL error
-    $end error
-    EXPONENT error
-    ELSE error
-    START_PROGRAM error
-    START_THEN error
-    START_FUNCTION_STATEMENTS error
-    ARRAY_DECL error
-    END_FUNCTION_STATEMENTS error
-    PARAMETER_COMMA error
-    REAL_DECL error
-    ASSIGN error
-    STRING_LITERAL error
-    INT_LITERAL error
-    STRING_DECL error
-    INTEGER_DECL error
-    ELIF error
-    LEFT_BRACKET error
-    DIVIDE shift 66
-    MULTIPLY shift 67
-    . reduce 14
-
-state 82 (entry on exp)
-    factor : factor EXPONENT exp_    (19)
-
-    REAL_DECL error
-    LEFT_BRACKET error
-    START_FUNCTION_STATEMENTS error
-    REAL_LITERAL error
-    ASSIGN error
-    LEFT_PARENTHESIS error
-    STRING_DECL error
-    START_PROGRAM error
-    INT_LITERAL error
-    ARRAY_DECL error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    ELSE error
-    $end error
-    error error
-    STRING_LITERAL error
-    INTEGER_DECL error
-    START_THEN error
-    ELIF error
-    . reduce 19
-
-state 83 (entry on expr)
-    expr : expr_ADD term    (13)
-    expr : expr_SUBTRACT term    (14)
-    relational : relational GREATER_THAN expr_    (51)
-
-    ADD shift 58
-    SUBTRACT shift 59
-    GREATER_THAN_OR_EQUAL reduce 51
-    OUTPUT reduce 51
-    GREATER_THAN reduce 51
-    NOT_EQUALS reduce 51
-    NEWLINE reduce 51
-    FUNCTION_DEF reduce 51
-    LESS_THAN_OR_EQUAL reduce 51
-    LESS_THAN reduce 51
-    EQUALS reduce 51
-    END_WHILE reduce 51
-    START_WHILE reduce 51
-    INPUT reduce 51
-    END_THEN reduce 51
-    RIGHT_PARENTHESIS reduce 51
-    IF reduce 51
-    RETURN reduce 51
-    ID reduce 51
-    END_PROGRAM reduce 51
-    . error
-
-state 84 (entry on expr)
-    expr : expr_ADD term    (13)
-    expr : expr_SUBTRACT term    (14)
-    relational : relational GREATER_THAN_OR_EQUAL expr_    (52)
-
-    ADD shift 58
-    SUBTRACT shift 59
-    GREATER_THAN_OR_EQUAL reduce 52
-    OUTPUT reduce 52
-    GREATER_THAN reduce 52
-    NOT_EQUALS reduce 52
-    NEWLINE reduce 52
-    FUNCTION_DEF reduce 52
-    LESS_THAN_OR_EQUAL reduce 52
-    LESS_THAN reduce 52
-    EQUALS reduce 52
-    END_WHILE reduce 52
-    START_WHILE reduce 52
-    INPUT reduce 52
-    END_THEN reduce 52
-    RIGHT_PARENTHESIS reduce 52
-    IF reduce 52
-    RETURN reduce 52
-    ID reduce 52
-    END_PROGRAM reduce 52
-    . error
-
-state 85 (entry on expr)
-    expr : expr_ADD term    (13)
-    expr : expr_SUBTRACT term    (14)
-    relational : relational LESS_THAN expr_    (53)
-
-    ADD shift 58
-    SUBTRACT shift 59
-    GREATER_THAN_OR_EQUAL reduce 53
-    OUTPUT reduce 53
-    GREATER_THAN reduce 53
-    NOT_EQUALS reduce 53
-    NEWLINE reduce 53
-    FUNCTION_DEF reduce 53
-    LESS_THAN_OR_EQUAL reduce 53
-    LESS_THAN reduce 53
-    EQUALS reduce 53
-    END_WHILE reduce 53
-    START_WHILE reduce 53
-    INPUT reduce 53
-    END_THEN reduce 53
-    RIGHT_PARENTHESIS reduce 53
-    IF reduce 53
-    RETURN reduce 53
-    ID reduce 53
-    END_PROGRAM reduce 53
-    . error
-
-state 86 (entry on expr)
-    expr : expr_ADD term    (13)
-    expr : expr_SUBTRACT term    (14)
-    relational : relational LESS_THAN_OR_EQUAL expr_    (54)
-
-    ADD shift 58
-    SUBTRACT shift 59
-    GREATER_THAN_OR_EQUAL reduce 54
-    OUTPUT reduce 54
-    GREATER_THAN reduce 54
-    NOT_EQUALS reduce 54
-    NEWLINE reduce 54
-    FUNCTION_DEF reduce 54
-    LESS_THAN_OR_EQUAL reduce 54
-    LESS_THAN reduce 54
-    EQUALS reduce 54
-    END_WHILE reduce 54
-    START_WHILE reduce 54
-    INPUT reduce 54
-    END_THEN reduce 54
-    RIGHT_PARENTHESIS reduce 54
-    IF reduce 54
-    RETURN reduce 54
-    ID reduce 54
-    END_PROGRAM reduce 54
-    . error
-
-state 87 (entry on factor)
-    factor : factor_EXPONENT exp    (19)
-    term : term DIVIDE factor_    (17)
-
-    REAL_DECL error
-    LEFT_BRACKET error
-    START_FUNCTION_STATEMENTS error
-    REAL_LITERAL error
-    LEFT_PARENTHESIS error
-    $end error
-    STRING_DECL error
-    START_PROGRAM error
-    INT_LITERAL error
-    ARRAY_DECL error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    ELSE error
-    ASSIGN error
-    error error
-    STRING_LITERAL error
-    INTEGER_DECL error
-    START_THEN error
-    ELIF error
-    EXPONENT shift 60
-    . reduce 17
-
-state 88 (entry on factor)
-    factor : factor_EXPONENT exp    (19)
-    term : term MULTIPLY factor_    (16)
-
-    REAL_DECL error
-    LEFT_BRACKET error
-    START_FUNCTION_STATEMENTS error
-    REAL_LITERAL error
-    LEFT_PARENTHESIS error
-    $end error
-    STRING_DECL error
-    START_PROGRAM error
-    INT_LITERAL error
-    ARRAY_DECL error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    ELSE error
-    ASSIGN error
-    error error
-    STRING_LITERAL error
-    INTEGER_DECL error
-    START_THEN error
-    ELIF error
-    EXPONENT shift 60
-    . reduce 16
-
-state 89 (entry on RIGHT_PARENTHESIS)
-    exp : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS_    (21)
-
-    REAL_DECL error
-    LEFT_BRACKET error
-    START_FUNCTION_STATEMENTS error
-    REAL_LITERAL error
-    ASSIGN error
-    LEFT_PARENTHESIS error
-    STRING_DECL error
-    START_PROGRAM error
-    INT_LITERAL error
-    ARRAY_DECL error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    ELSE error
-    $end error
-    error error
-    STRING_LITERAL error
-    INTEGER_DECL error
-    START_THEN error
-    ELIF error
-    . reduce 21
-
-state 90 (entry on END_WHILE)
-    while_statement : START_WHILE equality stmnt_list END_WHILE_    (30)
-
-    OUTPUT reduce 30
-    FUNCTION_DEF reduce 30
-    END_WHILE reduce 30
-    START_WHILE reduce 30
-    INPUT reduce 30
-    END_THEN reduce 30
-    IF reduce 30
-    RETURN reduce 30
-    ID reduce 30
-    END_PROGRAM reduce 30
-    . error
-
-state 91 (entry on RIGHT_PARENTHESIS)
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS_START_THEN stmnt_list END_THEN    (39)
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS_START_THEN stmnt_list END_THEN elif_statement    (40)
-
-    START_THEN shift 98
-    . error
-
-state 92 (entry on END_THEN)
-    else_statement : ELSE START_THEN stmnt_list END_THEN_    (41)
-
-    OUTPUT reduce 41
-    FUNCTION_DEF reduce 41
-    END_WHILE reduce 41
-    START_WHILE reduce 41
-    INPUT reduce 41
-    END_THEN reduce 41
-    IF reduce 41
-    RETURN reduce 41
-    ID reduce 41
-    END_PROGRAM reduce 41
-    . error
-
-state 93 (entry on PARAMETER_COMMA)
-    parameter_list : parameter_list PARAMETER_COMMA_ID    (46)
-
-    ID shift 99
-    . error
-
-state 94 (entry on RIGHT_PARENTHESIS)
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS_START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
-
-    START_FUNCTION_STATEMENTS shift 100
-    . error
-
-state 95 (entry on ref)
-    ref_list : ref_list PARAMETER_COMMA ref_    (43)
-
-    PARAMETER_COMMA reduce 43
-    RIGHT_PARENTHESIS reduce 43
-    . error
-
-state 96 (entry on START_THEN)
-    if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN_stmnt_list END_THEN    (38)
-
-    FUNCTION_DEF shift 13
-    ID shift 14
-    IF shift 15
-    INPUT shift 16
-    OUTPUT shift 17
-    START_WHILE shift 18
-    . error
-
-    assignment goto 3
-    conditional goto 4
-    function_call goto 5
-    function_def goto 6
-    if_statement goto 7
-    input goto 8
-    output goto 9
-    statement goto 10
-    stmnt_list goto 101
-    while_statement goto 12
-
-state 97 (entry on RIGHT_BRACKET)
-    ref : ID LEFT_BRACKET expr RIGHT_BRACKET_    (11)
-
-    REAL_DECL error
-    ELIF error
-    START_FUNCTION_STATEMENTS error
-    REAL_LITERAL error
-    ELSE error
-    LEFT_BRACKET error
-    STRING_DECL error
-    START_PROGRAM error
-    INT_LITERAL error
-    ARRAY_DECL error
-    END_FUNCTION_STATEMENTS error
-    ASSIGN error
-    $end error
-    LEFT_PARENTHESIS error
-    error error
-    STRING_LITERAL error
-    INTEGER_DECL error
-    START_THEN error
-    . reduce 11
-
-state 98 (entry on START_THEN)
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN_stmnt_list END_THEN    (39)
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN_stmnt_list END_THEN elif_statement    (40)
-
-    FUNCTION_DEF shift 13
-    ID shift 14
-    IF shift 15
-    INPUT shift 16
-    OUTPUT shift 17
-    START_WHILE shift 18
-    . error
-
-    assignment goto 3
-    conditional goto 4
-    function_call goto 5
-    function_def goto 6
-    if_statement goto 7
-    input goto 8
-    output goto 9
-    statement goto 10
-    stmnt_list goto 102
-    while_statement goto 12
-
-state 99 (entry on ID)
-    parameter_list : parameter_list PARAMETER_COMMA ID_    (46)
+state 60 (entry on ref)
+    ref_list : ref_    (46)
 
     PARAMETER_COMMA reduce 46
     RIGHT_PARENTHESIS reduce 46
     . error
 
-state 100 (entry on START_FUNCTION_STATEMENTS)
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS_stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
+state 61 (entry on ref_list)
+    function_call : ID LEFT_PARENTHESIS ref_list_RIGHT_PARENTHESIS    (44)
+    ref_list : ref_list_PARAMETER_COMMA ref    (45)
 
-    FUNCTION_DEF shift 13
-    ID shift 14
-    IF shift 15
-    INPUT shift 16
-    OUTPUT shift 17
-    START_WHILE shift 18
+    PARAMETER_COMMA shift 85
+    RIGHT_PARENTHESIS shift 86
+    . error
+
+state 62 (entry on equality)
+    equality : equality_EQUALS relational    (50)
+    equality : equality_NOT_EQUALS relational    (51)
+    if_statement : IF LEFT_PARENTHESIS equality_RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (39)
+
+    EQUALS shift 63
+    NOT_EQUALS shift 64
+    RIGHT_PARENTHESIS shift 87
+    . error
+
+state 63 (entry on EQUALS)
+    equality : equality EQUALS_relational    (50)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    expr goto 37
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    relational goto 88
+    term goto 43
+
+state 64 (entry on NOT_EQUALS)
+    equality : equality NOT_EQUALS_relational    (51)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    expr goto 37
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    relational goto 89
+    term goto 43
+
+state 65 (entry on ADD)
+    expr : expr ADD_term    (13)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    term goto 90
+
+state 66 (entry on SUBTRACT)
+    expr : expr SUBTRACT_term    (14)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    term goto 91
+
+state 67 (entry on EXPONENT)
+    factor : factor EXPONENT_exp    (19)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 92
+    function_call goto 39
+    ref goto 41
+
+state 68 (entry on NEWLINE)
+    output : OUTPUT assignable NEWLINE_    (34)
+
+    RETURN reduce 34
+    ID reduce 34
+    END_PROGRAM reduce 34
+    OUTPUT reduce 34
+    FUNCTION_DEF reduce 34
+    START_WHILE reduce 34
+    END_WHILE reduce 34
+    INPUT reduce 34
+    IF reduce 34
+    END_THEN reduce 34
+    . error
+
+state 69 (entry on GREATER_THAN)
+    relational : relational GREATER_THAN_expr    (53)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    expr goto 93
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    term goto 43
+
+state 70 (entry on GREATER_THAN_OR_EQUAL)
+    relational : relational GREATER_THAN_OR_EQUAL_expr    (54)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    expr goto 94
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    term goto 43
+
+state 71 (entry on LESS_THAN)
+    relational : relational LESS_THAN_expr    (55)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    expr goto 95
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    term goto 43
+
+state 72 (entry on LESS_THAN_OR_EQUAL)
+    relational : relational LESS_THAN_OR_EQUAL_expr    (56)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    expr goto 96
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    term goto 43
+
+state 73 (entry on DIVIDE)
+    term : term DIVIDE_factor    (17)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    factor goto 97
+    function_call goto 39
+    ref goto 41
+
+state 74 (entry on MULTIPLY)
+    term : term MULTIPLY_factor    (16)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    factor goto 98
+    function_call goto 39
+    ref goto 41
+
+state 75 (entry on LEFT_PARENTHESIS)
+    cast : INTEGER_TYPE LEFT_PARENTHESIS_relational RIGHT_PARENTHESIS    (59)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    expr goto 37
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    relational goto 99
+    term goto 43
+
+state 76 (entry on expr)
+    exp : LEFT_PARENTHESIS expr_RIGHT_PARENTHESIS    (21)
+    expr : expr_ADD term    (13)
+    expr : expr_SUBTRACT term    (14)
+
+    ADD shift 65
+    SUBTRACT shift 66
+    RIGHT_PARENTHESIS shift 100
+    . error
+
+state 77 (entry on LEFT_PARENTHESIS)
+    cast : REAL_TYPE LEFT_PARENTHESIS_relational RIGHT_PARENTHESIS    (60)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    expr goto 37
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    relational goto 101
+    term goto 43
+
+state 78 (entry on LEFT_PARENTHESIS)
+    cast : STRING_TYPE LEFT_PARENTHESIS_relational RIGHT_PARENTHESIS    (58)
+
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    expr goto 37
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    relational goto 102
+    term goto 43
+
+state 79 (entry on stmnt_list)
+    stmnt_list : stmnt_list_statement    (2)
+    while_statement : START_WHILE equality stmnt_list_END_WHILE    (31)
+
+    FUNCTION_DEF shift 14
+    ID shift 15
+    IF shift 16
+    INPUT shift 17
+    OUTPUT shift 18
+    START_WHILE shift 19
+    END_WHILE shift 103
     . error
 
     assignment goto 3
@@ -1715,44 +1386,30 @@ state 100 (entry on START_FUNCTION_STATEMENTS)
     if_statement goto 7
     input goto 8
     output goto 9
-    statement goto 10
-    stmnt_list goto 103
-    while_statement goto 12
+    ref goto 10
+    statement goto 26
+    while_statement goto 13
 
-state 101 (entry on stmnt_list)
-    if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list_END_THEN    (38)
-    stmnt_list : stmnt_list_statement    (2)
+state 80 (entry on equality)
+    elif_statement : ELIF LEFT_PARENTHESIS equality_RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN    (40)
+    equality : equality_EQUALS relational    (50)
+    equality : equality_NOT_EQUALS relational    (51)
 
-    FUNCTION_DEF shift 13
-    ID shift 14
-    IF shift 15
-    INPUT shift 16
-    OUTPUT shift 17
-    START_WHILE shift 18
-    END_THEN shift 104
+    EQUALS shift 63
+    NOT_EQUALS shift 64
+    RIGHT_PARENTHESIS shift 104
     . error
 
-    assignment goto 3
-    conditional goto 4
-    function_call goto 5
-    function_def goto 6
-    if_statement goto 7
-    input goto 8
-    output goto 9
-    statement goto 23
-    while_statement goto 12
-
-state 102 (entry on stmnt_list)
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list_END_THEN    (39)
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list_END_THEN elif_statement    (40)
+state 81 (entry on stmnt_list)
+    else_statement : ELSE START_THEN stmnt_list_END_THEN    (43)
     stmnt_list : stmnt_list_statement    (2)
 
-    FUNCTION_DEF shift 13
-    ID shift 14
-    IF shift 15
-    INPUT shift 16
-    OUTPUT shift 17
-    START_WHILE shift 18
+    FUNCTION_DEF shift 14
+    ID shift 15
+    IF shift 16
+    INPUT shift 17
+    OUTPUT shift 18
+    START_WHILE shift 19
     END_THEN shift 105
     . error
 
@@ -1763,20 +1420,503 @@ state 102 (entry on stmnt_list)
     if_statement goto 7
     input goto 8
     output goto 9
-    statement goto 23
-    while_statement goto 12
+    ref goto 10
+    statement goto 26
+    while_statement goto 13
 
-state 103 (entry on stmnt_list)
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list_RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
-    stmnt_list : stmnt_list_statement    (2)
+state 82 (entry on parameter_list)
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list_RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (47)
+    parameter_list : parameter_list_PARAMETER_COMMA ID    (48)
 
-    FUNCTION_DEF shift 13
-    ID shift 14
-    IF shift 15
-    INPUT shift 16
-    OUTPUT shift 17
-    START_WHILE shift 18
-    RETURN shift 106
+    PARAMETER_COMMA shift 106
+    RIGHT_PARENTHESIS shift 107
+    . error
+
+state 83 (entry on ID)
+    parameter_list : ID_    (49)
+
+    PARAMETER_COMMA reduce 49
+    RIGHT_PARENTHESIS reduce 49
+    . error
+
+state 84 (entry on RIGHT_BRACKET)
+    ref : ID LEFT_BRACKET expr RIGHT_BRACKET_    (11)
+
+    REAL_LITERAL error
+    STRING_LITERAL error
+    START_THEN error
+    REAL_TYPE error
+    START_FUNCTION_STATEMENTS error
+    INT_LITERAL error
+    STRING_TYPE error
+    INTEGER_TYPE error
+    START_PROGRAM error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    $end error
+    LEFT_PARENTHESIS error
+    ELSE error
+    error error
+    LEFT_BRACKET error
+    . reduce 11
+
+state 85 (entry on PARAMETER_COMMA)
+    ref_list : ref_list PARAMETER_COMMA_ref    (45)
+
+    ID shift 33
+    . error
+
+    ref goto 108
+
+state 86 (entry on RIGHT_PARENTHESIS)
+    function_call : ID LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS_    (44)
+
+    REAL_TYPE error
+    ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    . reduce 44
+
+state 87 (entry on RIGHT_PARENTHESIS)
+    if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS_START_THEN stmnt_list END_THEN    (39)
+
+    START_THEN shift 109
+    . error
+
+state 88 (entry on relational)
+    equality : equality EQUALS relational_    (50)
+    relational : relational_GREATER_THAN expr    (53)
+    relational : relational_GREATER_THAN_OR_EQUAL expr    (54)
+    relational : relational_LESS_THAN expr    (55)
+    relational : relational_LESS_THAN_OR_EQUAL expr    (56)
+
+    GREATER_THAN shift 69
+    GREATER_THAN_OR_EQUAL shift 70
+    LESS_THAN shift 71
+    LESS_THAN_OR_EQUAL shift 72
+    RETURN reduce 50
+    ID reduce 50
+    END_PROGRAM reduce 50
+    OUTPUT reduce 50
+    NOT_EQUALS reduce 50
+    NEWLINE reduce 50
+    FUNCTION_DEF reduce 50
+    EQUALS reduce 50
+    START_WHILE reduce 50
+    END_WHILE reduce 50
+    INPUT reduce 50
+    RIGHT_PARENTHESIS reduce 50
+    IF reduce 50
+    END_THEN reduce 50
+    . error
+
+state 89 (entry on relational)
+    equality : equality NOT_EQUALS relational_    (51)
+    relational : relational_GREATER_THAN expr    (53)
+    relational : relational_GREATER_THAN_OR_EQUAL expr    (54)
+    relational : relational_LESS_THAN expr    (55)
+    relational : relational_LESS_THAN_OR_EQUAL expr    (56)
+
+    GREATER_THAN shift 69
+    GREATER_THAN_OR_EQUAL shift 70
+    LESS_THAN shift 71
+    LESS_THAN_OR_EQUAL shift 72
+    RETURN reduce 51
+    ID reduce 51
+    END_PROGRAM reduce 51
+    OUTPUT reduce 51
+    NOT_EQUALS reduce 51
+    NEWLINE reduce 51
+    FUNCTION_DEF reduce 51
+    EQUALS reduce 51
+    START_WHILE reduce 51
+    END_WHILE reduce 51
+    INPUT reduce 51
+    RIGHT_PARENTHESIS reduce 51
+    IF reduce 51
+    END_THEN reduce 51
+    . error
+
+state 90 (entry on term)
+    expr : expr ADD term_    (13)
+    term : term_MULTIPLY factor    (16)
+    term : term_DIVIDE factor    (17)
+
+    ELIF error
+    LEFT_PARENTHESIS error
+    INTEGER_TYPE error
+    ASSIGN error
+    EXPONENT error
+    REAL_LITERAL error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    PARAMETER_COMMA error
+    REAL_TYPE error
+    END_FUNCTION_STATEMENTS error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    ELSE error
+    DIVIDE shift 73
+    MULTIPLY shift 74
+    . reduce 13
+
+state 91 (entry on term)
+    expr : expr SUBTRACT term_    (14)
+    term : term_MULTIPLY factor    (16)
+    term : term_DIVIDE factor    (17)
+
+    ELIF error
+    LEFT_PARENTHESIS error
+    INTEGER_TYPE error
+    ASSIGN error
+    EXPONENT error
+    REAL_LITERAL error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    PARAMETER_COMMA error
+    REAL_TYPE error
+    END_FUNCTION_STATEMENTS error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    ELSE error
+    DIVIDE shift 73
+    MULTIPLY shift 74
+    . reduce 14
+
+state 92 (entry on exp)
+    factor : factor EXPONENT exp_    (19)
+
+    REAL_TYPE error
+    ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    . reduce 19
+
+state 93 (entry on expr)
+    expr : expr_ADD term    (13)
+    expr : expr_SUBTRACT term    (14)
+    relational : relational GREATER_THAN expr_    (53)
+
+    ADD shift 65
+    SUBTRACT shift 66
+    ID reduce 53
+    GREATER_THAN_OR_EQUAL reduce 53
+    END_PROGRAM reduce 53
+    OUTPUT reduce 53
+    NOT_EQUALS reduce 53
+    RETURN reduce 53
+    GREATER_THAN reduce 53
+    NEWLINE reduce 53
+    FUNCTION_DEF reduce 53
+    LESS_THAN_OR_EQUAL reduce 53
+    LESS_THAN reduce 53
+    EQUALS reduce 53
+    START_WHILE reduce 53
+    END_WHILE reduce 53
+    INPUT reduce 53
+    RIGHT_PARENTHESIS reduce 53
+    IF reduce 53
+    END_THEN reduce 53
+    . error
+
+state 94 (entry on expr)
+    expr : expr_ADD term    (13)
+    expr : expr_SUBTRACT term    (14)
+    relational : relational GREATER_THAN_OR_EQUAL expr_    (54)
+
+    ADD shift 65
+    SUBTRACT shift 66
+    ID reduce 54
+    GREATER_THAN_OR_EQUAL reduce 54
+    END_PROGRAM reduce 54
+    OUTPUT reduce 54
+    NOT_EQUALS reduce 54
+    RETURN reduce 54
+    GREATER_THAN reduce 54
+    NEWLINE reduce 54
+    FUNCTION_DEF reduce 54
+    LESS_THAN_OR_EQUAL reduce 54
+    LESS_THAN reduce 54
+    EQUALS reduce 54
+    START_WHILE reduce 54
+    END_WHILE reduce 54
+    INPUT reduce 54
+    RIGHT_PARENTHESIS reduce 54
+    IF reduce 54
+    END_THEN reduce 54
+    . error
+
+state 95 (entry on expr)
+    expr : expr_ADD term    (13)
+    expr : expr_SUBTRACT term    (14)
+    relational : relational LESS_THAN expr_    (55)
+
+    ADD shift 65
+    SUBTRACT shift 66
+    ID reduce 55
+    GREATER_THAN_OR_EQUAL reduce 55
+    END_PROGRAM reduce 55
+    OUTPUT reduce 55
+    NOT_EQUALS reduce 55
+    RETURN reduce 55
+    GREATER_THAN reduce 55
+    NEWLINE reduce 55
+    FUNCTION_DEF reduce 55
+    LESS_THAN_OR_EQUAL reduce 55
+    LESS_THAN reduce 55
+    EQUALS reduce 55
+    START_WHILE reduce 55
+    END_WHILE reduce 55
+    INPUT reduce 55
+    RIGHT_PARENTHESIS reduce 55
+    IF reduce 55
+    END_THEN reduce 55
+    . error
+
+state 96 (entry on expr)
+    expr : expr_ADD term    (13)
+    expr : expr_SUBTRACT term    (14)
+    relational : relational LESS_THAN_OR_EQUAL expr_    (56)
+
+    ADD shift 65
+    SUBTRACT shift 66
+    ID reduce 56
+    GREATER_THAN_OR_EQUAL reduce 56
+    END_PROGRAM reduce 56
+    OUTPUT reduce 56
+    NOT_EQUALS reduce 56
+    RETURN reduce 56
+    GREATER_THAN reduce 56
+    NEWLINE reduce 56
+    FUNCTION_DEF reduce 56
+    LESS_THAN_OR_EQUAL reduce 56
+    LESS_THAN reduce 56
+    EQUALS reduce 56
+    START_WHILE reduce 56
+    END_WHILE reduce 56
+    INPUT reduce 56
+    RIGHT_PARENTHESIS reduce 56
+    IF reduce 56
+    END_THEN reduce 56
+    . error
+
+state 97 (entry on factor)
+    factor : factor_EXPONENT exp    (19)
+    term : term DIVIDE factor_    (17)
+
+    ELSE error
+    LEFT_PARENTHESIS error
+    INTEGER_TYPE error
+    ELIF error
+    REAL_TYPE error
+    START_FUNCTION_STATEMENTS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    REAL_LITERAL error
+    PARAMETER_COMMA error
+    END_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    EXPONENT shift 67
+    . reduce 17
+
+state 98 (entry on factor)
+    factor : factor_EXPONENT exp    (19)
+    term : term MULTIPLY factor_    (16)
+
+    ELSE error
+    LEFT_PARENTHESIS error
+    INTEGER_TYPE error
+    ELIF error
+    REAL_TYPE error
+    START_FUNCTION_STATEMENTS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    REAL_LITERAL error
+    PARAMETER_COMMA error
+    END_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    EXPONENT shift 67
+    . reduce 16
+
+state 99 (entry on relational)
+    cast : INTEGER_TYPE LEFT_PARENTHESIS relational_RIGHT_PARENTHESIS    (59)
+    relational : relational_GREATER_THAN expr    (53)
+    relational : relational_GREATER_THAN_OR_EQUAL expr    (54)
+    relational : relational_LESS_THAN expr    (55)
+    relational : relational_LESS_THAN_OR_EQUAL expr    (56)
+
+    GREATER_THAN shift 69
+    GREATER_THAN_OR_EQUAL shift 70
+    LESS_THAN shift 71
+    LESS_THAN_OR_EQUAL shift 72
+    RIGHT_PARENTHESIS shift 110
+    . error
+
+state 100 (entry on RIGHT_PARENTHESIS)
+    exp : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS_    (21)
+
+    REAL_TYPE error
+    ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    . reduce 21
+
+state 101 (entry on relational)
+    cast : REAL_TYPE LEFT_PARENTHESIS relational_RIGHT_PARENTHESIS    (60)
+    relational : relational_GREATER_THAN expr    (53)
+    relational : relational_GREATER_THAN_OR_EQUAL expr    (54)
+    relational : relational_LESS_THAN expr    (55)
+    relational : relational_LESS_THAN_OR_EQUAL expr    (56)
+
+    GREATER_THAN shift 69
+    GREATER_THAN_OR_EQUAL shift 70
+    LESS_THAN shift 71
+    LESS_THAN_OR_EQUAL shift 72
+    RIGHT_PARENTHESIS shift 111
+    . error
+
+state 102 (entry on relational)
+    cast : STRING_TYPE LEFT_PARENTHESIS relational_RIGHT_PARENTHESIS    (58)
+    relational : relational_GREATER_THAN expr    (53)
+    relational : relational_GREATER_THAN_OR_EQUAL expr    (54)
+    relational : relational_LESS_THAN expr    (55)
+    relational : relational_LESS_THAN_OR_EQUAL expr    (56)
+
+    GREATER_THAN shift 69
+    GREATER_THAN_OR_EQUAL shift 70
+    LESS_THAN shift 71
+    LESS_THAN_OR_EQUAL shift 72
+    RIGHT_PARENTHESIS shift 112
+    . error
+
+state 103 (entry on END_WHILE)
+    while_statement : START_WHILE equality stmnt_list END_WHILE_    (31)
+
+    RETURN reduce 31
+    ID reduce 31
+    END_PROGRAM reduce 31
+    OUTPUT reduce 31
+    FUNCTION_DEF reduce 31
+    START_WHILE reduce 31
+    END_WHILE reduce 31
+    INPUT reduce 31
+    IF reduce 31
+    END_THEN reduce 31
+    . error
+
+state 104 (entry on RIGHT_PARENTHESIS)
+    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS_START_THEN stmnt_list END_THEN    (40)
+
+    START_THEN shift 113
+    . error
+
+state 105 (entry on END_THEN)
+    else_statement : ELSE START_THEN stmnt_list END_THEN_    (43)
+
+    RETURN reduce 43
+    ID reduce 43
+    END_PROGRAM reduce 43
+    OUTPUT reduce 43
+    FUNCTION_DEF reduce 43
+    START_WHILE reduce 43
+    END_WHILE reduce 43
+    INPUT reduce 43
+    IF reduce 43
+    END_THEN reduce 43
+    . error
+
+state 106 (entry on PARAMETER_COMMA)
+    parameter_list : parameter_list PARAMETER_COMMA_ID    (48)
+
+    ID shift 114
+    . error
+
+state 107 (entry on RIGHT_PARENTHESIS)
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS_START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (47)
+
+    START_FUNCTION_STATEMENTS shift 115
+    . error
+
+state 108 (entry on ref)
+    ref_list : ref_list PARAMETER_COMMA ref_    (45)
+
+    PARAMETER_COMMA reduce 45
+    RIGHT_PARENTHESIS reduce 45
+    . error
+
+state 109 (entry on START_THEN)
+    if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN_stmnt_list END_THEN    (39)
+
+    FUNCTION_DEF shift 14
+    ID shift 15
+    IF shift 16
+    INPUT shift 17
+    OUTPUT shift 18
+    START_WHILE shift 19
     . error
 
     assignment goto 3
@@ -1786,115 +1926,299 @@ state 103 (entry on stmnt_list)
     if_statement goto 7
     input goto 8
     output goto 9
-    statement goto 23
-    while_statement goto 12
+    ref goto 10
+    statement goto 11
+    stmnt_list goto 116
+    while_statement goto 13
 
-state 104 (entry on END_THEN)
-    if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN_    (38)
+state 110 (entry on RIGHT_PARENTHESIS)
+    cast : INTEGER_TYPE LEFT_PARENTHESIS relational RIGHT_PARENTHESIS_    (59)
 
-    OUTPUT reduce 38
-    FUNCTION_DEF reduce 38
-    ELSE reduce 38
-    END_WHILE reduce 38
-    ELIF reduce 38
-    START_WHILE reduce 38
-    INPUT reduce 38
-    END_THEN reduce 38
-    IF reduce 38
-    RETURN reduce 38
-    ID reduce 38
-    END_PROGRAM reduce 38
+    REAL_TYPE error
+    ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    . reduce 59
+
+state 111 (entry on RIGHT_PARENTHESIS)
+    cast : REAL_TYPE LEFT_PARENTHESIS relational RIGHT_PARENTHESIS_    (60)
+
+    REAL_TYPE error
+    ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    . reduce 60
+
+state 112 (entry on RIGHT_PARENTHESIS)
+    cast : STRING_TYPE LEFT_PARENTHESIS relational RIGHT_PARENTHESIS_    (58)
+
+    REAL_TYPE error
+    ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    $end error
+    error error
+    STRING_TYPE error
+    INT_LITERAL error
+    . reduce 58
+
+state 113 (entry on START_THEN)
+    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN_stmnt_list END_THEN    (40)
+
+    FUNCTION_DEF shift 14
+    ID shift 15
+    IF shift 16
+    INPUT shift 17
+    OUTPUT shift 18
+    START_WHILE shift 19
     . error
 
-state 105 (entry on END_THEN)
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN_    (39)
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN_elif_statement    (40)
+    assignment goto 3
+    conditional goto 4
+    function_call goto 5
+    function_def goto 6
+    if_statement goto 7
+    input goto 8
+    output goto 9
+    ref goto 10
+    statement goto 11
+    stmnt_list goto 117
+    while_statement goto 13
 
-    ELIF shift 21
-    OUTPUT reduce 39
-    FUNCTION_DEF reduce 39
-    ELSE reduce 39
-    END_WHILE reduce 39
-    START_WHILE reduce 39
-    INPUT reduce 39
-    END_THEN reduce 39
-    IF reduce 39
+state 114 (entry on ID)
+    parameter_list : parameter_list PARAMETER_COMMA ID_    (48)
+
+    PARAMETER_COMMA reduce 48
+    RIGHT_PARENTHESIS reduce 48
+    . error
+
+state 115 (entry on START_FUNCTION_STATEMENTS)
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS_stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (47)
+
+    FUNCTION_DEF shift 14
+    ID shift 15
+    IF shift 16
+    INPUT shift 17
+    OUTPUT shift 18
+    START_WHILE shift 19
+    . error
+
+    assignment goto 3
+    conditional goto 4
+    function_call goto 5
+    function_def goto 6
+    if_statement goto 7
+    input goto 8
+    output goto 9
+    ref goto 10
+    statement goto 11
+    stmnt_list goto 118
+    while_statement goto 13
+
+state 116 (entry on stmnt_list)
+    if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list_END_THEN    (39)
+    stmnt_list : stmnt_list_statement    (2)
+
+    FUNCTION_DEF shift 14
+    ID shift 15
+    IF shift 16
+    INPUT shift 17
+    OUTPUT shift 18
+    START_WHILE shift 19
+    END_THEN shift 119
+    . error
+
+    assignment goto 3
+    conditional goto 4
+    function_call goto 5
+    function_def goto 6
+    if_statement goto 7
+    input goto 8
+    output goto 9
+    ref goto 10
+    statement goto 26
+    while_statement goto 13
+
+state 117 (entry on stmnt_list)
+    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list_END_THEN    (40)
+    stmnt_list : stmnt_list_statement    (2)
+
+    FUNCTION_DEF shift 14
+    ID shift 15
+    IF shift 16
+    INPUT shift 17
+    OUTPUT shift 18
+    START_WHILE shift 19
+    END_THEN shift 120
+    . error
+
+    assignment goto 3
+    conditional goto 4
+    function_call goto 5
+    function_def goto 6
+    if_statement goto 7
+    input goto 8
+    output goto 9
+    ref goto 10
+    statement goto 26
+    while_statement goto 13
+
+state 118 (entry on stmnt_list)
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list_RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (47)
+    stmnt_list : stmnt_list_statement    (2)
+
+    FUNCTION_DEF shift 14
+    ID shift 15
+    IF shift 16
+    INPUT shift 17
+    OUTPUT shift 18
+    START_WHILE shift 19
+    RETURN shift 121
+    . error
+
+    assignment goto 3
+    conditional goto 4
+    function_call goto 5
+    function_def goto 6
+    if_statement goto 7
+    input goto 8
+    output goto 9
+    ref goto 10
+    statement goto 26
+    while_statement goto 13
+
+state 119 (entry on END_THEN)
+    if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN_    (39)
+
     RETURN reduce 39
     ID reduce 39
     END_PROGRAM reduce 39
+    OUTPUT reduce 39
+    FUNCTION_DEF reduce 39
+    ELSE reduce 39
+    START_WHILE reduce 39
+    END_WHILE reduce 39
+    INPUT reduce 39
+    IF reduce 39
+    END_THEN reduce 39
+    ELIF reduce 39
     . error
 
-    elif_statement goto 107
+state 120 (entry on END_THEN)
+    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN_    (40)
 
-state 106 (entry on RETURN)
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN_LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
-
-    LEFT_PARENTHESIS shift 108
-    . error
-
-state 107 (entry on elif_statement)
-    elif_statement : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN elif_statement_    (40)
-
-    OUTPUT reduce 40
-    FUNCTION_DEF reduce 40
-    ELSE reduce 40
-    END_WHILE reduce 40
-    START_WHILE reduce 40
-    INPUT reduce 40
-    END_THEN reduce 40
-    IF reduce 40
     RETURN reduce 40
     ID reduce 40
     END_PROGRAM reduce 40
+    OUTPUT reduce 40
+    FUNCTION_DEF reduce 40
+    ELSE reduce 40
+    START_WHILE reduce 40
+    END_WHILE reduce 40
+    INPUT reduce 40
+    IF reduce 40
+    END_THEN reduce 40
+    ELIF reduce 40
     . error
 
-state 108 (entry on LEFT_PARENTHESIS)
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS_expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
+state 121 (entry on RETURN)
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN_LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (47)
 
-    ID shift 40
-    INT_LITERAL shift 41
-    LEFT_PARENTHESIS shift 42
-    REAL_LITERAL shift 43
+    LEFT_PARENTHESIS shift 122
     . error
 
-    exp goto 32
-    expr goto 109
-    factor goto 34
-    function_call goto 35
-    ref goto 37
-    term goto 39
+state 122 (entry on LEFT_PARENTHESIS)
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS_expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (47)
 
-state 109 (entry on expr)
+    ID shift 15
+    INTEGER_TYPE shift 44
+    INT_LITERAL shift 45
+    LEFT_PARENTHESIS shift 46
+    REAL_LITERAL shift 47
+    REAL_TYPE shift 48
+    STRING_TYPE shift 50
+    STRING_LITERAL shift 52
+    . error
+
+    cast goto 34
+    exp goto 36
+    expr goto 123
+    factor goto 38
+    function_call goto 39
+    ref goto 41
+    term goto 43
+
+state 123 (entry on expr)
     expr : expr_ADD term    (13)
     expr : expr_SUBTRACT term    (14)
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr_RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (45)
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr_RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS    (47)
 
-    ADD shift 58
-    SUBTRACT shift 59
-    RIGHT_PARENTHESIS shift 110
+    ADD shift 65
+    SUBTRACT shift 66
+    RIGHT_PARENTHESIS shift 124
     . error
 
-state 110 (entry on RIGHT_PARENTHESIS)
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS_END_FUNCTION_STATEMENTS    (45)
+state 124 (entry on RIGHT_PARENTHESIS)
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS_END_FUNCTION_STATEMENTS    (47)
 
-    END_FUNCTION_STATEMENTS shift 111
+    END_FUNCTION_STATEMENTS shift 125
     . error
 
-state 111 (entry on END_FUNCTION_STATEMENTS)
-    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS_    (45)
+state 125 (entry on END_FUNCTION_STATEMENTS)
+    function_def : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS_    (47)
 
-    OUTPUT reduce 45
-    FUNCTION_DEF reduce 45
-    END_WHILE reduce 45
-    START_WHILE reduce 45
-    INPUT reduce 45
-    END_THEN reduce 45
-    IF reduce 45
-    RETURN reduce 45
-    ID reduce 45
-    END_PROGRAM reduce 45
+    RETURN reduce 47
+    ID reduce 47
+    END_PROGRAM reduce 47
+    OUTPUT reduce 47
+    FUNCTION_DEF reduce 47
+    START_WHILE reduce 47
+    END_WHILE reduce 47
+    INPUT reduce 47
+    IF reduce 47
+    END_THEN reduce 47
     . error
 
-43 terminals, 23 nonterminals;
-55 grammar rules, 112 states;
+Rule not reduced: assignable : STRING_LITERAL
+
+42 terminals, 25 nonterminals;
+60 grammar rules, 126 states;
 0 shift/reduce and 11 reduce/reduce conflicts reported.

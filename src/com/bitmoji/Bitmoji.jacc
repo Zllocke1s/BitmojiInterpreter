@@ -109,6 +109,10 @@ exp                     : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS
                         }
 	                    | ref
 	                    | function_call
+	                    | STRING_LITERAL
+	                    {
+	                        $$ = (String) $1;
+	                    }
 	                    | REAL_LITERAL
 	                    {
                             $$ = (Double) $1;
@@ -126,8 +130,7 @@ assignment              : ref ASSIGN assignable
                         }
 		                ;
 
-assignable              : STRING_LITERAL
-                        | equality
+assignable              : equality
                         ;
 
 while_statement         : START_WHILE equality stmnt_list END_WHILE

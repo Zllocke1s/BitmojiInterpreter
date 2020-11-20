@@ -1,4 +1,4 @@
-// Output created by jacc on Thu Nov 19 22:13:13 CST 2020
+// Output created by jacc on Thu Nov 19 23:20:17 CST 2020
 
 package com.bitmoji;
 
@@ -1943,6 +1943,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2059,6 +2061,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2079,6 +2083,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2145,7 +2151,7 @@ class Bitmoji implements BitmojiTokens {
             case INT_LITERAL:
                 return 253;
         }
-        return yyr26();
+        return yyr27();
     }
 
     private int yys35() {
@@ -2401,7 +2407,7 @@ class Bitmoji implements BitmojiTokens {
             case INT_LITERAL:
                 return 253;
         }
-        return yyr25();
+        return yyr26();
     }
 
     private int yys46() {
@@ -2418,6 +2424,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2446,25 +2454,32 @@ class Bitmoji implements BitmojiTokens {
             case INT_LITERAL:
                 return 253;
         }
-        return yyr24();
+        return yyr25();
     }
 
     private int yys49() {
         switch (yytok) {
-            case RETURN:
-            case ID:
-            case END_PROGRAM:
-            case OUTPUT:
-            case NEWLINE:
-            case FUNCTION_DEF:
-            case START_WHILE:
-            case END_WHILE:
-            case INPUT:
-            case IF:
-            case END_THEN:
-                return yyr28();
+            case REAL_TYPE:
+            case ELSE:
+            case INTEGER_TYPE:
+            case ELIF:
+            case END_FUNCTION_STATEMENTS:
+            case LEFT_PARENTHESIS:
+            case LEFT_BRACKET:
+            case STRING_LITERAL:
+            case START_THEN:
+            case ASSIGN:
+            case PARAMETER_COMMA:
+            case REAL_LITERAL:
+            case START_FUNCTION_STATEMENTS:
+            case START_PROGRAM:
+            case ENDINPUT:
+            case error:
+            case STRING_TYPE:
+            case INT_LITERAL:
+                return 253;
         }
-        return 253;
+        return yyr24();
     }
 
     private int yys51() {
@@ -2539,6 +2554,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2575,7 +2592,7 @@ class Bitmoji implements BitmojiTokens {
             case INPUT:
             case IF:
             case END_THEN:
-                return yyr27();
+                return yyr28();
         }
         return 253;
     }
@@ -2594,6 +2611,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2614,6 +2633,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2634,6 +2655,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2654,6 +2677,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2674,6 +2699,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2711,6 +2738,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2731,6 +2760,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2751,6 +2782,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2771,6 +2804,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2791,6 +2826,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2811,6 +2848,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2831,6 +2870,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2851,6 +2892,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -2871,6 +2914,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -3578,6 +3623,8 @@ class Bitmoji implements BitmojiTokens {
                 return 47;
             case REAL_TYPE:
                 return 48;
+            case STRING_LITERAL:
+                return 49;
             case STRING_TYPE:
                 return 50;
         }
@@ -3609,7 +3656,7 @@ class Bitmoji implements BitmojiTokens {
         return 1;
     }
 
-    private int yyr27() { // assignment : ref ASSIGN assignable
+    private int yyr28() { // assignment : ref ASSIGN assignable
         {
                             yyrv = tree.new AssignNode((BitmojiPT.ReferenceNode) yysv[yysp-3], yysv[yysp-1]);
                         }
@@ -3761,7 +3808,15 @@ class Bitmoji implements BitmojiTokens {
         return yypexp();
     }
 
-    private int yyr24() { // exp : REAL_LITERAL
+    private int yyr24() { // exp : STRING_LITERAL
+        {
+                                yyrv = (String) ((String)yysv[yysp-1]);
+                            }
+        yysv[yysp-=1] = yyrv;
+        return yypexp();
+    }
+
+    private int yyr25() { // exp : REAL_LITERAL
         {
                             yyrv = (Double) yysv[yysp-1];
                         }
@@ -3769,7 +3824,7 @@ class Bitmoji implements BitmojiTokens {
         return yypexp();
     }
 
-    private int yyr25() { // exp : INT_LITERAL
+    private int yyr26() { // exp : INT_LITERAL
         {
                             yyrv = (Integer) yysv[yysp-1];
                         }
@@ -3777,7 +3832,7 @@ class Bitmoji implements BitmojiTokens {
         return yypexp();
     }
 
-    private int yyr26() { // exp : cast
+    private int yyr27() { // exp : cast
         yysp -= 1;
         return yypexp();
     }
@@ -3910,17 +3965,8 @@ class Bitmoji implements BitmojiTokens {
         return 81;
     }
 
-    private int yyr28() { // assignable : STRING_LITERAL
-        yysp -= 1;
-        return yypassignable();
-    }
-
     private int yyr29() { // assignable : equality
         yysp -= 1;
-        return yypassignable();
-    }
-
-    private int yypassignable() {
         switch (yyst[yysp-1]) {
             case 18: return 40;
             default: return 56;

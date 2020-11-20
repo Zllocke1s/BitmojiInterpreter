@@ -21,8 +21,8 @@ public class BitmojiPT {
         return scopes.peekFirst();
     }
 
-    public void addSymbolTable() {
-        scopes.addLast(new SymbolTable());
+    public void addSymbolTable(SymbolTable st) {
+        scopes.addLast(st);
     }
 
     public void removeSymbolTable() {
@@ -537,17 +537,20 @@ public class BitmojiPT {
         @Override
         public Object evaluate() {
             FunctionDefinitionNode fd = (FunctionDefinitionNode) globalSymbolTable().getValue(name);
-            addSymbolTable();
             ArrayList<String> parameterNames = fd.getParameterNames();
             if (arguments.size() != parameterNames.size()) {
                 parser.yyerror("Parameter argument mismatch");
                 System.exit(1);
             }
+            SymbolTable st = new SymbolTable();
             for (int i = 0; i < arguments.size(); i++) {
-                symbolTable().assignValue(parameterNames.get(i), arguments.get(i));
+                st.assignValue(parameterNames.get(i), TypeHandler.evaluate(arguments.get(i)));
             }
+            addSymbolTable(st);
             fd.getStatements().evaluate();
-            return TypeHandler.evaluate(fd.getReturnExpression());
+            Object returnExpression = TypeHandler.evaluate(fd.getReturnExpression());
+            removeSymbolTable();
+            return returnExpression;
         }
     }
 }

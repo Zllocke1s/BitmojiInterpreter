@@ -1,7 +1,12 @@
 🎃
-    🎈 add 🌜 a 🐊 b 🌛 🐎
-        ➡ a
-        👽 a 🎄 b
+    🎈 fibonacci 🌜 num 🌛 🐎
+        result 🚸 0
+        👀 🌜 num 🍺 2 🌛 👶
+            result 🚸 num
+        🧓 😡 👶
+            result 🚸 🌜 fibonacci 🌜 num 🐀 1 🌛 🌛 🎄 🌜 fibonacci 🌜 num 🐀 2 🌛 🌛
+        🧓
+        👽 result
     😂
-    ➡ add 🌜 1 🐊 9 🌛
+    ➡ fibonacci 🌜 4 🌛
 ☣

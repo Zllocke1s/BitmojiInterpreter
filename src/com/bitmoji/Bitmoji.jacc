@@ -157,6 +157,10 @@ conditional             : if_statement
 			            ;
 
 if_statement            : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN
+                        {
+                            $$ = tree.new IfConditionNode($3, (BitmojiPT.StatementListNode) $6);
+                        }
+
 			            ;
 
 elif_statement          : ELIF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN

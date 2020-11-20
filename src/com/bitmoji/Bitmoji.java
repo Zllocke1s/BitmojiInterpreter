@@ -1,4 +1,4 @@
-// Output created by jacc on Thu Nov 19 14:31:13 CST 2020
+// Output created by jacc on Thu Nov 19 15:06:05 CST 2020
 
 package com.bitmoji;
 
@@ -3244,7 +3244,10 @@ class Bitmoji implements BitmojiTokens {
     }
 
     private int yyr37() { // if_statement : IF LEFT_PARENTHESIS equality RIGHT_PARENTHESIS START_THEN stmnt_list END_THEN
-        yysp -= 7;
+        {
+                            yyrv = tree.new IfConditionNode(yysv[yysp-5], (BitmojiPT.StatementListNode) yysv[yysp-2]);
+                        }
+        yysv[yysp-=7] = yyrv;
         return 7;
     }
 

@@ -299,6 +299,55 @@ public class BitmojiPT {
         }
     }
 
+    public class CastNode implements PTNode {
+        protected Object value;
+
+        public CastNode(Object value) {
+            this.value = value;
+        }
+
+        @Override
+        public Object evaluate() {
+            return null;
+        }
+    }
+
+    public class IntegerCastNode extends CastNode
+    {
+        public IntegerCastNode(Object value) {
+            super(value);
+        }
+
+        @Override
+        public Object evaluate() {
+            return TypeHandler.parseInt(value);
+        }
+    }
+
+    public class RealCastNode extends CastNode
+    {
+        public RealCastNode(Object value) {
+            super(value);
+        }
+
+        @Override
+        public Object evaluate() {
+            return TypeHandler.parseDouble(value);
+        }
+    }
+
+    public class StringCastNode extends CastNode
+    {
+        public StringCastNode(Object value) {
+            super(value);
+        }
+
+        @Override
+        public Object evaluate() {
+            return TypeHandler.parseString(value);
+        }
+    }
+
     public class IfConditionNode extends StatementNode
     {
         Object condition;

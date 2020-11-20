@@ -10,6 +10,8 @@ public interface TypeHandler {
             return ((Integer) node);
         } else if (node instanceof Double) {
             return ((Number) node).intValue();
+        } else if (node instanceof String) {
+            return Integer.parseInt((String) node);
         } else {
             throw new IllegalArgumentException();
         }
@@ -23,6 +25,8 @@ public interface TypeHandler {
             return ((Number) node).doubleValue();
         } else if (node instanceof Double) {
             return ((Double) node);
+        } else if (node instanceof String) {
+            return Double.parseDouble((String) node);
         } else {
             throw new IllegalArgumentException();
         }
@@ -34,6 +38,8 @@ public interface TypeHandler {
         }
         if (node instanceof Boolean) {
             return ((Boolean) node);
+        } else if (node instanceof String) {
+            return Boolean.parseBoolean((String) node);
         } else {
             throw new IllegalArgumentException();
         }

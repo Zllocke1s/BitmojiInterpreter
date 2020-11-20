@@ -10,7 +10,8 @@
 %next yynext()
 %get lexer.getToken()
 %semantic Object : lexer.getValue()
-
+// Types
+%token INTEGER_TYPE REAL_TYPE STRING_TYPE
 // Conditionals
 %token EQUALS NOT_EQUALS LESS_THAN GREATER_THAN LESS_THAN_OR_EQUAL GREATER_THAN_OR_EQUAL
 // Arithmetic Operators
@@ -116,6 +117,7 @@ exp                     : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS
 	                    {
                             $$ = (Integer) $1;
                         }
+                        | cast
 	                    ;
 	
 assignment              : ref ASSIGN assignable
@@ -211,6 +213,19 @@ relational              : relational GREATER_THAN expr
 		                | expr
 		                ;
 
+cast                    : STRING_TYPE LEFT_PARENTHESIS relational RIGHT_PARENTHESIS
+                        {
+                            $$ = tree.new StringCastNode($3);
+                        }
+                        | INTEGER_TYPE LEFT_PARENTHESIS relational RIGHT_PARENTHESIS
+                        {
+                            $$ = tree.new IntegerCastNode($3);
+                        }
+                        | REAL_TYPE LEFT_PARENTHESIS relational RIGHT_PARENTHESIS
+                        {
+                            $$ = tree.new RealCastNode($3);
+                        }
+                        ;
 
 
 %%

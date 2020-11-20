@@ -115,6 +115,9 @@ public class BitmojiLexer implements BitmojiTokens
         bitmojiSymbols.put("\uD83D\uDC76", START_THEN); // Start then
         bitmojiSymbols.put("\uD83E\uDDD3", END_THEN); // End then
         bitmojiSymbols.put("\uD83D\uDC4C", NEWLINE);
+        bitmojiSymbols.put("\uD83D\uDC1B", STRING_TYPE);
+        bitmojiSymbols.put("\uD83E\uDDDC\uD83C\uDFFC\u200D♀️", REAL_TYPE);
+        bitmojiSymbols.put("\uD83D\uDD22", INTEGER_TYPE);
 
         for (String symbol : bitmojiSymbols.keySet()) {
             for (Character c : symbol.toCharArray()) {
@@ -262,6 +265,9 @@ public class BitmojiLexer implements BitmojiTokens
         label[STRING_LITERAL] = "STRING_LITERAL";
         label[SUBTRACT] = "SUBTRACT";
         label[NEWLINE] = "NEWLINE";
+        label[INTEGER_TYPE] = "INTEGER_TYPE";
+        label[REAL_TYPE] = "REAL_TYPE";
+        label[STRING_TYPE] = "STRING_TYPE";
         label[error] = "error";
 
         return label[token] + ": " + value;

@@ -1,18 +1,32 @@
 package com.bitmoji;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class BitmojiPT {
 
     private Bitmoji parser;
-    private SymbolTable globalSymbolTable;
+    private LinkedList<SymbolTable> scopes;
 
     public BitmojiPT(Bitmoji parser) {
         this.parser = parser;
-        globalSymbolTable = new SymbolTable();
+        scopes = new LinkedList<>();
+        scopes.addLast(new SymbolTable());
+    }
+
+    public SymbolTable symbolTable() {
+        return scopes.peekLast();
+    }
+
+    public SymbolTable globalSymbolTable() {
+        return scopes.peekFirst();
+    }
+
+    public void addSymbolTable() {
+        scopes.addLast(new SymbolTable());
+    }
+
+    public void removeSymbolTable() {
+        scopes.removeLast();
     }
 
     public interface PTNode {
@@ -96,12 +110,12 @@ public class BitmojiPT {
 
         @Override
         public void setValue(Object expression) {
-            globalSymbolTable.assignValue(name, TypeHandler.evaluate(expression));
+            symbolTable().assignValue(name, TypeHandler.evaluate(expression));
         }
 
         @Override
         public Object evaluate() {
-            return globalSymbolTable.getValue(name);
+            return symbolTable().getValue(name);
         }
     }
 
@@ -116,31 +130,25 @@ public class BitmojiPT {
 
         @Override
         public void setValue(Object expression) {
-            if(globalSymbolTable.hasName(name))
-            {
-                HashMap<Object, Object>map = (HashMap<Object, Object>)globalSymbolTable.getValue(name);
-                if(map.containsKey(TypeHandler.evaluate(index)))
-                {
+            if (symbolTable().hasName(name)) {
+                HashMap<Object, Object> map = (HashMap<Object, Object>) symbolTable().getValue(name);
+                if (map.containsKey(TypeHandler.evaluate(index))) {
                     map.replace(TypeHandler.evaluate(index), TypeHandler.evaluate(expression));
-                }
-                else
-                {
+                } else {
                     map.put(TypeHandler.evaluate(index), TypeHandler.evaluate(expression));
                 }
-                globalSymbolTable.assignValue(name, map);
+                symbolTable().assignValue(name, map);
             }
-            else
-            {
+            else {
                 HashMap<Object, Object> newMap = new HashMap<>();
                 newMap.put(TypeHandler.evaluate(index), TypeHandler.evaluate(expression));
-                globalSymbolTable.assignValue(name, newMap);
+                symbolTable().assignValue(name, newMap);
             }
-
         }
 
         @Override
         public Object evaluate() {
-            return ((HashMap<Object, Object>)(globalSymbolTable.getValue(name))).get(TypeHandler.evaluate(index));
+            return ((HashMap<Object, Object>) (symbolTable().getValue(name))).get(TypeHandler.evaluate(index));
         }
     }
 
@@ -212,7 +220,7 @@ public class BitmojiPT {
                 String s = ((String) left).concat((String) right);
                 return s;
             }
-            catch (IllegalArgumentException ex) {
+            catch (Exception ex) {
                 return null;
             }
         }
@@ -223,13 +231,13 @@ public class BitmojiPT {
             if (condition != null) {
                 return condition;
             }
-            String word = stringEval();
-            if(word != null) {
-                return word;
-            }
             Number result = arithmeticEval();
             if (result != null) {
                 return result;
+            }
+            String word = stringEval();
+            if(word != null) {
+                return word;
             } else {
                 parser.yyerror("Type error");
                 System.exit(1);
@@ -443,11 +451,9 @@ public class BitmojiPT {
             try {
                 if (TypeHandler.parseBoolean(condition)) {
                     statements.evaluate();
-
                     return true;
                 }
-                else
-                {
+                else {
                     return false;
                 }
             } catch (IllegalArgumentException ex) {
@@ -455,6 +461,93 @@ public class BitmojiPT {
                 System.exit(1);
             }
             return null;
+        }
+    }
+
+    public class ParameterListNode implements PTNode
+    {
+        private ArrayList<String> parameters;
+
+        public ParameterListNode() {
+            this.parameters = new ArrayList<>();
+        }
+
+        public ParameterListNode(String parameter) {
+            this();
+            parameters.add(parameter);
+        }
+
+        public void add(String parameterName) {
+            parameters.add(parameterName);
+        }
+
+        public ArrayList<String> getParameters() {
+            return parameters;
+        }
+
+        @Override
+        public Object evaluate() {
+            return null;
+        }
+    }
+
+    public class FunctionDefinitionNode extends StatementNode
+    {
+        private ParameterListNode parameterList;
+        private String name;
+        private StatementListNode statements;
+        private Object returnExpression;
+
+        public FunctionDefinitionNode(String name, ParameterListNode parameterList, StatementListNode statements, Object returnExpression) {
+            this.name = name;
+            this.parameterList = parameterList;
+            this.statements = statements;
+            this.returnExpression = returnExpression;
+        }
+
+        public StatementListNode getStatements() {
+            return statements;
+        }
+
+        public ArrayList<String> getParameterNames() {
+            return parameterList.getParameters();
+        }
+
+        public Object getReturnExpression() {
+            return returnExpression;
+        }
+
+        @Override
+        public Object evaluate() {
+            globalSymbolTable().assignValue(name, this);
+            return null;
+        }
+    }
+
+    public class FunctionCallNode implements PTNode
+    {
+        ArrayList<Object> arguments;
+        String name;
+
+        public FunctionCallNode(String name, ArrayList<Object> arguments) {
+            this.name = name;
+            this.arguments = arguments;
+        }
+
+        @Override
+        public Object evaluate() {
+            FunctionDefinitionNode fd = (FunctionDefinitionNode) globalSymbolTable().getValue(name);
+            addSymbolTable();
+            ArrayList<String> parameterNames = fd.getParameterNames();
+            if (arguments.size() != parameterNames.size()) {
+                parser.yyerror("Parameter argument mismatch");
+                System.exit(1);
+            }
+            for (int i = 0; i < arguments.size(); i++) {
+                symbolTable().assignValue(parameterNames.get(i), arguments.get(i));
+            }
+            fd.getStatements().evaluate();
+            return TypeHandler.evaluate(fd.getReturnExpression());
         }
     }
 }

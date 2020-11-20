@@ -10,6 +10,10 @@
 %next yynext()
 %get lexer.getToken()
 %semantic Object : lexer.getValue()
+
+%{
+import java.util.ArrayList;
+%}
 // Types
 %token INTEGER_TYPE REAL_TYPE STRING_TYPE
 // Conditionals
@@ -60,7 +64,6 @@ statement               : assignment
 		                | input
 		                | output
 		                | conditional
-		                | function_call
 		                | function_def //Does this go in the program NT or does it go outside program NT?
 		                ;
 
@@ -205,19 +208,40 @@ else_statement          : ELSE START_THEN stmnt_list END_THEN
 			            ;
 
 function_call           : ID LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS
+                        {
+                            $$ = tree.new FunctionCallNode((String) $1, (ArrayList<Object>) $3);
+                        }
 			            ;
 			  
-ref_list                : ref_list PARAMETER_COMMA ref
-		                | ref
+ref_list                : ref_list PARAMETER_COMMA relational
+                        {
+                            ((ArrayList<Object>) $1).add($3);
+                            $$ = $1;
+                        }
+		                | relational
+                        {
+                            ArrayList<Object> ref_list = new ArrayList<>();
+                            ref_list.add($1);
+                            $$ = ref_list;
+                        }
 		                ;
 
-function_def            : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN LEFT_PARENTHESIS expr RIGHT_PARENTHESIS END_FUNCTION_STATEMENTS
+function_def            : FUNCTION_DEF ID LEFT_PARENTHESIS parameter_list RIGHT_PARENTHESIS START_FUNCTION_STATEMENTS stmnt_list RETURN relational END_FUNCTION_STATEMENTS
+                        {
+                            $$ = tree.new FunctionDefinitionNode((String) $2, (BitmojiPT.ParameterListNode) $4, (BitmojiPT.StatementListNode) $7, $9);
+                        }
 			            ;
 		   
 parameter_list          : parameter_list PARAMETER_COMMA ID
+                        {
+                            ((BitmojiPT.ParameterListNode) $1).add((String) $3);
+                            $$ = $1;
+                        }
 			            | ID
+			            {
+			                $$ = tree.new ParameterListNode((String) $1);
+			            }
 			            ;
-			   
 
 equality                : equality EQUALS relational
                         {

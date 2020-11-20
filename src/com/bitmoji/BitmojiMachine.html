@@ -3,7 +3,7 @@
 <body>
 <h1>Generated machine for Bitmoji</h1>
 <pre>
-// Output created by jacc on Thu Nov 19 16:19:20 CST 2020
+// Output created by jacc on Thu Nov 19 21:06:42 CST 2020
 
 <hr><a name="st0"><b>state 0 (entry on program)</b></a>
     $accept : _program $end
@@ -221,7 +221,6 @@
     ID <a href="#st27">shift 27</a>
     . error
 
-15: shift/reduce conflict (shift 29 and red'n 12) on LEFT_PARENTHESIS
 <hr><a name="st15"><b>state 15 (entry on ID)</b></a>
     function_call : ID_LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS    (42)
     ref : ID_LEFT_BRACKET expr RIGHT_BRACKET    (11)
@@ -493,23 +492,24 @@
 <hr><a name="st33"><b>state 33 (entry on cast)</b></a>
     exp : cast_    (26)
 
-    REAL_LITERAL error
-    INT_LITERAL error
-    INTEGER_TYPE error
     REAL_TYPE error
-    ASSIGN error
     ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    START_FUNCTION_STATEMENTS error
     START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     . reduce 26
 
 <hr><a name="st34"><b>state 34 (entry on equality)</b></a>
@@ -535,23 +535,24 @@
 <hr><a name="st35"><b>state 35 (entry on exp)</b></a>
     factor : exp_    (20)
 
-    REAL_LITERAL error
-    INT_LITERAL error
-    INTEGER_TYPE error
     REAL_TYPE error
-    ASSIGN error
     ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    START_FUNCTION_STATEMENTS error
     START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     . reduce 20
 
 <hr><a name="st36"><b>state 36 (entry on expr)</b></a>
@@ -566,13 +567,12 @@
     END_PROGRAM reduce 55
     OUTPUT reduce 55
     NOT_EQUALS reduce 55
-    GREATER_THAN reduce 55
     RETURN reduce 55
+    GREATER_THAN reduce 55
     NEWLINE reduce 55
     FUNCTION_DEF reduce 55
     LESS_THAN_OR_EQUAL reduce 55
     LESS_THAN reduce 55
-    LEFT_PARENTHESIS reduce 55
     EQUALS reduce 55
     START_WHILE reduce 55
     END_WHILE reduce 55
@@ -586,46 +586,48 @@
     factor : factor_EXPONENT exp    (19)
     term : factor_    (18)
 
-    INT_LITERAL error
     ELSE error
+    LEFT_PARENTHESIS error
     INTEGER_TYPE error
+    ELIF error
     REAL_TYPE error
-    END_FUNCTION_STATEMENTS error
-    START_THEN error
+    START_FUNCTION_STATEMENTS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    REAL_LITERAL error
-    START_FUNCTION_STATEMENTS error
+    START_THEN error
     ASSIGN error
+    REAL_LITERAL error
+    PARAMETER_COMMA error
+    END_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     EXPONENT <a href="#st64">shift 64</a>
     . reduce 18
 
 <hr><a name="st38"><b>state 38 (entry on function_call)</b></a>
     exp : function_call_    (23)
 
-    REAL_LITERAL error
-    INT_LITERAL error
-    INTEGER_TYPE error
     REAL_TYPE error
-    ASSIGN error
     ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    START_FUNCTION_STATEMENTS error
     START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     . reduce 23
 
 <hr><a name="st39"><b>state 39 (entry on assignable)</b></a>
@@ -648,23 +650,24 @@
 <hr><a name="st40"><b>state 40 (entry on ref)</b></a>
     exp : ref_    (22)
 
-    REAL_LITERAL error
-    INT_LITERAL error
-    INTEGER_TYPE error
     REAL_TYPE error
-    ASSIGN error
     ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    START_FUNCTION_STATEMENTS error
     START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     . reduce 22
 
 <hr><a name="st41"><b>state 41 (entry on relational)</b></a>
@@ -699,30 +702,31 @@
     term : term_MULTIPLY factor    (16)
     term : term_DIVIDE factor    (17)
 
-    REAL_TYPE error
-    ELSE error
-    INTEGER_TYPE error
     ELIF error
-    START_THEN error
-    START_FUNCTION_STATEMENTS error
-    LEFT_BRACKET error
-    STRING_LITERAL error
-    START_PROGRAM error
+    LEFT_PARENTHESIS error
+    INTEGER_TYPE error
     ASSIGN error
     EXPONENT error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
     REAL_LITERAL error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    PARAMETER_COMMA error
+    REAL_TYPE error
+    END_FUNCTION_STATEMENTS error
     $end error
     error error
     STRING_TYPE error
     INT_LITERAL error
+    ELSE error
     DIVIDE <a href="#st70">shift 70</a>
     MULTIPLY <a href="#st71">shift 71</a>
     . reduce 15
 
 <hr><a name="st43"><b>state 43 (entry on INTEGER_TYPE)</b></a>
-    cast : INTEGER_TYPE_LEFT_PARENTHESIS relational LEFT_PARENTHESIS    (57)
+    cast : INTEGER_TYPE_LEFT_PARENTHESIS relational RIGHT_PARENTHESIS    (57)
 
     LEFT_PARENTHESIS <a href="#st72">shift 72</a>
     . error
@@ -730,23 +734,24 @@
 <hr><a name="st44"><b>state 44 (entry on INT_LITERAL)</b></a>
     exp : INT_LITERAL_    (25)
 
-    REAL_LITERAL error
-    INT_LITERAL error
-    INTEGER_TYPE error
     REAL_TYPE error
-    ASSIGN error
     ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    START_FUNCTION_STATEMENTS error
     START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     . reduce 25
 
 <hr><a name="st45"><b>state 45 (entry on LEFT_PARENTHESIS)</b></a>
@@ -772,27 +777,28 @@
 <hr><a name="st46"><b>state 46 (entry on REAL_LITERAL)</b></a>
     exp : REAL_LITERAL_    (24)
 
-    REAL_LITERAL error
-    INT_LITERAL error
-    INTEGER_TYPE error
     REAL_TYPE error
-    ASSIGN error
     ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    START_FUNCTION_STATEMENTS error
     START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     . reduce 24
 
 <hr><a name="st47"><b>state 47 (entry on REAL_TYPE)</b></a>
-    cast : REAL_TYPE_LEFT_PARENTHESIS relational LEFT_PARENTHESIS    (58)
+    cast : REAL_TYPE_LEFT_PARENTHESIS relational RIGHT_PARENTHESIS    (58)
 
     LEFT_PARENTHESIS <a href="#st74">shift 74</a>
     . error
@@ -814,7 +820,7 @@
     . error
 
 <hr><a name="st49"><b>state 49 (entry on STRING_TYPE)</b></a>
-    cast : STRING_TYPE_LEFT_PARENTHESIS relational LEFT_PARENTHESIS    (56)
+    cast : STRING_TYPE_LEFT_PARENTHESIS relational RIGHT_PARENTHESIS    (56)
 
     LEFT_PARENTHESIS <a href="#st75">shift 75</a>
     . error
@@ -1194,7 +1200,7 @@
     ref <a href="#st40">goto 40</a>
 
 <hr><a name="st72"><b>state 72 (entry on LEFT_PARENTHESIS)</b></a>
-    cast : INTEGER_TYPE LEFT_PARENTHESIS_relational LEFT_PARENTHESIS    (57)
+    cast : INTEGER_TYPE LEFT_PARENTHESIS_relational RIGHT_PARENTHESIS    (57)
 
     ID <a href="#st15">shift 15</a>
     INTEGER_TYPE <a href="#st43">shift 43</a>
@@ -1225,7 +1231,7 @@
     . error
 
 <hr><a name="st74"><b>state 74 (entry on LEFT_PARENTHESIS)</b></a>
-    cast : REAL_TYPE LEFT_PARENTHESIS_relational LEFT_PARENTHESIS    (58)
+    cast : REAL_TYPE LEFT_PARENTHESIS_relational RIGHT_PARENTHESIS    (58)
 
     ID <a href="#st15">shift 15</a>
     INTEGER_TYPE <a href="#st43">shift 43</a>
@@ -1246,7 +1252,7 @@
     term <a href="#st42">goto 42</a>
 
 <hr><a name="st75"><b>state 75 (entry on LEFT_PARENTHESIS)</b></a>
-    cast : STRING_TYPE LEFT_PARENTHESIS_relational LEFT_PARENTHESIS    (56)
+    cast : STRING_TYPE LEFT_PARENTHESIS_relational RIGHT_PARENTHESIS    (56)
 
     ID <a href="#st15">shift 15</a>
     INTEGER_TYPE <a href="#st43">shift 43</a>
@@ -1343,21 +1349,22 @@
 <hr><a name="st81"><b>state 81 (entry on RIGHT_BRACKET)</b></a>
     ref : ID LEFT_BRACKET expr RIGHT_BRACKET_    (11)
 
-    END_FUNCTION_STATEMENTS error
-    LEFT_BRACKET error
-    START_THEN error
     REAL_LITERAL error
-    START_PROGRAM error
     STRING_LITERAL error
+    START_THEN error
+    REAL_TYPE error
+    START_FUNCTION_STATEMENTS error
+    INT_LITERAL error
     STRING_TYPE error
     INTEGER_TYPE error
-    START_FUNCTION_STATEMENTS error
-    REAL_TYPE error
+    START_PROGRAM error
     ELIF error
+    END_FUNCTION_STATEMENTS error
     $end error
+    LEFT_PARENTHESIS error
     ELSE error
-    INT_LITERAL error
     error error
+    LEFT_BRACKET error
     . reduce 11
 
 <hr><a name="st82"><b>state 82 (entry on PARAMETER_COMMA)</b></a>
@@ -1371,23 +1378,24 @@
 <hr><a name="st83"><b>state 83 (entry on RIGHT_PARENTHESIS)</b></a>
     function_call : ID LEFT_PARENTHESIS ref_list RIGHT_PARENTHESIS_    (42)
 
-    REAL_LITERAL error
-    INT_LITERAL error
-    INTEGER_TYPE error
     REAL_TYPE error
-    ASSIGN error
     ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    START_FUNCTION_STATEMENTS error
     START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     . reduce 42
 
 <hr><a name="st84"><b>state 84 (entry on RIGHT_PARENTHESIS)</b></a>
@@ -1455,24 +1463,25 @@
     term : term_MULTIPLY factor    (16)
     term : term_DIVIDE factor    (17)
 
-    REAL_TYPE error
-    ELSE error
-    INTEGER_TYPE error
     ELIF error
-    START_THEN error
-    START_FUNCTION_STATEMENTS error
-    LEFT_BRACKET error
-    STRING_LITERAL error
-    START_PROGRAM error
+    LEFT_PARENTHESIS error
+    INTEGER_TYPE error
     ASSIGN error
     EXPONENT error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
     REAL_LITERAL error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    PARAMETER_COMMA error
+    REAL_TYPE error
+    END_FUNCTION_STATEMENTS error
     $end error
     error error
     STRING_TYPE error
     INT_LITERAL error
+    ELSE error
     DIVIDE <a href="#st70">shift 70</a>
     MULTIPLY <a href="#st71">shift 71</a>
     . reduce 13
@@ -1482,24 +1491,25 @@
     term : term_MULTIPLY factor    (16)
     term : term_DIVIDE factor    (17)
 
-    REAL_TYPE error
-    ELSE error
-    INTEGER_TYPE error
     ELIF error
-    START_THEN error
-    START_FUNCTION_STATEMENTS error
-    LEFT_BRACKET error
-    STRING_LITERAL error
-    START_PROGRAM error
+    LEFT_PARENTHESIS error
+    INTEGER_TYPE error
     ASSIGN error
     EXPONENT error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
     REAL_LITERAL error
+    LEFT_BRACKET error
+    STRING_LITERAL error
+    START_THEN error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
+    PARAMETER_COMMA error
+    REAL_TYPE error
+    END_FUNCTION_STATEMENTS error
     $end error
     error error
     STRING_TYPE error
     INT_LITERAL error
+    ELSE error
     DIVIDE <a href="#st70">shift 70</a>
     MULTIPLY <a href="#st71">shift 71</a>
     . reduce 14
@@ -1507,23 +1517,24 @@
 <hr><a name="st89"><b>state 89 (entry on exp)</b></a>
     factor : factor EXPONENT exp_    (19)
 
-    REAL_LITERAL error
-    INT_LITERAL error
-    INTEGER_TYPE error
     REAL_TYPE error
-    ASSIGN error
     ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    START_FUNCTION_STATEMENTS error
     START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     . reduce 19
 
 <hr><a name="st90"><b>state 90 (entry on expr)</b></a>
@@ -1538,13 +1549,12 @@
     END_PROGRAM reduce 51
     OUTPUT reduce 51
     NOT_EQUALS reduce 51
-    GREATER_THAN reduce 51
     RETURN reduce 51
+    GREATER_THAN reduce 51
     NEWLINE reduce 51
     FUNCTION_DEF reduce 51
     LESS_THAN_OR_EQUAL reduce 51
     LESS_THAN reduce 51
-    LEFT_PARENTHESIS reduce 51
     EQUALS reduce 51
     START_WHILE reduce 51
     END_WHILE reduce 51
@@ -1566,13 +1576,12 @@
     END_PROGRAM reduce 52
     OUTPUT reduce 52
     NOT_EQUALS reduce 52
-    GREATER_THAN reduce 52
     RETURN reduce 52
+    GREATER_THAN reduce 52
     NEWLINE reduce 52
     FUNCTION_DEF reduce 52
     LESS_THAN_OR_EQUAL reduce 52
     LESS_THAN reduce 52
-    LEFT_PARENTHESIS reduce 52
     EQUALS reduce 52
     START_WHILE reduce 52
     END_WHILE reduce 52
@@ -1594,13 +1603,12 @@
     END_PROGRAM reduce 53
     OUTPUT reduce 53
     NOT_EQUALS reduce 53
-    GREATER_THAN reduce 53
     RETURN reduce 53
+    GREATER_THAN reduce 53
     NEWLINE reduce 53
     FUNCTION_DEF reduce 53
     LESS_THAN_OR_EQUAL reduce 53
     LESS_THAN reduce 53
-    LEFT_PARENTHESIS reduce 53
     EQUALS reduce 53
     START_WHILE reduce 53
     END_WHILE reduce 53
@@ -1622,13 +1630,12 @@
     END_PROGRAM reduce 54
     OUTPUT reduce 54
     NOT_EQUALS reduce 54
-    GREATER_THAN reduce 54
     RETURN reduce 54
+    GREATER_THAN reduce 54
     NEWLINE reduce 54
     FUNCTION_DEF reduce 54
     LESS_THAN_OR_EQUAL reduce 54
     LESS_THAN reduce 54
-    LEFT_PARENTHESIS reduce 54
     EQUALS reduce 54
     START_WHILE reduce 54
     END_WHILE reduce 54
@@ -1642,23 +1649,24 @@
     factor : factor_EXPONENT exp    (19)
     term : term DIVIDE factor_    (17)
 
-    INT_LITERAL error
     ELSE error
+    LEFT_PARENTHESIS error
     INTEGER_TYPE error
+    ELIF error
     REAL_TYPE error
-    END_FUNCTION_STATEMENTS error
-    START_THEN error
+    START_FUNCTION_STATEMENTS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    REAL_LITERAL error
-    START_FUNCTION_STATEMENTS error
+    START_THEN error
     ASSIGN error
+    REAL_LITERAL error
+    PARAMETER_COMMA error
+    END_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     EXPONENT <a href="#st64">shift 64</a>
     . reduce 17
 
@@ -1666,28 +1674,29 @@
     factor : factor_EXPONENT exp    (19)
     term : term MULTIPLY factor_    (16)
 
-    INT_LITERAL error
     ELSE error
+    LEFT_PARENTHESIS error
     INTEGER_TYPE error
+    ELIF error
     REAL_TYPE error
-    END_FUNCTION_STATEMENTS error
-    START_THEN error
+    START_FUNCTION_STATEMENTS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    REAL_LITERAL error
-    START_FUNCTION_STATEMENTS error
+    START_THEN error
     ASSIGN error
+    REAL_LITERAL error
+    PARAMETER_COMMA error
+    END_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     EXPONENT <a href="#st64">shift 64</a>
     . reduce 16
 
 <hr><a name="st96"><b>state 96 (entry on relational)</b></a>
-    cast : INTEGER_TYPE LEFT_PARENTHESIS relational_LEFT_PARENTHESIS    (57)
+    cast : INTEGER_TYPE LEFT_PARENTHESIS relational_RIGHT_PARENTHESIS    (57)
     relational : relational_GREATER_THAN expr    (51)
     relational : relational_GREATER_THAN_OR_EQUAL expr    (52)
     relational : relational_LESS_THAN expr    (53)
@@ -1697,33 +1706,34 @@
     GREATER_THAN_OR_EQUAL <a href="#st67">shift 67</a>
     LESS_THAN <a href="#st68">shift 68</a>
     LESS_THAN_OR_EQUAL <a href="#st69">shift 69</a>
-    LEFT_PARENTHESIS <a href="#st107">shift 107</a>
+    RIGHT_PARENTHESIS <a href="#st107">shift 107</a>
     . error
 
 <hr><a name="st97"><b>state 97 (entry on RIGHT_PARENTHESIS)</b></a>
     exp : LEFT_PARENTHESIS expr RIGHT_PARENTHESIS_    (21)
 
-    REAL_LITERAL error
-    INT_LITERAL error
-    INTEGER_TYPE error
     REAL_TYPE error
-    ASSIGN error
     ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    START_FUNCTION_STATEMENTS error
     START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     . reduce 21
 
 <hr><a name="st98"><b>state 98 (entry on relational)</b></a>
-    cast : REAL_TYPE LEFT_PARENTHESIS relational_LEFT_PARENTHESIS    (58)
+    cast : REAL_TYPE LEFT_PARENTHESIS relational_RIGHT_PARENTHESIS    (58)
     relational : relational_GREATER_THAN expr    (51)
     relational : relational_GREATER_THAN_OR_EQUAL expr    (52)
     relational : relational_LESS_THAN expr    (53)
@@ -1733,11 +1743,11 @@
     GREATER_THAN_OR_EQUAL <a href="#st67">shift 67</a>
     LESS_THAN <a href="#st68">shift 68</a>
     LESS_THAN_OR_EQUAL <a href="#st69">shift 69</a>
-    LEFT_PARENTHESIS <a href="#st108">shift 108</a>
+    RIGHT_PARENTHESIS <a href="#st108">shift 108</a>
     . error
 
 <hr><a name="st99"><b>state 99 (entry on relational)</b></a>
-    cast : STRING_TYPE LEFT_PARENTHESIS relational_LEFT_PARENTHESIS    (56)
+    cast : STRING_TYPE LEFT_PARENTHESIS relational_RIGHT_PARENTHESIS    (56)
     relational : relational_GREATER_THAN expr    (51)
     relational : relational_GREATER_THAN_OR_EQUAL expr    (52)
     relational : relational_LESS_THAN expr    (53)
@@ -1747,7 +1757,7 @@
     GREATER_THAN_OR_EQUAL <a href="#st67">shift 67</a>
     LESS_THAN <a href="#st68">shift 68</a>
     LESS_THAN_OR_EQUAL <a href="#st69">shift 69</a>
-    LEFT_PARENTHESIS <a href="#st109">shift 109</a>
+    RIGHT_PARENTHESIS <a href="#st109">shift 109</a>
     . error
 
 <hr><a name="st100"><b>state 100 (entry on END_WHILE)</b></a>
@@ -1829,70 +1839,73 @@
     stmnt_list <a href="#st113">goto 113</a>
     while_statement <a href="#st13">goto 13</a>
 
-<hr><a name="st107"><b>state 107 (entry on LEFT_PARENTHESIS)</b></a>
-    cast : INTEGER_TYPE LEFT_PARENTHESIS relational LEFT_PARENTHESIS_    (57)
+<hr><a name="st107"><b>state 107 (entry on RIGHT_PARENTHESIS)</b></a>
+    cast : INTEGER_TYPE LEFT_PARENTHESIS relational RIGHT_PARENTHESIS_    (57)
 
-    REAL_LITERAL error
-    INT_LITERAL error
-    INTEGER_TYPE error
     REAL_TYPE error
-    ASSIGN error
     ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    START_FUNCTION_STATEMENTS error
     START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     . reduce 57
 
-<hr><a name="st108"><b>state 108 (entry on LEFT_PARENTHESIS)</b></a>
-    cast : REAL_TYPE LEFT_PARENTHESIS relational LEFT_PARENTHESIS_    (58)
+<hr><a name="st108"><b>state 108 (entry on RIGHT_PARENTHESIS)</b></a>
+    cast : REAL_TYPE LEFT_PARENTHESIS relational RIGHT_PARENTHESIS_    (58)
 
-    REAL_LITERAL error
-    INT_LITERAL error
-    INTEGER_TYPE error
     REAL_TYPE error
-    ASSIGN error
     ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    START_FUNCTION_STATEMENTS error
     START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     . reduce 58
 
-<hr><a name="st109"><b>state 109 (entry on LEFT_PARENTHESIS)</b></a>
-    cast : STRING_TYPE LEFT_PARENTHESIS relational LEFT_PARENTHESIS_    (56)
+<hr><a name="st109"><b>state 109 (entry on RIGHT_PARENTHESIS)</b></a>
+    cast : STRING_TYPE LEFT_PARENTHESIS relational RIGHT_PARENTHESIS_    (56)
 
-    REAL_LITERAL error
-    INT_LITERAL error
-    INTEGER_TYPE error
     REAL_TYPE error
-    ASSIGN error
     ELSE error
+    INTEGER_TYPE error
+    ELIF error
+    END_FUNCTION_STATEMENTS error
+    LEFT_PARENTHESIS error
     LEFT_BRACKET error
     STRING_LITERAL error
-    START_PROGRAM error
-    ELIF error
-    PARAMETER_COMMA error
-    END_FUNCTION_STATEMENTS error
-    START_FUNCTION_STATEMENTS error
     START_THEN error
+    ASSIGN error
+    PARAMETER_COMMA error
+    REAL_LITERAL error
+    START_FUNCTION_STATEMENTS error
+    START_PROGRAM error
     $end error
     error error
     STRING_TYPE error
+    INT_LITERAL error
     . reduce 56
 
 <hr><a name="st110"><b>state 110 (entry on START_THEN)</b></a>
@@ -2134,7 +2147,7 @@
 
 42 terminals, 24 nonterminals;
 58 grammar rules, 124 states;
-1 shift/reduce and 0 reduce/reduce conflicts reported.
+0 shift/reduce and 0 reduce/reduce conflicts reported.
 </pre>
 </body>
 </html>

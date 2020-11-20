@@ -213,15 +213,15 @@ relational              : relational GREATER_THAN expr
 		                | expr
 		                ;
 
-cast                    : STRING_TYPE LEFT_PARENTHESIS relational LEFT_PARENTHESIS
+cast                    : STRING_TYPE LEFT_PARENTHESIS relational RIGHT_PARENTHESIS
                         {
                             $$ = tree.new StringCastNode($3);
                         }
-                        | INTEGER_TYPE LEFT_PARENTHESIS relational LEFT_PARENTHESIS
+                        | INTEGER_TYPE LEFT_PARENTHESIS relational RIGHT_PARENTHESIS
                         {
                             $$ = tree.new IntegerCastNode($3);
                         }
-                        | REAL_TYPE LEFT_PARENTHESIS relational LEFT_PARENTHESIS
+                        | REAL_TYPE LEFT_PARENTHESIS relational RIGHT_PARENTHESIS
                         {
                             $$ = tree.new RealCastNode($3);
                         }

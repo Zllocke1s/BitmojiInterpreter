@@ -163,7 +163,7 @@ public class BitmojiLexer implements BitmojiTokens
             sb.append(currentChar);
             nextChar();
         }
-        while (Character.isLetter(currentChar)) {
+        while (Character.isLetterOrDigit(currentChar)) {
             sb.append(currentChar);
             nextChar();
         }

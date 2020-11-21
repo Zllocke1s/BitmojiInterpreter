@@ -124,7 +124,8 @@ public class BitmojiLexer implements BitmojiTokens
                 uniqueChars.add(c);
             }
         }
-        while (uniqueChars.contains(currentChar) || quotes.contains(String.valueOf(currentChar))) {
+        while ((uniqueChars.contains(currentChar) || quotes.contains(String.valueOf(currentChar)))
+                && !bitmojiSymbols.containsKey(sb.toString())) {
             sb.append(currentChar);
             nextChar();
         }
@@ -158,6 +159,10 @@ public class BitmojiLexer implements BitmojiTokens
     //matches an id
     private void idWord() {
         StringBuilder sb = new StringBuilder();
+        if (Character.isLetter(currentChar)) {
+            sb.append(currentChar);
+            nextChar();
+        }
         while (Character.isLetter(currentChar)) {
             sb.append(currentChar);
             nextChar();

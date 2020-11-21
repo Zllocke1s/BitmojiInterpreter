@@ -158,7 +158,7 @@ public class BitmojiLexer implements BitmojiTokens
     //matches an id
     private void idWord() {
         StringBuilder sb = new StringBuilder();
-        while (Character.isLetter(currentChar)) {
+        while (Character.isLetterOrDigit(currentChar)) {
             sb.append(currentChar);
             nextChar();
         }

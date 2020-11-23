@@ -1,0 +1,145 @@
+🎃
+    ➡ 🕷Matrix A 🕷👌
+    ➡ 🕷=======🕷 👌
+    ➡ 🕷Rows: 🕷👌
+    ⬅ aRow
+    aRow 🚸 🔢 🌜aRow🌛
+    ➡ 🕷Cols: 🕷👌
+    ⬅ aCol
+    aCol 🚸 🔢 🌜aCol🌛
+
+    i 🚸 0
+    j 🚸 0
+    prev 🚸 0
+    yCarry 🚸 0
+
+    ♻ i 🍺 aRow
+        j 🚸 0
+        ♻ j 🍺 aCol
+            👀 🌜prev 🔥 i🌛
+                👶
+                prev 🚸 i
+                yCarry 🚸 yCarry 🎄 aCol 🐀 1
+            🧓
+            ➡ 🕷Enter the value for Matrix A at index [🕷
+            ➡ i
+            ➡ 🕷][🕷
+            ➡ j
+            ➡ 🕷]: 🕷
+            ⬅ aMatrix 🤜 i 🎄 j 🎄 yCarry 🤛
+            temp 🚸 aMatrix 🤜 i 🎄 j 🎄 yCarry 🤛
+            aMatrix 🤜 i 🎄 j 🎄 yCarry 🤛 🚸 🔢 🌜temp🌛
+            j 🚸 j 🎄 1
+        🛑
+        i 🚸 i 🎄 1
+    🛑
+
+    i 🚸 0
+    j 🚸 0
+    prev 🚸 0
+    yCarry 🚸 0
+
+    ➡ 🕷Matrix B 🕷👌
+    ➡ 🕷=======🕷 👌
+    ➡ 🕷Rows: 🕷👌
+    ⬅ bRow
+    bRow 🚸 🔢 🌜bRow🌛
+    ➡ 🕷Cols: 🕷👌
+    ⬅ bCol
+    bCol 🚸 🔢 🌜bCol🌛
+
+    ♻ i 🍺 bRow
+        j 🚸 0
+        ♻ j 🍺 bCol
+            👀 🌜prev 🔥 i🌛
+                👶
+                prev 🚸 i
+                yCarry 🚸 yCarry 🎄 bCol 🐀 1
+            🧓
+            ➡ 🕷Enter the value for Matrix B at index [🕷
+            ➡ i
+            ➡ 🕷][🕷
+            ➡ j
+            ➡ 🕷]: 🕷
+            ⬅ bMatrix 🤜 i 🎄 j 🎄 yCarry 🤛
+            temp 🚸 bMatrix 🤜 i 🎄 j 🎄 yCarry 🤛
+            bMatrix 🤜 i 🎄 j 🎄 yCarry 🤛 🚸 🔢 🌜temp🌛
+            j 🚸 j 🎄 1
+        🛑
+        i 🚸 i 🎄 1
+    🛑
+
+    👀 🌜aCol 🔥 bRow🌛
+    👶 ➡ 🕷Incompatible Matrices 🕷🧓
+    😡
+    👶
+        i 🚸 0
+        j 🚸 0
+        prev 🚸 0
+        yCarry 🚸 0
+
+        cRow 🚸 aRow
+        cCol 🚸 bCol
+
+        ♻ i 🍺 cRow
+            j 🚸 0
+            ♻ j 🍺 cCol
+                👀 🌜prev 🔥 i🌛
+                    👶
+                    prev 🚸 i
+                    yCarry 🚸 yCarry 🎄 cCol 🐀 1
+                🧓
+                cMatrix 🤜 i 🎄 j 🎄 yCarry 🤛 🚸 🔢 🌜0🌛
+                j 🚸 j 🎄 1
+           🛑
+        i 🚸 i 🎄 1
+    🛑
+        i 🚸 0
+        j 🚸 0
+        k 🚸 0
+        prev 🚸 0
+        yCarry 🚸 0
+        xCarry 🚸 0
+
+        ♻ i 🍺 aRow
+            j 🚸 0
+            ♻ j 🍺 bCol
+                👀 🌜prev 🔥 i🌛
+                    👶
+                    prev 🚸 i
+                    yCarry 🚸 yCarry 🎄 cCol 🐀 1
+                    🧓
+                k 🚸 0
+                 ♻ k 🍺 bRow
+                    temp 🚸 cMatrix 🤜 i 🎄 j 🎄 yCarry 🤛
+                    cMatrix 🤜 i 🎄 j 🎄 yCarry 🤛 🚸 temp 🎄 aMatrix 🤜 i 🎄 k 🎄 yCarry 🤛 🤺 bMatrix 🤜 k 🎄 j 🎄 xCarry 🤛
+                    k 🚸 k 🎄 1
+                    xCarry 🚸 xCarry 🎄 cCol 🐀 1
+                🛑
+                j 🚸 j 🎄 1
+                xCarry 🚸 0
+           🛑
+            i 🚸 i 🎄 1
+        🛑
+
+        i 🚸 0
+        j 🚸 0
+        prev 🚸 0
+        yCarry 🚸 0
+        ♻ i 🍺 cRow
+            j 🚸 0
+            ♻ j 🍺 cCol
+                👀 🌜prev 🔥 i🌛
+                    👶
+                    prev 🚸 i
+                    yCarry 🚸 yCarry 🎄 aCol 🐀 1
+                    ➡ 🕷🕷 👌
+                    🧓
+                    ➡ cMatrix 🤜 i 🎄 j 🎄 yCarry 🤛
+                    ➡ 🕷 🕷
+                    j 🚸 j 🎄 1
+               🛑
+            i 🚸 i 🎄 1
+        🛑
+        🧓
+☣

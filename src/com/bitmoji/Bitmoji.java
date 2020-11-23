@@ -1,4 +1,4 @@
-// Output created by jacc on Fri Nov 20 18:54:49 CST 2020
+// Output created by jacc on Mon Nov 23 14:30:09 CST 2020
 
 package com.bitmoji;
 
@@ -4195,9 +4195,9 @@ class Bitmoji implements BitmojiTokens {
         try {
             Bitmoji parser = new Bitmoji(new java.io.FileInputStream(filename));
             parser.yynext();
-            parser.parse();
-
-            parser.getProgram().evaluate();
+            if (parser.parse()) {
+                parser.getProgram().evaluate();
+            }
 
         } catch(java.io.FileNotFoundException e) {
             System.err.println("Could not open file.");

@@ -328,9 +328,9 @@ cast                    : STRING_TYPE LEFT_PARENTHESIS relational RIGHT_PARENTHE
         try {
             Bitmoji parser = new Bitmoji(new java.io.FileInputStream(filename));
             parser.yynext();
-            parser.parse();
-
-            parser.getProgram().evaluate();
+            if (parser.parse()) {
+                parser.getProgram().evaluate();
+            }
 
         } catch(java.io.FileNotFoundException e) {
             System.err.println("Could not open file.");

@@ -239,7 +239,7 @@ public class BitmojiPT {
             if(word != null) {
                 return word;
             } else {
-                parser.yyerror("Type error");
+                parser.yyerror("Cannot perform " + operator + " between " + TypeHandler.evaluate(left) + " and " + TypeHandler.evaluate(right));
                 System.exit(1);
             }
             return null;
@@ -313,7 +313,7 @@ public class BitmojiPT {
                     statements.evaluate();
                 }
             } catch (IllegalArgumentException ex) {
-                parser.yyerror("Not a valid boolean expression");
+                parser.yyerror(TypeHandler.evaluate(condition) + " not a valid boolean expression");
                 System.exit(1);
             }
             return null;
@@ -457,7 +457,7 @@ public class BitmojiPT {
                     return false;
                 }
             } catch (IllegalArgumentException ex) {
-                parser.yyerror("Not a valid boolean expression");
+                parser.yyerror(TypeHandler.evaluate(condition) + " not a valid boolean expression");
                 System.exit(1);
             }
             return null;
@@ -539,7 +539,7 @@ public class BitmojiPT {
             FunctionDefinitionNode fd = (FunctionDefinitionNode) globalSymbolTable().getValue(name);
             ArrayList<String> parameterNames = fd.getParameterNames();
             if (arguments.size() != parameterNames.size()) {
-                parser.yyerror("Parameter argument mismatch");
+                parser.yyerror("Parameter argument mismatch: " + arguments.size() + " arguments given " + parameterNames.size() + " expected.");
                 System.exit(1);
             }
             SymbolTable st = new SymbolTable();

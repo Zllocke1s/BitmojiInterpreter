@@ -280,7 +280,7 @@ public class BitmojiLexer implements BitmojiTokens
 
     // test the lexer
     public static void main(final String[] args) throws FileNotFoundException {
-        final FileInputStream fileStream = new FileInputStream(args[0].toString());
+        final FileInputStream fileStream = new FileInputStream(args[0]);
         final BitmojiLexer lexer = new BitmojiLexer(fileStream);
         do {
             lexer.next();
